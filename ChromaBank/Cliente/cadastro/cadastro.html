@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Abra sua conta digital no ChormaBank."
+    >
+
+    <title>Abrir conta | ChormaBank</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="cadastro.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Ícones -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- Efeitos decorativos do fundo -->
+
+    <div class="background-effects" aria-hidden="true">
+        <div class="background-glow glow-one"></div>
+        <div class="background-glow glow-two"></div>
+        <div class="background-lines lines-left"></div>
+        <div class="background-lines lines-right"></div>
+    </div>
+
+    <!-- Cabeçalho -->
+
+    <header class="register-header">
+
+        <a
+            href="../../index.html"
+            class="brand"
+            aria-label="Voltar para a página inicial"
+        >
+
+            <img
+                src="../login/inlog.png"
+                alt="Símbolo ChormaBank"
+                class="brand-logo"
+            >
+
+            <span class="brand-name">
+                <strong>Chroma</strong>Bank
+            </span>
+
+        </a>
+
+        <div class="login-link">
+
+            <span>Já possui uma conta?</span>
+
+            <a href="../login/login.html">
+
+                Entrar
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- Conteúdo principal -->
+
+    <main class="register-page">
+
+        <section class="register-container">
+
+            <!-- Título -->
+
+            <div class="register-heading">
+
+                <h1>Abra sua conta</h1>
+
+                <p>
+                    É rápido, fácil e 100% digital.
+                </p>
+
+            </div>
+
+            <!-- Barra de etapas -->
+
+            <div
+                class="steps"
+                aria-label="Progresso do cadastro"
+            >
+
+                <div
+                    class="step active"
+                    data-step-indicator="1"
+                >
+
+                    <div class="step-number">
+                        1
+                    </div>
+
+                    <span>Dados pessoais</span>
+
+                </div>
+
+                <div class="step-line"></div>
+
+                <div
+                    class="step"
+                    data-step-indicator="2"
+                >
+
+                    <div class="step-number">
+                        2
+                    </div>
+
+                    <span>Contato</span>
+
+                </div>
+
+                <div class="step-line"></div>
+
+                <div
+                    class="step"
+                    data-step-indicator="3"
+                >
+
+                    <div class="step-number">
+                        3
+                    </div>
+
+                    <span>Endereço</span>
+
+                </div>
+
+                <div class="step-line"></div>
+
+                <div
+                    class="step"
+                    data-step-indicator="4"
+                >
+
+                    <div class="step-number">
+                        4
+                    </div>
+
+                    <span>Segurança</span>
+
+                </div>
+
+                <div class="step-line"></div>
+
+                <div
+                    class="step"
+                    data-step-indicator="5"
+                >
+
+                    <div class="step-number">
+                        5
+                    </div>
+
+                    <span>Confirmação</span>
+
+                </div>
+
+            </div>
+
+            <!-- Conteúdo do cadastro -->
+
+            <div class="register-content">
+
+                <!-- Painel informativo -->
+
+                <aside class="security-panel">
+
+                    <div class="security-illustration">
+
+                        <div class="identity-card">
+
+                            <i class="fa-regular fa-user"></i>
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <div class="security-shield">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                        </div>
+
+                        <span class="spark spark-one"></span>
+                        <span class="spark spark-two"></span>
+                        <span class="spark spark-three"></span>
+
+                    </div>
+
+                    <div class="security-copy">
+
+                        <h2>Seus dados protegidos</h2>
+
+                        <p>
+                            Utilizamos criptografia e seguimos os mais altos
+                            padrões de segurança para proteger suas informações.
+                        </p>
+
+                    </div>
+
+                </aside>
+
+                <!-- Formulário -->
+
+                <form
+                    class="register-form"
+                    id="registerForm"
+                    novalidate
+                >
+
+                    <!-- =================================
+                         ETAPA 1 — DADOS PESSOAIS
+                    ================================== -->
+
+                    <section
+                        class="form-step active"
+                        data-step="1"
+                    >
+
+                        <div class="form-step-heading">
+
+                            <span>Etapa 1 de 5</span>
+
+                            <h2>Dados pessoais</h2>
+
+                            <p>
+                                Precisamos dessas informações para criar sua conta.
+                            </p>
+
+                        </div>
+
+                        <div class="form-fields">
+
+                            <div class="input-group full-width">
+
+                                <label for="nome">
+                                    Nome completo
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-regular fa-user"></i>
+
+                                    <input
+                                        type="text"
+                                        id="nome"
+                                        name="nome"
+                                        placeholder="Digite seu nome completo"
+                                        autocomplete="name"
+                                        required
+                                    >
+
+                                </div>
+
+                                <small class="error-message"></small>
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label for="cpf">
+                                    CPF
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-regular fa-id-card"></i>
+
+                                    <input
+                                        type="text"
+                                        id="cpf"
+                                        name="cpf"
+                                        placeholder="000.000.000-00"
+                                        inputmode="numeric"
+                                        maxlength="14"
+                                        autocomplete="off"
+                                        required
+                                    >
+
+                                </div>
+
+                                <small class="error-message"></small>
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label for="nascimento">
+                                    Data de nascimento
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-regular fa-calendar"></i>
+
+                                    <input
+                                        type="date"
+                                        id="nascimento"
+                                        name="nascimento"
+                                        required
+                                    >
+
+                                </div>
+
+                                <small class="error-message"></small>
+
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="next-button"
+                            data-next-step
+                        >
+
+                            Continuar
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </section>
+
+                    <!-- =================================
+                         ETAPA 2 — CONTATO
+                    ================================== -->
+
+                    <section
+                        class="form-step"
+                        data-step="2"
+                        hidden
+                    >
+
+                        <div class="form-step-heading">
+
+                            <span>Etapa 2 de 5</span>
+
+                            <h2>Contato</h2>
+
+                            <p>
+                                Informe como podemos falar com você.
+                            </p>
+
+                        </div>
+
+                        <div class="form-fields">
+
+                            <div class="input-group full-width">
+
+                                <label for="email">
+                                    E-mail
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-regular fa-envelope"></i>
+
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="seuemail@exemplo.com"
+                                        autocomplete="email"
+                                        required
+                                    >
+
+                                </div>
+
+                                <small class="error-message"></small>
+
+                            </div>
+
+                            <div class="input-group full-width">
+
+                                <label for="telefone">
+                                    Celular
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+
+                                    <input
+                                        type="tel"
+                                        id="telefone"
+                                        name="telefone"
+                                        placeholder="(00) 00000-0000"
+                                        inputmode="numeric"
+                                        maxlength="15"
+                                        autocomplete="tel"
+                                        required
+                                    >
+
+                                </div>
+
+                                <small class="error-message"></small>
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-navigation">
+
+                            <button
+                                type="button"
+                                class="back-button"
+                                data-previous-step
+                            >
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                                Voltar
+
+                            </button>
+
+                            <button
+                                type="button"
+                                class="next-button"
+                                data-next-step
+                            >
+
+                                Continuar
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                    <!-- =================================
+                         ETAPA 3 — ENDEREÇO
+                    ================================== -->
+
+                    <section
+                        class="form-step"
+                        data-step="3"
+                        hidden
+                    >
+
+                        <div class="form-step-heading">
+
+                            <span>Etapa 3 de 5</span>
+
+                            <h2>Endereço</h2>
+
+                            <p>
+                                Informe seu endereço residencial.
+                            </p>
+
+                        </div>
+
+                        <div class="form-fields">
+
+                            <div class="input-group">
+
+                                <label for="cep">
+                                    CEP
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-solid fa-location-dot"></i>
+
+                                    <input
+                                        type="text"
+                                        id="cep"
+                                        name="cep"
+                                        placeholder="00000-000"
+                                        inputmode="numeric"
+                                        maxlength="9"
+                                        autocomplete="postal-code"
+                                        required
+                                    >
+
+                                </div>
+
+                                <small class="error-message"></small>
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label for="estado">
+                                    Estado
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-regular fa-map"></i>
+
+                                    <select
+                                        id="estado"
+                                        name="estado"
+                                        autocomplete="address-level1"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Selecione
+                                        </option>
+
+                                        <option value="AC">AC</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AP">AP</option>
+                                        <option value="AM">AM</option>
+                                        <option value="BA">BA</option>
+                                        <option value="CE">CE</option>
+                                        <option value="DF">DF</option>
+                                        <option value="ES">ES</option>
+                                        <option value="GO">GO</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MT">MT</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MG">MG</option>
+                                        <option value="PA">PA</option>
+                                        <option value="PB">PB</option>
+                                        <option value="PR">PR</option>
+                                        <option value="PE">PE</option>
+                                        <option value="PI">PI</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RN">RN</option>
+                                        <option value="RS">RS</option>
+                                        <option value="RO">RO</option>
+                                        <option value="RR">RR</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SP">SP</option>
+                                        <option value="SE">SE</option>
+                                        <option value="TO">TO</option>
+
+                                    </select>
+
+                                </div>
+
+                                <small class="error-message"></small>
+
+                            </div>
+
+                            <div class="input-group full-width">
+
+                                <label for="rua">
+                                    Rua
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-solid fa-road"></i>
+
+                                    <input
+                                        type="text"
+                                        id="rua"
+                                        name="rua"
+                                        placeholder="Digite o nome da rua"
+                                        autocomplete="address-line1"
+                                        required
+                                    >
+
+                                </div>
+
+                                <small class="error-message"></small>
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label for="numero">
+                                    Número
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-solid fa-house"></i>
+
+                                    <input
+                                        type="text"
+                                        id="numero"
+                                        name="numero"
+                                        placeholder="123"
+                                        autocomplete="address-line2"
+                                        required
+                                    >
+
+                                </div>
+
+                                <small class="error-message"></small>
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label for="cidade">
+                                    Cidade
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-solid fa-city"></i>
+
+                                    <input
+                                        type="text"
+                                        id="cidade"
+                                        name="cidade"
+                                        placeholder="Digite sua cidade"
+                                        autocomplete="address-level2"
+                                        required
+                                    >
+
+                                </div>
+
+                                <small class="error-message"></small>
+
+                            </div>
+
+                            <div class="input-group full-width">
+
+                                <label for="complemento">
+                                    Complemento
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-regular fa-building"></i>
+
+                                    <input
+                                        type="text"
+                                        id="complemento"
+                                        name="complemento"
+                                        placeholder="Apartamento, bloco ou referência"
+                                        autocomplete="address-line3"
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-navigation">
+
+                            <button
+                                type="button"
+                                class="back-button"
+                                data-previous-step
+                            >
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                                Voltar
+
+                            </button>
+
+                            <button
+                                type="button"
+                                class="next-button"
+                                data-next-step
+                            >
+
+                                Continuar
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                    <!-- =================================
+                         ETAPA 4 — SEGURANÇA
+                    ================================== -->
+
+                    <section
+                        class="form-step"
+                        data-step="4"
+                        hidden
+                    >
+
+                        <div class="form-step-heading">
+
+                            <span>Etapa 4 de 5</span>
+
+                            <h2>Segurança</h2>
+
+                            <p>
+                                Crie uma senha segura para acessar sua conta.
+                            </p>
+
+                        </div>
+
+                        <div class="form-fields">
+
+                            <div class="input-group full-width">
+
+                                <label for="senhaCadastro">
+                                    Senha
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-solid fa-lock"></i>
+
+                                    <input
+                                        type="password"
+                                        id="senhaCadastro"
+                                        name="senha"
+                                        placeholder="Crie uma senha"
+                                        autocomplete="new-password"
+                                        minlength="8"
+                                        required
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        data-password-toggle="senhaCadastro"
+                                        aria-label="Mostrar senha"
+                                    >
+
+                                        <i class="fa-regular fa-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                                <small class="error-message"></small>
+
+                            </div>
+
+                            <div class="input-group full-width">
+
+                                <label for="confirmarSenha">
+                                    Confirmar senha
+                                </label>
+
+                                <div class="input-box">
+
+                                    <i class="fa-solid fa-lock"></i>
+
+                                    <input
+                                        type="password"
+                                        id="confirmarSenha"
+                                        name="confirmarSenha"
+                                        placeholder="Digite a senha novamente"
+                                        autocomplete="new-password"
+                                        minlength="8"
+                                        required
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        data-password-toggle="confirmarSenha"
+                                        aria-label="Mostrar confirmação da senha"
+                                    >
+
+                                        <i class="fa-regular fa-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                                <small class="error-message"></small>
+
+                            </div>
+
+                        </div>
+
+                        <div class="password-requirements">
+
+                            <p>Sua senha deve conter:</p>
+
+                            <ul>
+
+                                <li data-requirement="length">
+                                    <i class="fa-regular fa-circle"></i>
+                                    Pelo menos 8 caracteres
+                                </li>
+
+                                <li data-requirement="uppercase">
+                                    <i class="fa-regular fa-circle"></i>
+                                    Uma letra maiúscula
+                                </li>
+
+                                <li data-requirement="number">
+                                    <i class="fa-regular fa-circle"></i>
+                                    Um número
+                                </li>
+
+                                <li data-requirement="special">
+                                    <i class="fa-regular fa-circle"></i>
+                                    Um caractere especial
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="form-navigation">
+
+                            <button
+                                type="button"
+                                class="back-button"
+                                data-previous-step
+                            >
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                                Voltar
+
+                            </button>
+
+                            <button
+                                type="button"
+                                class="next-button"
+                                data-next-step
+                            >
+
+                                Revisar dados
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                    <!-- =================================
+                         ETAPA 5 — CONFIRMAÇÃO
+                    ================================== -->
+
+                    <section
+                        class="form-step"
+                        data-step="5"
+                        hidden
+                    >
+
+                        <div class="form-step-heading">
+
+                            <span>Etapa 5 de 5</span>
+
+                            <h2>Confirme seus dados</h2>
+
+                            <p>
+                                Revise as informações antes de criar sua conta.
+                            </p>
+
+                        </div>
+
+                        <div class="review-grid">
+
+                            <article class="review-card">
+
+                                <div>
+
+                                    <i class="fa-regular fa-user"></i>
+
+                                    <h3>Dados pessoais</h3>
+
+                                </div>
+
+                                <p id="reviewNome">—</p>
+                                <p id="reviewCpf">—</p>
+                                <p id="reviewNascimento">—</p>
+
+                            </article>
+
+                            <article class="review-card">
+
+                                <div>
+
+                                    <i class="fa-regular fa-envelope"></i>
+
+                                    <h3>Contato</h3>
+
+                                </div>
+
+                                <p id="reviewEmail">—</p>
+                                <p id="reviewTelefone">—</p>
+
+                            </article>
+
+                            <article class="review-card full-width">
+
+                                <div>
+
+                                    <i class="fa-solid fa-location-dot"></i>
+
+                                    <h3>Endereço</h3>
+
+                                </div>
+
+                                <p id="reviewEndereco">—</p>
+
+                            </article>
+
+                        </div>
+
+                        <label class="terms-checkbox">
+
+                            <input
+                                type="checkbox"
+                                id="termos"
+                                name="termos"
+                                required
+                            >
+
+                            <span class="custom-checkbox">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <span>
+
+                                Li e aceito os
+
+                                <a href="#">
+                                    Termos de Uso
+                                </a>
+
+                                e a
+
+                                <a href="#">
+                                    Política de Privacidade
+                                </a>.
+
+                            </span>
+
+                        </label>
+
+                        <small
+                            class="error-message terms-error"
+                            id="termsError"
+                        ></small>
+
+                        <div class="form-navigation">
+
+                            <button
+                                type="button"
+                                class="back-button"
+                                data-previous-step
+                            >
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                                Voltar
+
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="submit-button"
+                            >
+
+                                Criar minha conta
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                    <!-- Mensagem de segurança -->
+
+                    <div class="form-security-message">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <span>
+                            Seus dados estão seguros conosco.
+                        </span>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- Rodapé interno -->
+
+            <div class="register-security-footer">
+
+                <div>
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span>
+                        Ambiente 100% seguro
+                    </span>
+
+                </div>
+
+                <span class="footer-divider"></span>
+
+                <div>
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <span>
+                        Seus dados protegidos
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="cadastro.js"></script>
+
+</body>
+
+</html>
