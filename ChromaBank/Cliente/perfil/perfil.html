@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Perfil do cliente ChromaBank."
+    >
+
+    <title>Perfil | ChromaBank</title>
+
+    <link rel="stylesheet" href="perfil.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <a
+                    href="../../index.html"
+                    class="brand"
+                    aria-label="Página inicial do ChromaBank"
+                >
+
+                    <img
+                        src="../../img/logo.png"
+                        alt="Símbolo ChromaBank"
+                        class="brand-logo"
+                    >
+
+                    <span class="brand-name">
+                        <strong>chroma</strong>Bank
+                    </span>
+
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Fechar menu"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="../pix/pix.html"
+                    class="nav-item"
+                >
+                    <i class="fa-brands fa-pix"></i>
+                    <span>PIX</span>
+                </a>
+
+                <a
+                    href="../transferencias/transferencias.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span>Transferências</span>
+                </a>
+
+                <a
+                    href="../pagamentos/pagamentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Pagamentos</span>
+                </a>
+
+                <a
+                    href="../extrato/extrato.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Extrato</span>
+                </a>
+
+                <a
+                    href="../cartoes/cartoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Cartões</span>
+                </a>
+
+                <a
+                    href="../investimentos/investimentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Investimentos</span>
+                </a>
+
+                <a
+                    href="perfil.html"
+                    class="nav-item active"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+
+                <a
+                    href="../configuracoes/configuracoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-security">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+                    <strong>Dados protegidos</strong>
+
+                    <span>
+                        Suas informações pessoais estão seguras.
+                    </span>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair da conta</span>
+            </button>
+
+        </aside>
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+        <!-- =========================================
+             CONTEÚDO PRINCIPAL
+        ========================================== -->
+
+        <main class="main-content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="page-header">
+
+                <div class="header-left">
+
+                    <button
+                        type="button"
+                        class="menu-button"
+                        id="menuButton"
+                        aria-label="Abrir menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            Minha conta
+                        </span>
+
+                        <h1>Perfil</h1>
+
+                        <p>
+                            Consulte e atualize seus dados pessoais.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        aria-label="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="profile-button"
+                        id="profileButton"
+                    >
+                        <span class="profile-avatar">VF</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- =========================================
+                 PERFIL PRINCIPAL
+            ========================================== -->
+
+            <section class="profile-main-grid">
+
+                <!-- CARTÃO DO PERFIL -->
+
+                <article class="profile-card">
+
+                    <div class="profile-cover"></div>
+
+                    <div class="profile-card-content">
+
+                        <div class="profile-photo-wrapper">
+
+                            <div
+                                class="profile-photo"
+                                
+                            >
+
+                                <img
+                                   
+    src="../../img/perfil.png"
+    alt="Foto do usuário"
+    id="profilePhotoImage"
+>
+                                >
+
+                               
+
+                            </div>
+
+                            <label
+                                for="profilePhotoInput"
+                                class="change-photo-button"
+                                aria-label="Alterar foto"
+                            >
+                                <i class="fa-solid fa-camera"></i>
+                            </label>
+
+                            <input
+                                type="file"
+                                id="profilePhotoInput"
+                                accept="image/png, image/jpeg, image/webp"
+                                hidden
+                            >
+
+                        </div>
+
+                        <div class="profile-identity">
+
+                            <h2 id="profileDisplayName">
+                                Vinícius Fernandes
+                            </h2>
+
+                            <p>
+                                Cliente ChromaBank desde janeiro de 2026
+                            </p>
+
+                            <span class="account-status">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Conta verificada
+                            </span>
+
+                        </div>
+
+                        <div class="account-summary">
+
+                            <div>
+
+                                <span>Agência</span>
+
+                                <strong>0001</strong>
+
+                            </div>
+
+                            <div>
+
+                                <span>Conta</span>
+
+                                <strong>987654-3</strong>
+
+                            </div>
+
+                            <div>
+
+                                <span>Tipo</span>
+
+                                <strong>Conta corrente</strong>
+
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="primary-button"
+                            id="editProfileButton"
+                        >
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            Editar perfil
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- INFORMAÇÕES DA CONTA -->
+
+                <article class="account-info-panel panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Resumo
+                            </span>
+
+                            <h2>Informações da conta</h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="account-info-list">
+
+                        <div class="account-info-item">
+
+                            <span class="info-icon">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Banco</span>
+
+                                <strong>ChromaBank</strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="account-info-item">
+
+                            <span class="info-icon">
+                                <i class="fa-solid fa-hashtag"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Número da conta</span>
+
+                                <strong>0001 • 987654-3</strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="account-info-item">
+
+                            <span class="info-icon">
+                                <i class="fa-regular fa-calendar"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Conta criada em</span>
+
+                                <strong>15 de janeiro de 2026</strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="account-info-item">
+
+                            <span class="info-icon">
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Último acesso</span>
+
+                                <strong>
+                                    01 de agosto de 2026 às 19:21
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="../configuracoes/configuracoes.html"
+                        class="secondary-link"
+                    >
+                        Ver configurações da conta
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 DADOS PESSOAIS
+            ========================================== -->
+
+            <section class="panel personal-data-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            Informações pessoais
+                        </span>
+
+                        <h2>Dados pessoais</h2>
+
+                        <p>
+                            Mantenha seus dados sempre atualizados.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="outline-button"
+                        id="editPersonalDataButton"
+                    >
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        Editar
+                    </button>
+
+                </div>
+
+                <form id="personalDataForm">
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+
+                            <label for="fullName">
+                                Nome completo
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-regular fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    value="Vinícius Fernandes"
+                                    autocomplete="name"
+                                    disabled
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="cpf">
+                                CPF
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-regular fa-id-card"></i>
+
+                                <input
+                                    type="text"
+                                    id="cpf"
+                                    value="529.982.247-25"
+                                    disabled
+                                >
+
+                            </div>
+
+                            <small class="field-hint">
+                                O CPF não pode ser alterado.
+                            </small>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="birthDate">
+                                Data de nascimento
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-regular fa-calendar"></i>
+
+                                <input
+                                    type="date"
+                                    id="birthDate"
+                                    value="1998-05-14"
+                                    disabled
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="gender">
+                                Gênero
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-user-tag"></i>
+
+                                <select
+                                    id="gender"
+                                    disabled
+                                >
+
+                                    <option value="">
+                                        Prefiro não informar
+                                    </option>
+
+                                    <option
+                                        value="male"
+                                        selected
+                                    >
+                                        Masculino
+                                    </option>
+
+                                    <option value="female">
+                                        Feminino
+                                    </option>
+
+                                    <option value="other">
+                                        Outro
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="email">
+                                E-mail
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-regular fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    value="vinicius@email.com"
+                                    autocomplete="email"
+                                    disabled
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="phone">
+                                Telefone
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    value="(11) 99999-9999"
+                                    autocomplete="tel"
+                                    inputmode="numeric"
+                                    disabled
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="form-actions"
+                        id="personalDataActions"
+                        hidden
+                    >
+
+                        <button
+                            type="button"
+                            class="cancel-button"
+                            id="cancelPersonalDataButton"
+                        >
+                            Cancelar
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Salvar alterações
+
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <!-- =========================================
+                 ENDEREÇO
+            ========================================== -->
+
+            <section class="panel address-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            Localização
+                        </span>
+
+                        <h2>Endereço</h2>
+
+                        <p>
+                            Este endereço será usado para correspondências.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="outline-button"
+                        id="editAddressButton"
+                    >
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        Editar
+                    </button>
+
+                </div>
+
+                <form id="addressForm">
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+
+                            <label for="zipCode">
+                                CEP
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <input
+                                    type="text"
+                                    id="zipCode"
+                                    value="01310-100"
+                                    inputmode="numeric"
+                                    autocomplete="postal-code"
+                                    disabled
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="street">
+                                Rua
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-road"></i>
+
+                                <input
+                                    type="text"
+                                    id="street"
+                                    value="Avenida Paulista"
+                                    autocomplete="address-line1"
+                                    disabled
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="addressNumber">
+                                Número
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-house"></i>
+
+                                <input
+                                    type="text"
+                                    id="addressNumber"
+                                    value="1000"
+                                    inputmode="numeric"
+                                    disabled
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="addressComplement">
+                                Complemento
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-regular fa-building"></i>
+
+                                <input
+                                    type="text"
+                                    id="addressComplement"
+                                    value="Apartamento 120"
+                                    autocomplete="address-line2"
+                                    disabled
+                                >
+
+                            </div>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="neighborhood">
+                                Bairro
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-map-location-dot"></i>
+
+                                <input
+                                    type="text"
+                                    id="neighborhood"
+                                    value="Bela Vista"
+                                    disabled
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="city">
+                                Cidade
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-city"></i>
+
+                                <input
+                                    type="text"
+                                    id="city"
+                                    value="São Paulo"
+                                    autocomplete="address-level2"
+                                    disabled
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="state">
+                                Estado
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-map"></i>
+
+                                <select
+                                    id="state"
+                                    autocomplete="address-level1"
+                                    disabled
+                                    required
+                                >
+
+                                    <option value="">
+                                        Selecione
+                                    </option>
+
+                                    <option
+                                        value="SP"
+                                        selected
+                                    >
+                                        São Paulo
+                                    </option>
+
+                                    <option value="RJ">
+                                        Rio de Janeiro
+                                    </option>
+
+                                    <option value="MG">
+                                        Minas Gerais
+                                    </option>
+
+                                    <option value="PR">
+                                        Paraná
+                                    </option>
+
+                                    <option value="SC">
+                                        Santa Catarina
+                                    </option>
+
+                                    <option value="RS">
+                                        Rio Grande do Sul
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="country">
+                                País
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-earth-americas"></i>
+
+                                <input
+                                    type="text"
+                                    id="country"
+                                    value="Brasil"
+                                    disabled
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="form-actions"
+                        id="addressActions"
+                        hidden
+                    >
+
+                        <button
+                            type="button"
+                            class="cancel-button"
+                            id="cancelAddressButton"
+                        >
+                            Cancelar
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Salvar endereço
+
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <!-- =========================================
+                 DOCUMENTOS E SEGURANÇA
+            ========================================== -->
+
+            <section class="bottom-grid">
+
+                <!-- DOCUMENTOS -->
+
+                <article class="panel documents-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Verificação
+                            </span>
+
+                            <h2>Documentos</h2>
+
+                            <p>
+                                Documentos usados na validação da conta.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="documents-list">
+
+                        <div class="document-item">
+
+                            <span class="document-icon">
+                                <i class="fa-regular fa-id-card"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>Documento de identidade</strong>
+
+                                <span>
+                                    Enviado e aprovado
+                                </span>
+
+                            </div>
+
+                            <span class="document-status approved">
+                                <i class="fa-solid fa-check"></i>
+                                Aprovado
+                            </span>
+
+                        </div>
+
+                        <div class="document-item">
+
+                            <span class="document-icon">
+                                <i class="fa-regular fa-file-lines"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>Comprovante de residência</strong>
+
+                                <span>
+                                    Atualizado em julho de 2026
+                                </span>
+
+                            </div>
+
+                            <span class="document-status approved">
+                                <i class="fa-solid fa-check"></i>
+                                Aprovado
+                            </span>
+
+                        </div>
+
+                        <div class="document-item">
+
+                            <span class="document-icon">
+                                <i class="fa-solid fa-camera"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>Verificação facial</strong>
+
+                                <span>
+                                    Biometria facial concluída
+                                </span>
+
+                            </div>
+
+                            <span class="document-status approved">
+                                <i class="fa-solid fa-check"></i>
+                                Aprovado
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="updateDocumentsButton"
+                    >
+                        Atualizar documentos
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </article>
+
+                <!-- SEGURANÇA -->
+
+                <article class="panel security-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Proteção
+                            </span>
+
+                            <h2>Segurança da conta</h2>
+
+                            <p>
+                                Acompanhe o nível de segurança do seu acesso.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="security-score">
+
+                        <div class="security-score-header">
+
+                            <div>
+
+                                <span>Nível de segurança</span>
+
+                                <strong>Alto</strong>
+
+                            </div>
+
+                            <span class="security-percentage">
+                                85%
+                            </span>
+
+                        </div>
+
+                        <div class="security-progress">
+
+                            <span style="width: 85%;"></span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="security-check-list">
+
+                        <div class="security-check-item">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>Senha forte configurada</span>
+
+                        </div>
+
+                        <div class="security-check-item">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>Biometria ativada</span>
+
+                        </div>
+
+                        <div class="security-check-item">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>E-mail verificado</span>
+
+                        </div>
+
+                        <div class="security-check-item pending">
+
+                            <i class="fa-regular fa-circle"></i>
+
+                            <span>Autenticação em duas etapas</span>
+
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="../configuracoes/configuracoes.html"
+                        class="secondary-button"
+                    >
+                        Melhorar segurança
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 PRIVACIDADE
+            ========================================== -->
+
+            <section class="privacy-banner">
+
+                <span class="privacy-banner-icon">
+                    <i class="fa-solid fa-lock"></i>
+                </span>
+
+                <div>
+
+                    <h2>Seus dados pertencem a você</h2>
+
+                    <p>
+                        O ChromaBank utiliza suas informações somente para prestar
+                        os serviços da conta e garantir sua segurança.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="privacyButton"
+                >
+                    Ver política de privacidade
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </section>
+
+            <!-- RODAPÉ -->
+
+            <footer class="page-footer">
+
+                <p>
+                    © 2026 ChromaBank. Todos os direitos reservados.
+                </p>
+
+                <div>
+
+                    <a href="#">Segurança</a>
+
+                    <a href="#">Privacidade</a>
+
+                    <a href="#">Ajuda</a>
+
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE FOTO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="photoModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="photoModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-camera"></i>
+            </span>
+
+            <h2 id="photoModalTitle">
+                Atualizar foto
+            </h2>
+
+            <p>
+                Escolha como deseja exibir sua foto no perfil.
+            </p>
+
+            <div class="photo-preview">
+
+                <img
+                    src=""
+                    alt="Prévia da nova foto"
+                    id="photoPreviewImage"
+                    hidden
+                >
+
+                <span id="photoPreviewInitials">
+                    VF
+                </span>
+
+            </div>
+
+            <div class="photo-modal-actions">
+
+                <label
+                    for="photoModalInput"
+                    class="secondary-button"
+                >
+                    <i class="fa-solid fa-upload"></i>
+                    Escolher imagem
+                </label>
+
+                <input
+                    type="file"
+                    id="photoModalInput"
+                    accept="image/png, image/jpeg, image/webp"
+                    hidden
+                >
+
+                <button
+                    type="button"
+                    class="danger-button"
+                    id="removePhotoButton"
+                >
+                    <i class="fa-regular fa-trash-can"></i>
+                    Remover foto
+                </button>
+
+            </div>
+
+            <button
+                type="button"
+                class="primary-button"
+                id="savePhotoButton"
+            >
+                Salvar foto
+
+                <i class="fa-solid fa-check"></i>
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Alterações salvas com sucesso.
+        </span>
+
+    </div>
+
+    <script src="perfil.js"></script>
+
+</body>
+
+</html>
