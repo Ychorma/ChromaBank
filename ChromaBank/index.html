@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="ChormaBank — banco digital moderno, seguro e completo."
+    >
+
+    <title>ChormaBank | Seu banco no seu ritmo</title>
+
+    <!-- CSS principal da home -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- =================================
+         CABEÇALHO
+    ================================== -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <!-- Logo -->
+            <a href="index.html" class="brand" aria-label="Página inicial do ChormaBank">
+
+                <img
+                    src="img/inlog.png"
+                    alt="Logo ChromaBank"
+                    class="brand-logo"
+                >
+
+                <span class="brand-name">
+                    <strong>Chroma</strong>Bank
+                </span>
+
+            </a>
+
+            <!-- Botão do menu mobile -->
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="navMenu"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Menu principal -->
+            <div class="nav-menu" id="navMenu">
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#produtos">Produtos</a>
+                    </li>
+
+                    <li>
+                        <a href="#para-voce">Para você</a>
+                    </li>
+
+                    <li>
+                        <a href="#investimentos">Investimentos</a>
+                    </li>
+
+                    <li>
+                        <a href="#sobre">Sobre nós</a>
+                    </li>
+
+                    <li>
+                        <a href="#ajuda">Ajuda</a>
+                    </li>
+
+                </ul>
+
+                <div class="nav-actions">
+
+                    <a href="index.html" class="btn btn-outline">
+                        Entrar
+                    </a>
+
+                    <a href="cadastro.html" class="btn btn-primary">
+                        Abrir conta
+                    </a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- =================================
+         CONTEÚDO PRINCIPAL
+    ================================== -->
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero" id="inicio">
+
+            <div class="hero-background"></div>
+
+            <div class="hero-content">
+
+                <!-- Texto principal -->
+                <div class="hero-text">
+
+                    <span class="hero-eyebrow">
+                        Simples. Moderno. Completo.
+                    </span>
+
+                    <h1>
+                        Seu banco
+                        <br>
+                        no seu ritmo<span>.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Tudo o que você precisa para cuidar do seu dinheiro
+                        com liberdade, segurança e praticidade.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="cadastro.html" class="btn btn-primary btn-large">
+                            Abrir minha conta
+                        </a>
+
+                        <button
+                            type="button"
+                            class="watch-button"
+                            id="watchButton"
+                            aria-label="Ver como o ChormaBank funciona"
+                        >
+
+                            <span class="play-icon">
+                                <i class="fa-solid fa-play"></i>
+                            </span>
+
+                            <span>Ver como funciona</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Área visual do cartão -->
+                <div class="hero-visual" aria-label="Cartão ChormaBank">
+
+                    <div class="glow-circle glow-circle-one"></div>
+                    <div class="glow-circle glow-circle-two"></div>
+                    <div class="glow-circle glow-circle-three"></div>
+
+                    <div class="card-stage">
+
+                        <div class="bank-card">
+
+                            <div class="card-top">
+
+                                <div class="card-brand">
+
+                                    <img
+                                        src="img/inlog.png"
+                                        alt=""
+                                        class="card-logo"
+                                    >
+
+                                    <span>ChromaBank</span>
+
+                                </div>
+
+                                <i class="fa-solid fa-wifi contactless"></i>
+
+                            </div>
+
+                            <div class="card-chip">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                            <div class="card-details">
+
+                                <div>
+
+                                    <span class="card-label">
+                                        Titular
+                                    </span>
+
+                                    <strong>
+                                        CLIENTE CHROMABANK
+                                        
+                                    </strong>
+
+                                </div>
+
+                                <div>
+
+                                    <span class="card-label">
+                                        Validade
+                                    </span>
+
+                                    <strong>
+                                        12/31
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer">
+
+                                <span class="card-number">
+                                    •••• •••• •••• 4582
+                                </span>
+
+                                <span class="card-network">
+                                    VISA
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="stage-platform">
+
+                            <div class="platform-ring"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Benefícios principais -->
+            <div class="benefits-bar" id="produtos">
+
+                <article class="benefit-item">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+
+                    <div>
+
+                        <h2>Conta digital gratuita</h2>
+
+                        <p>Sem mensalidades</p>
+
+                    </div>
+
+                </article>
+
+                <article class="benefit-item">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+
+                    <div>
+
+                        <h2>Cartão internacional</h2>
+
+                        <p>Aceito no mundo todo</p>
+
+                    </div>
+
+                </article>
+
+                <article class="benefit-item" id="investimentos">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+
+                    <div>
+
+                        <h2>Investimentos</h2>
+
+                        <p>Renda para o seu futuro</p>
+
+                    </div>
+
+                </article>
+
+                <article class="benefit-item">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+
+                    <div>
+
+                        <h2>PIX ilimitado</h2>
+
+                        <p>Rápido e seguro</p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- =================================
+             SEÇÃO PARA VOCÊ
+        ================================== -->
+
+        <section class="section solutions-section" id="para-voce">
+
+            <div class="section-heading">
+
+                <span>Feito para você</span>
+
+                <h2>
+                    Uma conta completa para todos os momentos
+                </h2>
+
+                <p>
+                    Controle seu dinheiro, faça pagamentos, transfira valores
+                    e acompanhe sua vida financeira em um único lugar.
+                </p>
+
+            </div>
+
+            <div class="solution-grid">
+
+                <article class="solution-card">
+
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+
+                    <h3>Transferências</h3>
+
+                    <p>
+                        Envie dinheiro com rapidez e segurança para qualquer banco.
+                    </p>
+
+                    <a href="#">
+                        Saiba mais
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+                <article class="solution-card">
+
+                    <i class="fa-solid fa-credit-card"></i>
+
+                    <h3>Cartão sem anuidade</h3>
+
+                    <p>
+                        Um cartão moderno, internacional e fácil de controlar.
+                    </p>
+
+                    <a href="#">
+                        Saiba mais
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+                <article class="solution-card">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <h3>Segurança</h3>
+
+                    <p>
+                        Tecnologia avançada para proteger sua conta e seus dados.
+                    </p>
+
+                    <a href="#">
+                        Saiba mais
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- =================================
+             SOBRE O BANCO
+        ================================== -->
+
+        <section class="section about-section" id="sobre">
+
+            <div class="about-content">
+
+                <div class="about-text">
+
+                    <span>Sobre o ChromaBank</span>
+
+                    <h2>
+                        Tecnologia para simplificar sua vida financeira
+                    </h2>
+
+                    <p>
+                        O ChormaBank nasceu para oferecer uma experiência bancária
+                        simples, transparente e segura. Aqui, você controla tudo
+                        pelo celular e toma decisões com mais liberdade.
+                    </p>
+
+                    <a href="#" class="btn btn-outline">
+                        Conheça nossa história
+                    </a>
+
+                </div>
+
+                <div class="about-stats">
+
+                    <article>
+
+                        <strong>100%</strong>
+
+                        <span>Digital</span>
+
+                    </article>
+
+                    <article>
+
+                        <strong>24h</strong>
+
+                        <span>Atendimento</span>
+
+                    </article>
+
+                    <article>
+
+                        <strong>0</strong>
+
+                        <span>Mensalidade</span>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =================================
+             AJUDA
+        ================================== -->
+
+        <section class="section help-section" id="ajuda">
+
+            <div>
+
+                <span>Precisa de ajuda?</span>
+
+                <h2>
+                    Fale com o ChromaBank
+                </h2>
+
+                <p>
+                    Nossa equipe está pronta para ajudar você a qualquer momento.
+                </p>
+
+            </div>
+
+            <a href="#" class="btn btn-primary">
+                Falar com atendimento
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- =================================
+         RODAPÉ
+    ================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="brand">
+
+                    <img
+                        src="img/inlog.png"
+                        alt="Logo ChromaBank"
+                        class="brand-logo"
+                    >
+
+                    <span class="brand-name">
+                        <strong>Chroma</strong>Bank
+                    </span>
+
+                </a>
+
+                <p>
+                    Seu banco, no seu ritmo.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <div>
+
+                    <h3>ChromaBank</h3>
+
+                    <a href="#sobre">Sobre nós</a>
+                    <a href="#">Carreiras</a>
+                    <a href="#">Imprensa</a>
+
+                </div>
+
+                <div>
+
+                    <h3>Produtos</h3>
+
+                    <a href="#">Conta digital</a>
+                    <a href="#">Cartões</a>
+                    <a href="#">Investimentos</a>
+
+                </div>
+
+                <div>
+
+                    <h3>Suporte</h3>
+
+                    <a href="#ajuda">Central de ajuda</a>
+                    <a href="#">Segurança</a>
+                    <a href="#">Contato</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ChromaBank. Todos os direitos reservados.
+            </p>
+
+            <div>
+
+                <a href="#">Privacidade</a>
+                <a href="#">Termos de uso</a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JavaScript da home -->
+    <script src="index.js"></script>
+
+</body>
+</html>
