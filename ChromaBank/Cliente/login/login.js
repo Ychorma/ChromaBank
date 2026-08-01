@@ -93,21 +93,22 @@ btnLogin.addEventListener("click", (e) => {
 
     btnLogin.disabled = true;
 
-    setTimeout(() => {
+ setTimeout(() => {
 
-        alert("Login realizado com sucesso!");
+    sessionStorage.setItem(
+        "chromaBankLoggedIn",
+        "true"
+    );
 
-        // Futuramente:
-        // window.location.href = "dashboard.html";
+    sessionStorage.setItem(
+        "chromaBankCPF",
+        cpfInput.value
+    );
 
-        btnLogin.innerHTML = `
-            Entrar
-            <i class="fa-solid fa-arrow-right"></i>
-        `;
+    window.location.href =
+        "../dashboard/dashboard.html";
 
-        btnLogin.disabled = false;
-
-    }, 1800);
+}, 1800);
 
 });
 
@@ -144,5 +145,86 @@ inputs.forEach((input) => {
         input.parentElement.style.transform = "scale(1)";
 
     });
+// ==================================================
+// CHROMABANK - LOGIN
+// Arquivo: login.js
+// ==================================================
 
+document.addEventListener("DOMContentLoaded", () => {
+
+    const form = document.querySelector("form");
+
+    const cpf = document.getElementById("cpf");
+    const senha = document.getElementById("senha");
+
+    const mostrarSenha = document.getElementById("mostrarSenha");
+
+    // ===============================================
+    // MOSTRAR / OCULTAR SENHA
+    // ===============================================
+
+    if (mostrarSenha) {
+
+        mostrarSenha.addEventListener("click", () => {
+
+            if (senha.type === "password") {
+
+                senha.type = "text";
+                mostrarSenha.innerHTML =
+                    '<i class="fa-regular fa-eye-slash"></i>';
+
+            } else {
+
+                senha.type = "password";
+                mostrarSenha.innerHTML =
+                    '<i class="fa-regular fa-eye"></i>';
+
+            }
+
+        });
+
+    }
+
+    // ===============================================
+    // LOGIN
+    // ===============================================
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const cpfDigitado = cpf.value.trim();
+        const senhaDigitada = senha.value.trim();
+
+        if (cpfDigitado === "") {
+
+            alert("Digite seu CPF.");
+            cpf.focus();
+            return;
+
+        }
+
+        if (senhaDigitada === "") {
+
+            alert("Digite sua senha.");
+            senha.focus();
+            return;
+
+        }
+
+        // ===========================================
+        // SIMULAÇÃO DE LOGIN
+        // ===========================================
+
+        sessionStorage.setItem("chromaBankLoggedIn", "true");
+
+        sessionStorage.setItem("chromaBankCPF", cpfDigitado);
+
+        // Redireciona para a Dashboard
+
+        window.location.href = "./dashboard/dashboard.html";
+
+    });
+
+});
 });
