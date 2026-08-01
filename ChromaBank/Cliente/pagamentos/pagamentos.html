@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Área de pagamentos da conta ChromaBank."
+    >
+
+    <title>Pagamentos | ChromaBank</title>
+
+    <link rel="stylesheet" href="pagamentos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <a
+                    href="../../index.html"
+                    class="brand"
+                    aria-label="Página inicial do ChromaBank"
+                >
+
+                    <img
+                        src="../../img/logo.png"
+                        alt="Símbolo ChromaBank"
+                        class="brand-logo"
+                    >
+
+                    <span class="brand-name">
+                        <strong>chroma</strong>Bank
+                    </span>
+
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Fechar menu"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="../pix/pix.html"
+                    class="nav-item"
+                >
+                    <i class="fa-brands fa-pix"></i>
+                    <span>PIX</span>
+                </a>
+
+                <a
+                    href="../transferencias/transferencias.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span>Transferências</span>
+                </a>
+
+                <a
+                    href="pagamentos.html"
+                    class="nav-item active"
+                >
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Pagamentos</span>
+                </a>
+
+                <a
+                    href="../extrato/extrato.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Extrato</span>
+                </a>
+
+                <a
+                    href="../cartoes/cartoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Cartões</span>
+                </a>
+
+                <a
+                    href="../investimentos/investimentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Investimentos</span>
+                </a>
+
+                <a
+                    href="../perfil/perfil.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+
+                <a
+                    href="../configuracoes/configuracoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-security">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+                    <strong>Pagamento protegido</strong>
+
+                    <span>
+                        Confira sempre os dados antes de pagar.
+                    </span>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair da conta</span>
+            </button>
+
+        </aside>
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+        <!-- =========================================
+             CONTEÚDO PRINCIPAL
+        ========================================== -->
+
+        <main class="main-content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="page-header">
+
+                <div class="header-left">
+
+                    <button
+                        type="button"
+                        class="menu-button"
+                        id="menuButton"
+                        aria-label="Abrir menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            Contas e boletos
+                        </span>
+
+                        <h1>Pagamentos</h1>
+
+                        <p>
+                            Pague boletos, contas e acompanhe seus agendamentos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        id="toggleBalance"
+                        aria-label="Mostrar ou ocultar saldo"
+                    >
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        aria-label="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="profile-button"
+                        id="profileButton"
+                    >
+                        <span class="profile-avatar">VF</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- =========================================
+                 SALDO
+            ========================================== -->
+
+            <section class="balance-banner">
+
+                <div>
+
+                    <span>Saldo disponível</span>
+
+                    <strong id="balanceValue">
+                        R$ 4.856,90
+                    </strong>
+
+                    <p>
+                        Disponível para pagamentos.
+                    </p>
+
+                </div>
+
+                <a href="../extrato/extrato.html">
+
+                    Ver extrato
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </section>
+
+            <!-- =========================================
+                 AÇÕES DE PAGAMENTO
+            ========================================== -->
+
+            <section class="payment-options-grid">
+
+                <button
+                    type="button"
+                    class="payment-option featured"
+                    data-open-modal="barcodeModal"
+                >
+
+                    <span class="option-icon">
+                        <i class="fa-solid fa-barcode"></i>
+                    </span>
+
+                    <div>
+
+                        <h2>Pagar boleto</h2>
+
+                        <p>
+                            Digite ou cole o código de barras.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right option-arrow"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="payment-option"
+                    data-open-modal="scanModal"
+                >
+
+                    <span class="option-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </span>
+
+                    <div>
+
+                        <h2>Escanear código</h2>
+
+                        <p>
+                            Use a câmera para ler o boleto.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right option-arrow"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="payment-option"
+                    data-open-modal="utilityBillModal"
+                >
+
+                    <span class="option-icon">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </span>
+
+                    <div>
+
+                        <h2>Pagar conta</h2>
+
+                        <p>
+                            Água, energia, internet e telefone.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right option-arrow"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="payment-option"
+                    data-open-modal="schedulePaymentModal"
+                >
+
+                    <span class="option-icon">
+                        <i class="fa-regular fa-calendar"></i>
+                    </span>
+
+                    <div>
+
+                        <h2>Agendar pagamento</h2>
+
+                        <p>
+                            Escolha uma data para pagar depois.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right option-arrow"></i>
+
+                </button>
+
+            </section>
+
+            <!-- =========================================
+                 CONTEÚDO EM DUAS COLUNAS
+            ========================================== -->
+
+            <section class="payment-content-grid">
+
+                <!-- CONTAS FAVORITAS -->
+
+                <article class="panel favorites-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Acesso rápido
+                            </span>
+
+                            <h2>Contas favoritas</h2>
+
+                            <p>
+                                Pague novamente contas já utilizadas.
+                            </p>
+
+                        </div>
+
+                        <button type="button">
+                            Ver todas
+                        </button>
+
+                    </div>
+
+                    <div class="favorites-list">
+
+                        <button
+                            type="button"
+                            class="favorite-payment"
+                            data-company="Energia Paulista"
+                            data-category="Energia"
+                            data-code="836600000015843201382026608120081237459321080019"
+                            data-amount="186,40"
+                        >
+
+                            <span class="favorite-icon yellow">
+                                <i class="fa-solid fa-bolt"></i>
+                            </span>
+
+                            <span class="favorite-info">
+
+                                <strong>Energia Paulista</strong>
+
+                                <small>
+                                    Conta de energia
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="favorite-payment"
+                            data-company="Águas do Município"
+                            data-category="Água"
+                            data-code="846700000017243500240209608250002401111110000014"
+                            data-amount="92,70"
+                        >
+
+                            <span class="favorite-icon blue">
+                                <i class="fa-solid fa-droplet"></i>
+                            </span>
+
+                            <span class="favorite-info">
+
+                                <strong>Águas do Município</strong>
+
+                                <small>
+                                    Conta de água
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="favorite-payment"
+                            data-company="Chroma Telecom"
+                            data-category="Internet"
+                            data-code="858000000013299001262028608100000582119876540017"
+                            data-amount="129,90"
+                        >
+
+                            <span class="favorite-icon purple">
+                                <i class="fa-solid fa-wifi"></i>
+                            </span>
+
+                            <span class="favorite-info">
+
+                                <strong>Chroma Telecom</strong>
+
+                                <small>
+                                    Internet residencial
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="favorite-payment"
+                            data-company="Faculdade Digital"
+                            data-category="Educação"
+                            data-code="34191090080012345678901234560008398760000045000"
+                            data-amount="450,00"
+                        >
+
+                            <span class="favorite-icon green">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </span>
+
+                            <span class="favorite-info">
+
+                                <strong>Faculdade Digital</strong>
+
+                                <small>
+                                    Mensalidade
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- AGENDAMENTOS -->
+
+                <article class="panel schedules-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Próximos vencimentos
+                            </span>
+
+                            <h2>Pagamentos agendados</h2>
+
+                            <p>
+                                Acompanhe seus próximos pagamentos.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            data-open-modal="schedulePaymentModal"
+                        >
+                            Novo
+                        </button>
+
+                    </div>
+
+                    <div class="schedule-list">
+
+                        <article class="schedule-item">
+
+                            <span class="schedule-icon">
+                                <i class="fa-solid fa-bolt"></i>
+                            </span>
+
+                            <div class="schedule-info">
+
+                                <strong>Energia Paulista</strong>
+
+                                <span>
+                                    05 de agosto de 2026
+                                </span>
+
+                            </div>
+
+                            <div class="schedule-value">
+
+                                <strong>R$ 186,40</strong>
+
+                                <span class="status scheduled">
+                                    Agendado
+                                </span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="schedule-menu-button"
+                                aria-label="Opções"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                        <article class="schedule-item">
+
+                            <span class="schedule-icon">
+                                <i class="fa-solid fa-wifi"></i>
+                            </span>
+
+                            <div class="schedule-info">
+
+                                <strong>Chroma Telecom</strong>
+
+                                <span>
+                                    08 de agosto de 2026
+                                </span>
+
+                            </div>
+
+                            <div class="schedule-value">
+
+                                <strong>R$ 129,90</strong>
+
+                                <span class="status scheduled">
+                                    Agendado
+                                </span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="schedule-menu-button"
+                                aria-label="Opções"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                        <article class="schedule-item">
+
+                            <span class="schedule-icon">
+                                <i class="fa-solid fa-repeat"></i>
+                            </span>
+
+                            <div class="schedule-info">
+
+                                <strong>Netflix</strong>
+
+                                <span>
+                                    Todo dia 10
+                                </span>
+
+                            </div>
+
+                            <div class="schedule-value">
+
+                                <strong>R$ 39,90</strong>
+
+                                <span class="status recurring">
+                                    Recorrente
+                                </span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="schedule-menu-button"
+                                aria-label="Opções"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 HISTÓRICO
+            ========================================== -->
+
+            <section class="panel payment-history-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            Últimas operações
+                        </span>
+
+                        <h2>Histórico de pagamentos</h2>
+
+                        <p>
+                            Consulte seus pagamentos recentes.
+                        </p>
+
+                    </div>
+
+                    <a href="../extrato/extrato.html">
+
+                        Ver extrato completo
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+                <div class="payment-history-list">
+
+                    <article class="history-item">
+
+                        <span class="history-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Energia Paulista</strong>
+
+                            <span>
+                                Conta de energia
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>Hoje</span>
+
+                            <small>08:17</small>
+
+                        </div>
+
+                        <strong class="history-value">
+                            - R$ 186,40
+                        </strong>
+
+                        <span class="status completed">
+                            Pago
+                        </span>
+
+                    </article>
+
+                    <article class="history-item">
+
+                        <span class="history-icon">
+                            <i class="fa-solid fa-tv"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Netflix</strong>
+
+                            <span>
+                                Assinatura mensal
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>Ontem</span>
+
+                            <small>08:10</small>
+
+                        </div>
+
+                        <strong class="history-value">
+                            - R$ 39,90
+                        </strong>
+
+                        <span class="status completed">
+                            Pago
+                        </span>
+
+                    </article>
+
+                    <article class="history-item">
+
+                        <span class="history-icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Águas do Município</strong>
+
+                            <span>
+                                Conta de água
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>29 jul.</span>
+
+                            <small>14:52</small>
+
+                        </div>
+
+                        <strong class="history-value">
+                            - R$ 92,70
+                        </strong>
+
+                        <span class="status completed">
+                            Pago
+                        </span>
+
+                    </article>
+
+                    <article class="history-item">
+
+                        <span class="history-icon">
+                            <i class="fa-solid fa-wifi"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Chroma Telecom</strong>
+
+                            <span>
+                                Internet residencial
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>25 jul.</span>
+
+                            <small>09:18</small>
+
+                        </div>
+
+                        <strong class="history-value">
+                            - R$ 129,90
+                        </strong>
+
+                        <span class="status completed">
+                            Pago
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 BANNER DE SEGURANÇA
+            ========================================== -->
+
+            <section class="security-banner">
+
+                <span class="security-banner-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </span>
+
+                <div>
+
+                    <h2>Confira os dados antes de pagar</h2>
+
+                    <p>
+                        Verifique beneficiário, valor e vencimento antes da confirmação.
+                    </p>
+
+                </div>
+
+                <a href="#">
+
+                    Dicas de segurança
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </section>
+
+            <!-- RODAPÉ -->
+
+            <footer class="page-footer">
+
+                <p>
+                    © 2026 ChromaBank. Todos os direitos reservados.
+                </p>
+
+                <div>
+
+                    <a href="#">Segurança</a>
+
+                    <a href="#">Privacidade</a>
+
+                    <a href="#">Ajuda</a>
+
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         MODAL CÓDIGO DE BARRAS
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="barcodeModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="barcodeModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-barcode"></i>
+            </span>
+
+            <h2 id="barcodeModalTitle">
+                Pagar boleto
+            </h2>
+
+            <p>
+                Digite ou cole a linha digitável do boleto.
+            </p>
+
+            <form id="barcodeForm">
+
+                <div class="input-group">
+
+                    <label for="barcodeInput">
+                        Código de barras
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-barcode"></i>
+
+                        <input
+                            type="text"
+                            id="barcodeInput"
+                            placeholder="Digite ou cole o código"
+                            inputmode="numeric"
+                            autocomplete="off"
+                            maxlength="60"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div
+                    class="bill-preview"
+                    id="billPreview"
+                    hidden
+                >
+
+                    <div class="bill-preview-header">
+
+                        <span class="bill-company-icon">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </span>
+
+                        <div>
+
+                            <strong id="billCompany">
+                                Empresa beneficiária
+                            </strong>
+
+                            <span id="billCategory">
+                                Boleto bancário
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="bill-preview-details">
+
+                        <div>
+
+                            <span>Valor</span>
+
+                            <strong id="billAmount">
+                                R$ 0,00
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Vencimento</span>
+
+                            <strong id="billDueDate">
+                                10/08/2026
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="barcodePaymentDate">
+                        Data do pagamento
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        <input
+                            type="date"
+                            id="barcodePaymentDate"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    Continuar
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL ESCANEAR
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="scanModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card scan-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="scanModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-camera"></i>
+            </span>
+
+            <h2 id="scanModalTitle">
+                Escanear boleto
+            </h2>
+
+            <p>
+                Posicione o código de barras dentro da área indicada.
+            </p>
+
+            <div class="scanner-area">
+
+                <span class="scanner-corner top-left"></span>
+                <span class="scanner-corner top-right"></span>
+                <span class="scanner-corner bottom-left"></span>
+                <span class="scanner-corner bottom-right"></span>
+
+                <i class="fa-solid fa-barcode"></i>
+
+                <div class="scanner-line"></div>
+
+            </div>
+
+            <button
+                type="button"
+                class="primary-button"
+                id="simulateScanButton"
+            >
+
+                Simular leitura
+
+                <i class="fa-solid fa-camera"></i>
+
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL PAGAR CONTA
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="utilityBillModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="utilityBillTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+            </span>
+
+            <h2 id="utilityBillTitle">
+                Pagar conta
+            </h2>
+
+            <p>
+                Informe os dados da conta que deseja pagar.
+            </p>
+
+            <form id="utilityBillForm">
+
+                <div class="input-group">
+
+                    <label for="utilityCategory">
+                        Categoria
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                        <select
+                            id="utilityCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Selecione uma categoria
+                            </option>
+
+                            <option value="energy">
+                                Energia
+                            </option>
+
+                            <option value="water">
+                                Água
+                            </option>
+
+                            <option value="internet">
+                                Internet
+                            </option>
+
+                            <option value="phone">
+                                Telefone
+                            </option>
+
+                            <option value="education">
+                                Educação
+                            </option>
+
+                            <option value="other">
+                                Outra
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="utilityCompany">
+                        Empresa
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-building"></i>
+
+                        <input
+                            type="text"
+                            id="utilityCompany"
+                            placeholder="Nome da empresa"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="utilityCode">
+                        Código da conta
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-barcode"></i>
+
+                        <input
+                            type="text"
+                            id="utilityCode"
+                            placeholder="Digite o código"
+                            inputmode="numeric"
+                            maxlength="60"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="two-columns">
+
+                    <div class="input-group">
+
+                        <label for="utilityAmount">
+                            Valor
+                        </label>
+
+                        <div class="input-box currency-input">
+
+                            <span>R$</span>
+
+                            <input
+                                type="text"
+                                id="utilityAmount"
+                                placeholder="0,00"
+                                inputmode="numeric"
+                                required
+                            >
+
+                        </div>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="utilityDueDate">
+                            Vencimento
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="date"
+                                id="utilityDueDate"
+                                required
+                            >
+
+                        </div>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+                </div>
+
+                <label class="favorite-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="saveUtilityFavorite"
+                    >
+
+                    <span class="custom-checkbox">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>
+                        Salvar esta conta nos favoritos
+                    </span>
+
+                </label>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    Pagar conta
+
+                    <i class="fa-solid fa-check"></i>
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL AGENDAR PAGAMENTO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="schedulePaymentModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="schedulePaymentTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-regular fa-calendar"></i>
+            </span>
+
+            <h2 id="schedulePaymentTitle">
+                Agendar pagamento
+            </h2>
+
+            <p>
+                Informe os dados e escolha a data do pagamento.
+            </p>
+
+            <form id="schedulePaymentForm">
+
+                <div class="input-group">
+
+                    <label for="scheduledPaymentCompany">
+                        Beneficiário
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-building"></i>
+
+                        <input
+                            type="text"
+                            id="scheduledPaymentCompany"
+                            placeholder="Nome da empresa"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="scheduledPaymentCode">
+                        Código de barras
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-barcode"></i>
+
+                        <input
+                            type="text"
+                            id="scheduledPaymentCode"
+                            placeholder="Digite o código"
+                            inputmode="numeric"
+                            maxlength="60"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="two-columns">
+
+                    <div class="input-group">
+
+                        <label for="scheduledPaymentAmount">
+                            Valor
+                        </label>
+
+                        <div class="input-box currency-input">
+
+                            <span>R$</span>
+
+                            <input
+                                type="text"
+                                id="scheduledPaymentAmount"
+                                placeholder="0,00"
+                                inputmode="numeric"
+                                required
+                            >
+
+                        </div>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="scheduledPaymentDate">
+                            Data
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="date"
+                                id="scheduledPaymentDate"
+                                required
+                            >
+
+                        </div>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+                </div>
+
+                <label class="favorite-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="recurringPayment"
+                    >
+
+                    <span class="custom-checkbox">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>
+                        Repetir este pagamento mensalmente
+                    </span>
+
+                </label>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    Agendar pagamento
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MENU DOS AGENDAMENTOS
+    ========================================== -->
+
+    <div
+        class="schedule-dropdown"
+        id="scheduleDropdown"
+    >
+
+        <button type="button">
+
+            <i class="fa-regular fa-eye"></i>
+
+            Ver detalhes
+
+        </button>
+
+        <button type="button">
+
+            <i class="fa-solid fa-pen"></i>
+
+            Editar pagamento
+
+        </button>
+
+        <button
+            type="button"
+            class="danger-action"
+        >
+
+            <i class="fa-regular fa-trash-can"></i>
+
+            Cancelar pagamento
+
+        </button>
+
+    </div>
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Operação realizada com sucesso.
+        </span>
+
+    </div>
+
+    <script src="pagamentos.js"></script>
+
+</body>
+
+</html>

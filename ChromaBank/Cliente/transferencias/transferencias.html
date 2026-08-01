@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Área de transferências da conta ChromaBank."
+    >
+
+    <title>Transferências | ChromaBank</title>
+
+    <link rel="stylesheet" href="transferencias.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <a
+                    href="../../index.html"
+                    class="brand"
+                    aria-label="Página inicial do ChromaBank"
+                >
+
+                    <img
+                        src="../../img/logo.png"
+                        alt="Símbolo ChromaBank"
+                        class="brand-logo"
+                    >
+
+                    <span class="brand-name">
+                        <strong>chroma</strong>Bank
+                    </span>
+
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Fechar menu"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="../pix/pix.html"
+                    class="nav-item"
+                >
+                    <i class="fa-brands fa-pix"></i>
+                    <span>PIX</span>
+                </a>
+
+                <a
+                    href="transferencias.html"
+                    class="nav-item active"
+                >
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span>Transferências</span>
+                </a>
+
+                <a
+                    href="../pagamentos/pagamentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Pagamentos</span>
+                </a>
+
+                <a
+                    href="../extrato/extrato.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Extrato</span>
+                </a>
+
+                <a
+                    href="../cartoes/cartoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Cartões</span>
+                </a>
+
+                <a
+                    href="../investimentos/investimentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Investimentos</span>
+                </a>
+
+                <a
+                    href="../perfil/perfil.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+
+                <a
+                    href="../configuracoes/configuracoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-security">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+
+                    <strong>Transferência segura</strong>
+
+                    <span>
+                        Todas as operações são protegidas.
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                <span>Sair da conta</span>
+
+            </button>
+
+        </aside>
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+        <!-- =========================================
+             CONTEÚDO PRINCIPAL
+        ========================================== -->
+
+        <main class="main-content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="page-header">
+
+                <div class="header-left">
+
+                    <button
+                        type="button"
+                        class="menu-button"
+                        id="menuButton"
+                        aria-label="Abrir menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            Movimentar dinheiro
+                        </span>
+
+                        <h1>Transferências</h1>
+
+                        <p>
+                            Envie dinheiro para outras contas com segurança.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        id="toggleBalance"
+                        aria-label="Mostrar ou ocultar saldo"
+                    >
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        aria-label="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="profile-button"
+                        id="profileButton"
+                    >
+
+                        <span class="profile-avatar">VF</span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- =========================================
+                 SALDO
+            ========================================== -->
+
+            <section class="balance-banner">
+
+                <div>
+
+                    <span>Saldo disponível</span>
+
+                    <strong id="balanceValue">
+                        R$ 4.856,90
+                    </strong>
+
+                    <p>
+                        Disponível para transferências.
+                    </p>
+
+                </div>
+
+                <a href="../extrato/extrato.html">
+
+                    Ver extrato
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </section>
+
+            <!-- =========================================
+                 TIPOS DE TRANSFERÊNCIA
+            ========================================== -->
+
+            <section class="transfer-options-grid">
+
+                <button
+                    type="button"
+                    class="transfer-option featured"
+                    data-open-modal="bankTransferModal"
+                >
+
+                    <span class="option-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </span>
+
+                    <div>
+
+                        <h2>Para outro banco</h2>
+
+                        <p>
+                            Envie para qualquer instituição bancária.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right option-arrow"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="transfer-option"
+                    data-open-modal="chromaTransferModal"
+                >
+
+                    <span class="option-icon">
+                        <i class="fa-solid fa-user-group"></i>
+                    </span>
+
+                    <div>
+
+                        <h2>Entre contas ChromaBank</h2>
+
+                        <p>
+                            Transfira usando agência e conta.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right option-arrow"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="transfer-option"
+                    data-open-modal="scheduledTransferModal"
+                >
+
+                    <span class="option-icon">
+                        <i class="fa-regular fa-calendar"></i>
+                    </span>
+
+                    <div>
+
+                        <h2>Agendar transferência</h2>
+
+                        <p>
+                            Escolha uma data para enviar o valor.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right option-arrow"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="transfer-option"
+                    id="openPixButton"
+                >
+
+                    <span class="option-icon">
+                        <i class="fa-brands fa-pix"></i>
+                    </span>
+
+                    <div>
+
+                        <h2>Transferir por PIX</h2>
+
+                        <p>
+                            Envie em poucos segundos usando uma chave.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right option-arrow"></i>
+
+                </button>
+
+            </section>
+
+            <!-- =========================================
+                 ÁREA EM DUAS COLUNAS
+            ========================================== -->
+
+            <section class="transfer-content-grid">
+
+                <!-- FAVORITOS -->
+
+                <article class="panel favorites-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Acesso rápido
+                            </span>
+
+                            <h2>Destinatários favoritos</h2>
+
+                            <p>
+                                Selecione alguém para preencher os dados automaticamente.
+                            </p>
+
+                        </div>
+
+                        <button type="button">
+                            Ver todos
+                        </button>
+
+                    </div>
+
+                    <div class="favorites-list">
+
+                        <button
+                            type="button"
+                            class="favorite-item"
+                            data-recipient-name="Maria Silva"
+                            data-recipient-bank="Banco do Brasil"
+                            data-recipient-agency="1234"
+                            data-recipient-account="56789-0"
+                            data-recipient-document="52998224725"
+                        >
+
+                            <span class="favorite-avatar purple">
+                                MS
+                            </span>
+
+                            <span class="favorite-info">
+
+                                <strong>Maria Silva</strong>
+
+                                <small>
+                                    Banco do Brasil • Final 7890
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="favorite-item"
+                            data-recipient-name="João Santos"
+                            data-recipient-bank="Itaú"
+                            data-recipient-agency="4321"
+                            data-recipient-account="12345-6"
+                            data-recipient-document="11144477735"
+                        >
+
+                            <span class="favorite-avatar blue">
+                                JS
+                            </span>
+
+                            <span class="favorite-info">
+
+                                <strong>João Santos</strong>
+
+                                <small>
+                                    Itaú • Final 3456
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="favorite-item"
+                            data-recipient-name="Empresa LTDA"
+                            data-recipient-bank="Santander"
+                            data-recipient-agency="9876"
+                            data-recipient-account="54321-0"
+                            data-recipient-document="12345678000190"
+                        >
+
+                            <span class="favorite-avatar green">
+                                EL
+                            </span>
+
+                            <span class="favorite-info">
+
+                                <strong>Empresa LTDA</strong>
+
+                                <small>
+                                    Santander • Final 3210
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="favorite-item"
+                            data-recipient-name="Ana Oliveira"
+                            data-recipient-bank="Bradesco"
+                            data-recipient-agency="2468"
+                            data-recipient-account="13579-2"
+                            data-recipient-document="39053344705"
+                        >
+
+                            <span class="favorite-avatar orange">
+                                AO
+                            </span>
+
+                            <span class="favorite-info">
+
+                                <strong>Ana Oliveira</strong>
+
+                                <small>
+                                    Bradesco • Final 5792
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- AGENDAMENTOS -->
+
+                <article class="panel schedules-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Próximas operações
+                            </span>
+
+                            <h2>Transferências agendadas</h2>
+
+                            <p>
+                                Acompanhe e gerencie seus agendamentos.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            data-open-modal="scheduledTransferModal"
+                        >
+                            Novo
+                        </button>
+
+                    </div>
+
+                    <div class="schedule-list">
+
+                        <article class="schedule-item">
+
+                            <span class="schedule-icon">
+                                <i class="fa-regular fa-calendar-check"></i>
+                            </span>
+
+                            <div class="schedule-info">
+
+                                <strong>Maria Silva</strong>
+
+                                <span>
+                                    05 de agosto de 2026
+                                </span>
+
+                            </div>
+
+                            <div class="schedule-value">
+
+                                <strong>R$ 350,00</strong>
+
+                                <span class="status scheduled">
+                                    Agendada
+                                </span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="schedule-menu-button"
+                                aria-label="Opções"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                        <article class="schedule-item">
+
+                            <span class="schedule-icon">
+                                <i class="fa-regular fa-calendar-check"></i>
+                            </span>
+
+                            <div class="schedule-info">
+
+                                <strong>Empresa LTDA</strong>
+
+                                <span>
+                                    10 de agosto de 2026
+                                </span>
+
+                            </div>
+
+                            <div class="schedule-value">
+
+                                <strong>R$ 800,00</strong>
+
+                                <span class="status scheduled">
+                                    Agendada
+                                </span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="schedule-menu-button"
+                                aria-label="Opções"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                        <article class="schedule-item">
+
+                            <span class="schedule-icon">
+                                <i class="fa-solid fa-repeat"></i>
+                            </span>
+
+                            <div class="schedule-info">
+
+                                <strong>João Santos</strong>
+
+                                <span>
+                                    Todo dia 15
+                                </span>
+
+                            </div>
+
+                            <div class="schedule-value">
+
+                                <strong>R$ 150,00</strong>
+
+                                <span class="status recurring">
+                                    Recorrente
+                                </span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="schedule-menu-button"
+                                aria-label="Opções"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 HISTÓRICO
+            ========================================== -->
+
+            <section class="panel transfer-history-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            Últimas operações
+                        </span>
+
+                        <h2>Histórico de transferências</h2>
+
+                        <p>
+                            Veja suas transferências mais recentes.
+                        </p>
+
+                    </div>
+
+                    <a href="../extrato/extrato.html">
+
+                        Ver extrato completo
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+                <div class="transfer-history-list">
+
+                    <article class="history-item">
+
+                        <span class="history-icon sent">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>João Santos</strong>
+
+                            <span>
+                                Transferência para Itaú
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>Hoje</span>
+
+                            <small>09:32</small>
+
+                        </div>
+
+                        <strong class="history-value">
+                            - R$ 120,00
+                        </strong>
+
+                        <span class="status completed">
+                            Concluída
+                        </span>
+
+                    </article>
+
+                    <article class="history-item">
+
+                        <span class="history-icon received">
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Empresa LTDA</strong>
+
+                            <span>
+                                Transferência recebida
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>Ontem</span>
+
+                            <small>11:03</small>
+
+                        </div>
+
+                        <strong class="history-value positive">
+                            + R$ 2.400,00
+                        </strong>
+
+                        <span class="status completed">
+                            Concluída
+                        </span>
+
+                    </article>
+
+                    <article class="history-item">
+
+                        <span class="history-icon sent">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Ana Oliveira</strong>
+
+                            <span>
+                                Transferência para Bradesco
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>30 jul.</span>
+
+                            <small>18:12</small>
+
+                        </div>
+
+                        <strong class="history-value">
+                            - R$ 75,50
+                        </strong>
+
+                        <span class="status completed">
+                            Concluída
+                        </span>
+
+                    </article>
+
+                    <article class="history-item">
+
+                        <span class="history-icon sent">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Maria Silva</strong>
+
+                            <span>
+                                Transferência para Banco do Brasil
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>28 jul.</span>
+
+                            <small>14:21</small>
+
+                        </div>
+
+                        <strong class="history-value">
+                            - R$ 250,00
+                        </strong>
+
+                        <span class="status completed">
+                            Concluída
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 BANNER
+            ========================================== -->
+
+            <section class="security-banner">
+
+                <span class="security-banner-icon">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                </span>
+
+                <div>
+
+                    <h2>Transferências protegidas</h2>
+
+                    <p>
+                        Confira sempre os dados antes de confirmar uma operação.
+                    </p>
+
+                </div>
+
+                <a href="#">
+
+                    Saiba mais
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </section>
+
+            <!-- RODAPÉ -->
+
+            <footer class="page-footer">
+
+                <p>
+                    © 2026 ChromaBank. Todos os direitos reservados.
+                </p>
+
+                <div>
+
+                    <a href="#">Segurança</a>
+
+                    <a href="#">Privacidade</a>
+
+                    <a href="#">Ajuda</a>
+
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         MODAL OUTRO BANCO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="bankTransferModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="bankTransferTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-building-columns"></i>
+            </span>
+
+            <h2 id="bankTransferTitle">
+                Transferir para outro banco
+            </h2>
+
+            <p>
+                Informe os dados bancários do destinatário.
+            </p>
+
+            <form id="bankTransferForm">
+
+                <div class="input-group">
+
+                    <label for="recipientName">
+                        Nome do destinatário
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="recipientName"
+                            placeholder="Nome completo"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="recipientDocument">
+                        CPF ou CNPJ
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-id-card"></i>
+
+                        <input
+                            type="text"
+                            id="recipientDocument"
+                            placeholder="Digite o documento"
+                            inputmode="numeric"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="recipientBank">
+                        Banco
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-building-columns"></i>
+
+                        <select
+                            id="recipientBank"
+                            required
+                        >
+
+                            <option value="">
+                                Selecione o banco
+                            </option>
+
+                            <option value="001">
+                                Banco do Brasil
+                            </option>
+
+                            <option value="033">
+                                Santander
+                            </option>
+
+                            <option value="104">
+                                Caixa Econômica Federal
+                            </option>
+
+                            <option value="237">
+                                Bradesco
+                            </option>
+
+                            <option value="341">
+                                Itaú
+                            </option>
+
+                            <option value="260">
+                                Nubank
+                            </option>
+
+                            <option value="077">
+                                Banco Inter
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="two-columns">
+
+                    <div class="input-group">
+
+                        <label for="recipientAgency">
+                            Agência
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="text"
+                                id="recipientAgency"
+                                placeholder="0000"
+                                inputmode="numeric"
+                                maxlength="6"
+                                required
+                            >
+
+                        </div>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="recipientAccount">
+                            Conta
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="text"
+                                id="recipientAccount"
+                                placeholder="00000-0"
+                                maxlength="12"
+                                required
+                            >
+
+                        </div>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="accountType">
+                        Tipo de conta
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                        <select
+                            id="accountType"
+                            required
+                        >
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="checking">
+                                Conta corrente
+                            </option>
+
+                            <option value="savings">
+                                Conta poupança
+                            </option>
+
+                            <option value="payment">
+                                Conta de pagamento
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="transferAmount">
+                        Valor
+                    </label>
+
+                    <div class="input-box currency-input">
+
+                        <span>R$</span>
+
+                        <input
+                            type="text"
+                            id="transferAmount"
+                            placeholder="0,00"
+                            inputmode="numeric"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="transferDescription">
+
+                        Descrição
+
+                        <span>Opcional</span>
+
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-message"></i>
+
+                        <input
+                            type="text"
+                            id="transferDescription"
+                            placeholder="Escreva uma mensagem"
+                            maxlength="100"
+                        >
+
+                    </div>
+
+                </div>
+
+                <label class="favorite-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="saveRecipient"
+                    >
+
+                    <span class="custom-checkbox">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>
+                        Salvar destinatário nos favoritos
+                    </span>
+
+                </label>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    Continuar
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL ENTRE CONTAS CHROMABANK
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="chromaTransferModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="chromaTransferTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-user-group"></i>
+            </span>
+
+            <h2 id="chromaTransferTitle">
+                Entre contas ChromaBank
+            </h2>
+
+            <p>
+                Informe agência e conta do destinatário.
+            </p>
+
+            <form id="chromaTransferForm">
+
+                <div class="two-columns">
+
+                    <div class="input-group">
+
+                        <label for="chromaAgency">
+                            Agência
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="text"
+                                id="chromaAgency"
+                                placeholder="0001"
+                                inputmode="numeric"
+                                maxlength="4"
+                                required
+                            >
+
+                        </div>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="chromaAccount">
+                            Conta
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="text"
+                                id="chromaAccount"
+                                placeholder="000000-0"
+                                maxlength="10"
+                                required
+                            >
+
+                        </div>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="chromaAmount">
+                        Valor
+                    </label>
+
+                    <div class="input-box currency-input">
+
+                        <span>R$</span>
+
+                        <input
+                            type="text"
+                            id="chromaAmount"
+                            placeholder="0,00"
+                            inputmode="numeric"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="chromaDescription">
+
+                        Descrição
+
+                        <span>Opcional</span>
+
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-message"></i>
+
+                        <input
+                            type="text"
+                            id="chromaDescription"
+                            placeholder="Escreva uma mensagem"
+                            maxlength="100"
+                        >
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    Continuar
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL AGENDAMENTO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="scheduledTransferModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="scheduledTransferTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-regular fa-calendar"></i>
+            </span>
+
+            <h2 id="scheduledTransferTitle">
+                Agendar transferência
+            </h2>
+
+            <p>
+                Escolha os dados e a data da operação.
+            </p>
+
+            <form id="scheduledTransferForm">
+
+                <div class="input-group">
+
+                    <label for="scheduledRecipient">
+                        Destinatário
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="scheduledRecipient"
+                            placeholder="Nome do destinatário"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="two-columns">
+
+                    <div class="input-group">
+
+                        <label for="scheduledBank">
+                            Banco
+                        </label>
+
+                        <div class="input-box">
+
+                            <select
+                                id="scheduledBank"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecione
+                                </option>
+
+                                <option value="chroma">
+                                    ChromaBank
+                                </option>
+
+                                <option value="001">
+                                    Banco do Brasil
+                                </option>
+
+                                <option value="033">
+                                    Santander
+                                </option>
+
+                                <option value="237">
+                                    Bradesco
+                                </option>
+
+                                <option value="341">
+                                    Itaú
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="scheduledDate">
+                            Data
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="date"
+                                id="scheduledDate"
+                                required
+                            >
+
+                        </div>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="scheduledAmount">
+                        Valor
+                    </label>
+
+                    <div class="input-box currency-input">
+
+                        <span>R$</span>
+
+                        <input
+                            type="text"
+                            id="scheduledAmount"
+                            placeholder="0,00"
+                            inputmode="numeric"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <label class="favorite-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="recurringTransfer"
+                    >
+
+                    <span class="custom-checkbox">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>
+                        Repetir esta transferência mensalmente
+                    </span>
+
+                </label>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    Agendar transferência
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MENU DE AGENDAMENTO
+    ========================================== -->
+
+    <div
+        class="schedule-dropdown"
+        id="scheduleDropdown"
+    >
+
+        <button type="button">
+
+            <i class="fa-regular fa-eye"></i>
+
+            Ver detalhes
+
+        </button>
+
+        <button type="button">
+
+            <i class="fa-solid fa-pen"></i>
+
+            Editar agendamento
+
+        </button>
+
+        <button
+            type="button"
+            class="danger-action"
+        >
+
+            <i class="fa-regular fa-trash-can"></i>
+
+            Cancelar agendamento
+
+        </button>
+
+    </div>
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Operação realizada com sucesso.
+        </span>
+
+    </div>
+
+    <script src="transferencias.js"></script>
+
+</body>
+
+</html>

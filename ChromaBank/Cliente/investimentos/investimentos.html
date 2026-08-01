@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Área de investimentos da conta ChromaBank."
+    >
+
+    <title>Investimentos | ChromaBank</title>
+
+    <link rel="stylesheet" href="investimentos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <a
+                    href="../../index.html"
+                    class="brand"
+                    aria-label="Página inicial do ChromaBank"
+                >
+
+                    <img
+                        src="../../img/logo.png"
+                        alt="Símbolo ChromaBank"
+                        class="brand-logo"
+                    >
+
+                    <span class="brand-name">
+                        <strong>chroma</strong>Bank
+                    </span>
+
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Fechar menu"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="../pix/pix.html"
+                    class="nav-item"
+                >
+                    <i class="fa-brands fa-pix"></i>
+                    <span>PIX</span>
+                </a>
+
+                <a
+                    href="../transferencias/transferencias.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span>Transferências</span>
+                </a>
+
+                <a
+                    href="../pagamentos/pagamentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Pagamentos</span>
+                </a>
+
+                <a
+                    href="../extrato/extrato.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Extrato</span>
+                </a>
+
+                <a
+                    href="../cartoes/cartoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Cartões</span>
+                </a>
+
+                <a
+                    href="investimentos.html"
+                    class="nav-item active"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Investimentos</span>
+                </a>
+
+                <a
+                    href="../perfil/perfil.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+
+                <a
+                    href="../configuracoes/configuracoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-security">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+
+                    <strong>Investimento seguro</strong>
+
+                    <span>
+                        Acompanhe sua carteira e seus rendimentos.
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair da conta</span>
+            </button>
+
+        </aside>
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+        <!-- =========================================
+             CONTEÚDO PRINCIPAL
+        ========================================== -->
+
+        <main class="main-content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="page-header">
+
+                <div class="header-left">
+
+                    <button
+                        type="button"
+                        class="menu-button"
+                        id="menuButton"
+                        aria-label="Abrir menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            Sua carteira
+                        </span>
+
+                        <h1>Investimentos</h1>
+
+                        <p>
+                            Acompanhe seu patrimônio e descubra novas oportunidades.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        id="toggleValues"
+                        aria-label="Mostrar ou ocultar valores"
+                    >
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        aria-label="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="profile-button"
+                        id="profileButton"
+                    >
+                        <span class="profile-avatar">VF</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- =========================================
+                 RESUMO DA CARTEIRA
+            ========================================== -->
+
+            <section class="summary-grid">
+
+                <article class="summary-card featured-summary">
+
+                    <div class="summary-card-header">
+
+                        <div>
+
+                            <span>Patrimônio investido</span>
+
+                            <strong
+                                class="sensitive-value"
+                                data-value="R$ 12.650,80"
+                            >
+                                R$ 12.650,80
+                            </strong>
+
+                        </div>
+
+                        <span class="summary-icon purple">
+                            <i class="fa-solid fa-wallet"></i>
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Valor total da sua carteira.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="summary-action"
+                        data-open-modal="applyModal"
+                    >
+                        Investir agora
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </article>
+
+                <article class="summary-card">
+
+                    <div class="summary-card-header">
+
+                        <div>
+
+                            <span>Rendimento no mês</span>
+
+                            <strong
+                                class="positive-value sensitive-value"
+                                data-value="+ R$ 284,70"
+                            >
+                                + R$ 284,70
+                            </strong>
+
+                        </div>
+
+                        <span class="summary-icon green">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Rentabilidade de 2,31% no período.
+                    </p>
+
+                    <span class="summary-badge positive">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        2,31%
+                    </span>
+
+                </article>
+
+                <article class="summary-card">
+
+                    <div class="summary-card-header">
+
+                        <div>
+
+                            <span>Saldo disponível</span>
+
+                            <strong
+                                class="sensitive-value"
+                                data-value="R$ 4.856,90"
+                            >
+                                R$ 4.856,90
+                            </strong>
+
+                        </div>
+
+                        <span class="summary-icon blue">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Valor disponível para novas aplicações.
+                    </p>
+
+                    <a
+                        href="../extrato/extrato.html"
+                        class="summary-link"
+                    >
+                        Ver extrato
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+                <article class="summary-card">
+
+                    <div class="summary-card-header">
+
+                        <div>
+
+                            <span>Rendimento acumulado</span>
+
+                            <strong
+                                class="positive-value sensitive-value"
+                                data-value="+ R$ 1.342,60"
+                            >
+                                + R$ 1.342,60
+                            </strong>
+
+                        </div>
+
+                        <span class="summary-icon orange">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Resultado desde o início dos investimentos.
+                    </p>
+
+                    <span class="summary-badge positive">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        11,89%
+                    </span>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 GRÁFICOS
+            ========================================== -->
+
+            <section class="charts-grid">
+
+                <!-- EVOLUÇÃO -->
+
+                <article class="panel evolution-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Desempenho
+                            </span>
+
+                            <h2>Evolução do patrimônio</h2>
+
+                            <p>
+                                Acompanhe o crescimento da sua carteira.
+                            </p>
+
+                        </div>
+
+                        <div class="period-buttons">
+
+                            <button
+                                type="button"
+                                data-period="1M"
+                            >
+                                1M
+                            </button>
+
+                            <button
+                                type="button"
+                                data-period="3M"
+                            >
+                                3M
+                            </button>
+
+                            <button
+                                type="button"
+                                data-period="6M"
+                                class="active"
+                            >
+                                6M
+                            </button>
+
+                            <button
+                                type="button"
+                                data-period="1A"
+                            >
+                                1A
+                            </button>
+
+                            <button
+                                type="button"
+                                data-period="ALL"
+                            >
+                                Tudo
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-summary">
+
+                        <div>
+
+                            <span>Valor atual</span>
+
+                            <strong
+                                class="sensitive-value"
+                                data-value="R$ 12.650,80"
+                            >
+                                R$ 12.650,80
+                            </strong>
+
+                        </div>
+
+                        <span class="chart-growth">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            + 18,4%
+                        </span>
+
+                    </div>
+
+                    <div class="chart-wrapper">
+
+                        <canvas id="portfolioChart"></canvas>
+
+                    </div>
+
+                </article>
+
+                <!-- DISTRIBUIÇÃO -->
+
+                <article class="panel allocation-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Diversificação
+                            </span>
+
+                            <h2>Distribuição da carteira</h2>
+
+                            <p>
+                                Veja onde seu dinheiro está investido.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="allocation-chart-wrapper">
+
+                        <canvas id="allocationChart"></canvas>
+
+                        <div class="allocation-center">
+
+                            <span>Total</span>
+
+                            <strong
+                                class="sensitive-value"
+                                data-value="R$ 12,6 mil"
+                            >
+                                R$ 12,6 mil
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <div class="allocation-legend">
+
+                        <div>
+
+                            <span class="legend-dot purple"></span>
+
+                            <div>
+                                <strong>Renda fixa</strong>
+                                <small>45%</small>
+                            </div>
+
+                            <span
+                                class="sensitive-value"
+                                data-value="R$ 5.692,86"
+                            >
+                                R$ 5.692,86
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <span class="legend-dot blue"></span>
+
+                            <div>
+                                <strong>Fundos</strong>
+                                <small>25%</small>
+                            </div>
+
+                            <span
+                                class="sensitive-value"
+                                data-value="R$ 3.162,70"
+                            >
+                                R$ 3.162,70
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <span class="legend-dot green"></span>
+
+                            <div>
+                                <strong>Ações</strong>
+                                <small>20%</small>
+                            </div>
+
+                            <span
+                                class="sensitive-value"
+                                data-value="R$ 2.530,16"
+                            >
+                                R$ 2.530,16
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <span class="legend-dot orange"></span>
+
+                            <div>
+                                <strong>Criptoativos</strong>
+                                <small>10%</small>
+                            </div>
+
+                            <span
+                                class="sensitive-value"
+                                data-value="R$ 1.265,08"
+                            >
+                                R$ 1.265,08
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 MINHA CARTEIRA
+            ========================================== -->
+
+            <section class="panel portfolio-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            Seus ativos
+                        </span>
+
+                        <h2>Minha carteira</h2>
+
+                        <p>
+                            Acompanhe seus investimentos atuais.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="outline-button"
+                        data-open-modal="applyModal"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        Nova aplicação
+                    </button>
+
+                </div>
+
+                <div class="portfolio-list">
+
+                    <article
+                        class="portfolio-item"
+                        data-investment-name="CDB ChromaBank"
+                        data-investment-type="Renda fixa"
+                        data-investment-balance="4850.00"
+                    >
+
+                        <span class="portfolio-icon purple">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </span>
+
+                        <div class="portfolio-description">
+
+                            <strong>CDB ChromaBank</strong>
+
+                            <span>
+                                Renda fixa • 110% do CDI
+                            </span>
+
+                        </div>
+
+                        <div class="portfolio-profit">
+
+                            <span>Rentabilidade</span>
+
+                            <strong class="positive-value">
+                                + 1,12%
+                            </strong>
+
+                        </div>
+
+                        <div class="portfolio-balance">
+
+                            <span>Saldo bruto</span>
+
+                            <strong
+                                class="sensitive-value"
+                                data-value="R$ 4.850,00"
+                            >
+                                R$ 4.850,00
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="portfolio-menu-button"
+                            aria-label="Opções do investimento"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="portfolio-item"
+                        data-investment-name="Fundo Chroma Multimercado"
+                        data-investment-type="Fundos"
+                        data-investment-balance="3162.70"
+                    >
+
+                        <span class="portfolio-icon blue">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </span>
+
+                        <div class="portfolio-description">
+
+                            <strong>Fundo Chroma Multimercado</strong>
+
+                            <span>
+                                Fundo de investimento • Risco moderado
+                            </span>
+
+                        </div>
+
+                        <div class="portfolio-profit">
+
+                            <span>Rentabilidade</span>
+
+                            <strong class="positive-value">
+                                + 2,46%
+                            </strong>
+
+                        </div>
+
+                        <div class="portfolio-balance">
+
+                            <span>Saldo bruto</span>
+
+                            <strong
+                                class="sensitive-value"
+                                data-value="R$ 3.162,70"
+                            >
+                                R$ 3.162,70
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="portfolio-menu-button"
+                            aria-label="Opções do investimento"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="portfolio-item"
+                        data-investment-name="Carteira de Ações"
+                        data-investment-type="Ações"
+                        data-investment-balance="2530.16"
+                    >
+
+                        <span class="portfolio-icon green">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </span>
+
+                        <div class="portfolio-description">
+
+                            <strong>Carteira de Ações</strong>
+
+                            <span>
+                                Ações nacionais • 5 ativos
+                            </span>
+
+                        </div>
+
+                        <div class="portfolio-profit">
+
+                            <span>Rentabilidade</span>
+
+                            <strong class="positive-value">
+                                + 4,83%
+                            </strong>
+
+                        </div>
+
+                        <div class="portfolio-balance">
+
+                            <span>Saldo bruto</span>
+
+                            <strong
+                                class="sensitive-value"
+                                data-value="R$ 2.530,16"
+                            >
+                                R$ 2.530,16
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="portfolio-menu-button"
+                            aria-label="Opções do investimento"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="portfolio-item"
+                        data-investment-name="Carteira Cripto"
+                        data-investment-type="Criptoativos"
+                        data-investment-balance="1265.08"
+                    >
+
+                        <span class="portfolio-icon orange">
+                            <i class="fa-brands fa-bitcoin"></i>
+                        </span>
+
+                        <div class="portfolio-description">
+
+                            <strong>Carteira Cripto</strong>
+
+                            <span>
+                                Bitcoin e Ethereum • Alto risco
+                            </span>
+
+                        </div>
+
+                        <div class="portfolio-profit">
+
+                            <span>Rentabilidade</span>
+
+                            <strong class="negative-value">
+                                - 1,37%
+                            </strong>
+
+                        </div>
+
+                        <div class="portfolio-balance">
+
+                            <span>Saldo bruto</span>
+
+                            <strong
+                                class="sensitive-value"
+                                data-value="R$ 1.265,08"
+                            >
+                                R$ 1.265,08
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="portfolio-menu-button"
+                            aria-label="Opções do investimento"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 PRODUTOS DISPONÍVEIS
+            ========================================== -->
+
+            <section class="products-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            Oportunidades
+                        </span>
+
+                        <h2>Produtos para investir</h2>
+
+                        <p>
+                            Escolha investimentos de acordo com seus objetivos.
+                        </p>
+
+                    </div>
+
+                    <div class="product-filters">
+
+                        <button
+                            type="button"
+                            class="active"
+                            data-filter="all"
+                        >
+                            Todos
+                        </button>
+
+                        <button
+                            type="button"
+                            data-filter="fixed"
+                        >
+                            Renda fixa
+                        </button>
+
+                        <button
+                            type="button"
+                            data-filter="fund"
+                        >
+                            Fundos
+                        </button>
+
+                        <button
+                            type="button"
+                            data-filter="stocks"
+                        >
+                            Ações
+                        </button>
+
+                        <button
+                            type="button"
+                            data-filter="crypto"
+                        >
+                            Cripto
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="products-grid">
+
+                    <article
+                        class="investment-product featured-product"
+                        data-product-category="fixed"
+                        data-product-name="CDB ChromaBank 120% CDI"
+                        data-product-minimum="100"
+                        data-product-yield="120% do CDI"
+                        data-product-risk="Baixo"
+                    >
+
+                        <div class="product-header">
+
+                            <span class="product-icon purple">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </span>
+
+                            <span class="risk-badge low">
+                                Baixo risco
+                            </span>
+
+                        </div>
+
+                        <span class="product-type">
+                            Renda fixa
+                        </span>
+
+                        <h3>CDB ChromaBank</h3>
+
+                        <p>
+                            Rentabilidade acima da poupança e proteção do FGC.
+                        </p>
+
+                        <div class="product-details">
+
+                            <div>
+                                <span>Rentabilidade</span>
+                                <strong>120% do CDI</strong>
+                            </div>
+
+                            <div>
+                                <span>Aplicação mínima</span>
+                                <strong>R$ 100,00</strong>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="product-apply-button"
+                        >
+                            Investir
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="investment-product"
+                        data-product-category="fixed"
+                        data-product-name="Tesouro Selic 2029"
+                        data-product-minimum="150"
+                        data-product-yield="Selic + 0,10%"
+                        data-product-risk="Baixo"
+                    >
+
+                        <div class="product-header">
+
+                            <span class="product-icon blue">
+                                <i class="fa-solid fa-landmark"></i>
+                            </span>
+
+                            <span class="risk-badge low">
+                                Baixo risco
+                            </span>
+
+                        </div>
+
+                        <span class="product-type">
+                            Tesouro Direto
+                        </span>
+
+                        <h3>Tesouro Selic 2029</h3>
+
+                        <p>
+                            Ideal para reserva de emergência e objetivos de curto prazo.
+                        </p>
+
+                        <div class="product-details">
+
+                            <div>
+                                <span>Rentabilidade</span>
+                                <strong>Selic + 0,10%</strong>
+                            </div>
+
+                            <div>
+                                <span>Aplicação mínima</span>
+                                <strong>R$ 150,00</strong>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="product-apply-button"
+                        >
+                            Investir
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="investment-product"
+                        data-product-category="fund"
+                        data-product-name="Fundo Chroma Premium"
+                        data-product-minimum="500"
+                        data-product-yield="14,8% em 12 meses"
+                        data-product-risk="Moderado"
+                    >
+
+                        <div class="product-header">
+
+                            <span class="product-icon green">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </span>
+
+                            <span class="risk-badge medium">
+                                Risco moderado
+                            </span>
+
+                        </div>
+
+                        <span class="product-type">
+                            Fundo multimercado
+                        </span>
+
+                        <h3>Chroma Premium</h3>
+
+                        <p>
+                            Carteira diversificada administrada por especialistas.
+                        </p>
+
+                        <div class="product-details">
+
+                            <div>
+                                <span>Últimos 12 meses</span>
+                                <strong>14,8%</strong>
+                            </div>
+
+                            <div>
+                                <span>Aplicação mínima</span>
+                                <strong>R$ 500,00</strong>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="product-apply-button"
+                        >
+                            Investir
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="investment-product"
+                        data-product-category="stocks"
+                        data-product-name="Carteira Chroma Dividendos"
+                        data-product-minimum="300"
+                        data-product-yield="18,4% em 12 meses"
+                        data-product-risk="Alto"
+                    >
+
+                        <div class="product-header">
+
+                            <span class="product-icon orange">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                            </span>
+
+                            <span class="risk-badge high">
+                                Alto risco
+                            </span>
+
+                        </div>
+
+                        <span class="product-type">
+                            Ações
+                        </span>
+
+                        <h3>Chroma Dividendos</h3>
+
+                        <p>
+                            Seleção de empresas com histórico de pagamento de dividendos.
+                        </p>
+
+                        <div class="product-details">
+
+                            <div>
+                                <span>Últimos 12 meses</span>
+                                <strong>18,4%</strong>
+                            </div>
+
+                            <div>
+                                <span>Aplicação mínima</span>
+                                <strong>R$ 300,00</strong>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="product-apply-button"
+                        >
+                            Investir
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="investment-product"
+                        data-product-category="crypto"
+                        data-product-name="Fundo Cripto Chroma"
+                        data-product-minimum="50"
+                        data-product-yield="Variável"
+                        data-product-risk="Muito alto"
+                    >
+
+                        <div class="product-header">
+
+                            <span class="product-icon orange">
+                                <i class="fa-brands fa-bitcoin"></i>
+                            </span>
+
+                            <span class="risk-badge very-high">
+                                Risco muito alto
+                            </span>
+
+                        </div>
+
+                        <span class="product-type">
+                            Criptoativos
+                        </span>
+
+                        <h3>Fundo Cripto Chroma</h3>
+
+                        <p>
+                            Exposição diversificada a Bitcoin, Ethereum e outros ativos.
+                        </p>
+
+                        <div class="product-details">
+
+                            <div>
+                                <span>Rentabilidade</span>
+                                <strong>Variável</strong>
+                            </div>
+
+                            <div>
+                                <span>Aplicação mínima</span>
+                                <strong>R$ 50,00</strong>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="product-apply-button"
+                        >
+                            Investir
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="investment-product"
+                        data-product-category="fixed"
+                        data-product-name="LCI Chroma Imobiliária"
+                        data-product-minimum="1000"
+                        data-product-yield="98% do CDI"
+                        data-product-risk="Baixo"
+                    >
+
+                        <div class="product-header">
+
+                            <span class="product-icon purple">
+                                <i class="fa-solid fa-house"></i>
+                            </span>
+
+                            <span class="risk-badge low">
+                                Baixo risco
+                            </span>
+
+                        </div>
+
+                        <span class="product-type">
+                            Renda fixa
+                        </span>
+
+                        <h3>LCI Chroma Imobiliária</h3>
+
+                        <p>
+                            Investimento isento de Imposto de Renda para pessoa física.
+                        </p>
+
+                        <div class="product-details">
+
+                            <div>
+                                <span>Rentabilidade</span>
+                                <strong>98% do CDI</strong>
+                            </div>
+
+                            <div>
+                                <span>Aplicação mínima</span>
+                                <strong>R$ 1.000,00</strong>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="product-apply-button"
+                        >
+                            Investir
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 HISTÓRICO
+            ========================================== -->
+
+            <section class="panel investment-history-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            Movimentações
+                        </span>
+
+                        <h2>Histórico de investimentos</h2>
+
+                        <p>
+                            Veja suas aplicações, resgates e rendimentos.
+                        </p>
+
+                    </div>
+
+                    <a href="../extrato/extrato.html">
+
+                        Ver extrato completo
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+                <div class="investment-history-list">
+
+                    <article class="history-item">
+
+                        <span class="history-icon application">
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Aplicação em CDB</strong>
+
+                            <span>
+                                CDB ChromaBank 120% CDI
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>Hoje</span>
+
+                            <small>11:32</small>
+
+                        </div>
+
+                        <strong
+                            class="history-value sensitive-value"
+                            data-value="- R$ 500,00"
+                        >
+                            - R$ 500,00
+                        </strong>
+
+                        <span class="history-status completed">
+                            Concluída
+                        </span>
+
+                    </article>
+
+                    <article class="history-item">
+
+                        <span class="history-icon profit">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Rendimento recebido</strong>
+
+                            <span>
+                                Fundo Chroma Multimercado
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>Ontem</span>
+
+                            <small>08:00</small>
+
+                        </div>
+
+                        <strong
+                            class="history-value positive-value sensitive-value"
+                            data-value="+ R$ 84,70"
+                        >
+                            + R$ 84,70
+                        </strong>
+
+                        <span class="history-status completed">
+                            Creditado
+                        </span>
+
+                    </article>
+
+                    <article class="history-item">
+
+                        <span class="history-icon redeem">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Resgate realizado</strong>
+
+                            <span>
+                                Tesouro Selic 2029
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>30 jul.</span>
+
+                            <small>15:24</small>
+
+                        </div>
+
+                        <strong
+                            class="history-value positive-value sensitive-value"
+                            data-value="+ R$ 1.200,00"
+                        >
+                            + R$ 1.200,00
+                        </strong>
+
+                        <span class="history-status completed">
+                            Concluído
+                        </span>
+
+                    </article>
+
+                    <article class="history-item">
+
+                        <span class="history-icon application">
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Aplicação em ações</strong>
+
+                            <span>
+                                Carteira Chroma Dividendos
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>28 jul.</span>
+
+                            <small>10:18</small>
+
+                        </div>
+
+                        <strong
+                            class="history-value sensitive-value"
+                            data-value="- R$ 300,00"
+                        >
+                            - R$ 300,00
+                        </strong>
+
+                        <span class="history-status completed">
+                            Concluída
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 AVISO
+            ========================================== -->
+
+            <section class="risk-banner">
+
+                <span class="risk-banner-icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                </span>
+
+                <div>
+
+                    <h2>Investimentos possuem riscos</h2>
+
+                    <p>
+                        Rentabilidade passada não garante resultados futuros.
+                        Conheça seu perfil antes de investir.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="profileTestButton"
+                >
+                    Refazer perfil
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </section>
+
+            <!-- RODAPÉ -->
+
+            <footer class="page-footer">
+
+                <p>
+                    © 2026 ChromaBank. Todos os direitos reservados.
+                </p>
+
+                <div>
+
+                    <a href="#">Segurança</a>
+
+                    <a href="#">Privacidade</a>
+
+                    <a href="#">Ajuda</a>
+
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE APLICAÇÃO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="applyModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="applyModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </span>
+
+            <h2 id="applyModalTitle">
+                Fazer investimento
+            </h2>
+
+            <p>
+                Selecione o produto e informe o valor da aplicação.
+            </p>
+
+            <form id="applyForm">
+
+                <div class="selected-product-preview">
+
+                    <span class="selected-product-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </span>
+
+                    <div>
+
+                        <span>Produto selecionado</span>
+
+                        <strong id="selectedProductName">
+                            CDB ChromaBank 120% CDI
+                        </strong>
+
+                        <small id="selectedProductYield">
+                            Rentabilidade: 120% do CDI
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <input
+                    type="hidden"
+                    id="selectedProductCategory"
+                    value="fixed"
+                >
+
+                <input
+                    type="hidden"
+                    id="selectedProductMinimum"
+                    value="100"
+                >
+
+                <div class="input-group">
+
+                    <label for="applicationAmount">
+
+                        Valor da aplicação
+
+                        <span id="minimumApplicationLabel">
+                            Mínimo: R$ 100,00
+                        </span>
+
+                    </label>
+
+                    <div class="input-box currency-input">
+
+                        <span>R$</span>
+
+                        <input
+                            type="text"
+                            id="applicationAmount"
+                            placeholder="0,00"
+                            inputmode="numeric"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="available-balance">
+
+                    <span>Saldo disponível</span>
+
+                    <strong
+                        class="sensitive-value"
+                        data-value="R$ 4.856,90"
+                    >
+                        R$ 4.856,90
+                    </strong>
+
+                </div>
+
+                <label class="confirmation-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="investmentTerms"
+                    >
+
+                    <span class="custom-checkbox">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>
+                        Li e aceito os termos e estou ciente dos riscos deste investimento.
+                    </span>
+
+                </label>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Confirmar investimento
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE RESGATE
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="redeemModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="redeemModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+            </span>
+
+            <h2 id="redeemModalTitle">
+                Resgatar investimento
+            </h2>
+
+            <p>
+                Informe quanto deseja resgatar do investimento selecionado.
+            </p>
+
+            <form id="redeemForm">
+
+                <div class="selected-product-preview">
+
+                    <span class="selected-product-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </span>
+
+                    <div>
+
+                        <span>Investimento selecionado</span>
+
+                        <strong id="redeemInvestmentName">
+                            CDB ChromaBank
+                        </strong>
+
+                        <small id="redeemInvestmentType">
+                            Renda fixa
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="available-balance">
+
+                    <span>Saldo disponível para resgate</span>
+
+                    <strong id="redeemAvailableBalance">
+                        R$ 4.850,00
+                    </strong>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="redeemAmount">
+                        Valor do resgate
+                    </label>
+
+                    <div class="input-box currency-input">
+
+                        <span>R$</span>
+
+                        <input
+                            type="text"
+                            id="redeemAmount"
+                            placeholder="0,00"
+                            inputmode="numeric"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="full-balance-button"
+                    id="redeemFullBalanceButton"
+                >
+                    Resgatar valor total
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Confirmar resgate
+
+                    <i class="fa-solid fa-check"></i>
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MENU DO INVESTIMENTO
+    ========================================== -->
+
+    <div
+        class="investment-dropdown"
+        id="investmentDropdown"
+    >
+
+        <button
+            type="button"
+            data-investment-action="details"
+        >
+            <i class="fa-regular fa-eye"></i>
+            Ver detalhes
+        </button>
+
+        <button
+            type="button"
+            data-investment-action="apply"
+        >
+            <i class="fa-solid fa-plus"></i>
+            Fazer nova aplicação
+        </button>
+
+        <button
+            type="button"
+            data-investment-action="redeem"
+        >
+            <i class="fa-solid fa-money-bill-transfer"></i>
+            Resgatar
+        </button>
+
+    </div>
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Operação realizada com sucesso.
+        </span>
+
+    </div>
+
+    <!-- CHART.JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="investimentos.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Extrato completo da conta ChromaBank."
+    >
+
+    <title>Extrato | ChromaBank</title>
+
+    <link rel="stylesheet" href="extrato.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <a
+                    href="../../index.html"
+                    class="brand"
+                    aria-label="Página inicial do ChromaBank"
+                >
+
+                    <img
+                        src="../../img/logo.png"
+                        alt="Símbolo ChromaBank"
+                        class="brand-logo"
+                    >
+
+                    <span class="brand-name">
+                        <strong>chroma</strong>Bank
+                    </span>
+
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Fechar menu"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="../pix/pix.html"
+                    class="nav-item"
+                >
+                    <i class="fa-brands fa-pix"></i>
+                    <span>PIX</span>
+                </a>
+
+                <a
+                    href="../transferencias/transferencias.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span>Transferências</span>
+                </a>
+
+                <a
+                    href="../pagamentos/pagamentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Pagamentos</span>
+                </a>
+
+                <a
+                    href="extrato.html"
+                    class="nav-item active"
+                >
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Extrato</span>
+                </a>
+
+                <a
+                    href="../cartoes/cartoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Cartões</span>
+                </a>
+
+                <a
+                    href="../investimentos/investimentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Investimentos</span>
+                </a>
+
+                <a
+                    href="../perfil/perfil.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+
+                <a
+                    href="../configuracoes/configuracoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-security">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+                    <strong>Ambiente seguro</strong>
+                    <span>Seus dados financeiros estão protegidos.</span>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair da conta</span>
+            </button>
+
+        </aside>
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+        <!-- =========================================
+             CONTEÚDO
+        ========================================== -->
+
+        <main class="main-content">
+
+            <header class="page-header">
+
+                <div class="header-left">
+
+                    <button
+                        type="button"
+                        class="menu-button"
+                        id="menuButton"
+                        aria-label="Abrir menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            Movimentações
+                        </span>
+
+                        <h1>Extrato da conta</h1>
+
+                        <p>
+                            Consulte suas entradas, saídas e movimentações.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        id="toggleBalance"
+                        aria-label="Mostrar ou ocultar valores"
+                    >
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        aria-label="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="profile-button"
+                        id="profileButton"
+                    >
+                        <span class="profile-avatar">VF</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- =========================================
+                 RESUMO
+            ========================================== -->
+
+            <section class="summary-grid">
+
+                <article class="summary-card balance-card">
+
+                    <span>Saldo disponível</span>
+
+                    <strong
+                        class="sensitive-value"
+                        data-value="R$ 4.856,90"
+                    >
+                        R$ 4.856,90
+                    </strong>
+
+                    <p>
+                        Atualizado agora
+                    </p>
+
+                </article>
+
+                <article class="summary-card income-card">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Entradas no período</span>
+
+                        <strong
+                            class="positive-value sensitive-value"
+                            data-value="R$ 4.250,00"
+                        >
+                            R$ 4.250,00
+                        </strong>
+
+                        <p>5 recebimentos</p>
+
+                    </div>
+
+                </article>
+
+                <article class="summary-card expense-card">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Saídas no período</span>
+
+                        <strong
+                            class="negative-value sensitive-value"
+                            data-value="R$ 1.475,30"
+                        >
+                            R$ 1.475,30
+                        </strong>
+
+                        <p>8 pagamentos</p>
+
+                    </div>
+
+                </article>
+
+                <article class="summary-card result-card">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Resultado do período</span>
+
+                        <strong
+                            class="positive-value sensitive-value"
+                            data-value="+ R$ 2.774,70"
+                        >
+                            + R$ 2.774,70
+                        </strong>
+
+                        <p>Saldo positivo</p>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 FILTROS
+            ========================================== -->
+
+            <section class="filters-panel">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Buscar por descrição, pessoa ou estabelecimento"
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        id="clearSearchButton"
+                        aria-label="Limpar busca"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                </div>
+
+                <div class="filters-row">
+
+                    <div class="filter-group">
+
+                        <label for="periodFilter">
+                            Período
+                        </label>
+
+                        <select id="periodFilter">
+
+                            <option value="7">
+                                Últimos 7 dias
+                            </option>
+
+                            <option value="30" selected>
+                                Últimos 30 dias
+                            </option>
+
+                            <option value="90">
+                                Últimos 3 meses
+                            </option>
+
+                            <option value="180">
+                                Últimos 6 meses
+                            </option>
+
+                            <option value="365">
+                                Último ano
+                            </option>
+
+                            <option value="all">
+                                Todo o período
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <label for="typeFilter">
+                            Tipo
+                        </label>
+
+                        <select id="typeFilter">
+
+                            <option value="all">
+                                Todas
+                            </option>
+
+                            <option value="income">
+                                Entradas
+                            </option>
+
+                            <option value="expense">
+                                Saídas
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <label for="categoryFilter">
+                            Categoria
+                        </label>
+
+                        <select id="categoryFilter">
+
+                            <option value="all">
+                                Todas
+                            </option>
+
+                            <option value="pix">
+                                PIX
+                            </option>
+
+                            <option value="transfer">
+                                Transferências
+                            </option>
+
+                            <option value="payment">
+                                Pagamentos
+                            </option>
+
+                            <option value="card">
+                                Cartão
+                            </option>
+
+                            <option value="salary">
+                                Salário
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="export-button"
+                        id="exportButton"
+                    >
+
+                        <i class="fa-solid fa-download"></i>
+
+                        Exportar
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 EXTRATO
+            ========================================== -->
+
+            <section class="statement-panel">
+
+                <div class="statement-header">
+
+                    <div>
+
+                        <h2>Movimentações</h2>
+
+                        <p>
+                            <span id="resultCount">13</span>
+                            movimentações encontradas.
+                        </p>
+
+                    </div>
+
+                    <div class="view-actions">
+
+                        <button
+                            type="button"
+                            class="view-button active"
+                            data-view="list"
+                            aria-label="Visualização em lista"
+                        >
+                            <i class="fa-solid fa-list"></i>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="view-button"
+                            data-view="compact"
+                            aria-label="Visualização compacta"
+                        >
+                            <i class="fa-solid fa-table-cells-large"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="statement-list"
+                    id="statementList"
+                >
+
+                    <!-- HOJE -->
+
+                    <div class="date-group">
+
+                        <div class="date-heading">
+
+                            <span>Hoje</span>
+
+                            <small>01 de agosto de 2026</small>
+
+                        </div>
+
+                        <article
+                            class="transaction-item"
+                            data-type="income"
+                            data-category="pix"
+                            data-description="pix recebido maria silva"
+                            data-days="0"
+                        >
+
+                            <span class="transaction-icon income">
+                                <i class="fa-brands fa-pix"></i>
+                            </span>
+
+                            <div class="transaction-description">
+
+                                <strong>PIX recebido</strong>
+
+                                <span>
+                                    De Maria Silva
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-status">
+
+                                <span class="status completed">
+                                    Concluído
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-time">
+
+                                <span>10:45</span>
+
+                                <small>Conta corrente</small>
+
+                            </div>
+
+                            <strong
+                                class="transaction-value positive-value sensitive-value"
+                                data-value="+ R$ 850,00"
+                            >
+                                + R$ 850,00
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="transaction-menu-button"
+                                aria-label="Opções da movimentação"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                        <article
+                            class="transaction-item"
+                            data-type="expense"
+                            data-category="pix"
+                            data-description="pix enviado joao santos"
+                            data-days="0"
+                        >
+
+                            <span class="transaction-icon expense">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </span>
+
+                            <div class="transaction-description">
+
+                                <strong>PIX enviado</strong>
+
+                                <span>
+                                    Para João Santos
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-status">
+
+                                <span class="status completed">
+                                    Concluído
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-time">
+
+                                <span>09:32</span>
+
+                                <small>Conta corrente</small>
+
+                            </div>
+
+                            <strong
+                                class="transaction-value negative-value sensitive-value"
+                                data-value="- R$ 120,00"
+                            >
+                                - R$ 120,00
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="transaction-menu-button"
+                                aria-label="Opções da movimentação"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                        <article
+                            class="transaction-item"
+                            data-type="expense"
+                            data-category="payment"
+                            data-description="pagamento conta de luz energia"
+                            data-days="0"
+                        >
+
+                            <span class="transaction-icon expense">
+                                <i class="fa-solid fa-bolt"></i>
+                            </span>
+
+                            <div class="transaction-description">
+
+                                <strong>Pagamento de conta</strong>
+
+                                <span>
+                                    Energia elétrica
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-status">
+
+                                <span class="status completed">
+                                    Concluído
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-time">
+
+                                <span>08:17</span>
+
+                                <small>Débito em conta</small>
+
+                            </div>
+
+                            <strong
+                                class="transaction-value negative-value sensitive-value"
+                                data-value="- R$ 186,40"
+                            >
+                                - R$ 186,40
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="transaction-menu-button"
+                                aria-label="Opções da movimentação"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                    <!-- ONTEM -->
+
+                    <div class="date-group">
+
+                        <div class="date-heading">
+
+                            <span>Ontem</span>
+
+                            <small>31 de julho de 2026</small>
+
+                        </div>
+
+                        <article
+                            class="transaction-item"
+                            data-type="expense"
+                            data-category="card"
+                            data-description="compra cartao amazon"
+                            data-days="1"
+                        >
+
+                            <span class="transaction-icon card">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </span>
+
+                            <div class="transaction-description">
+
+                                <strong>Compra no crédito</strong>
+
+                                <span>
+                                    Amazon
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-status">
+
+                                <span class="status completed">
+                                    Aprovada
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-time">
+
+                                <span>15:42</span>
+
+                                <small>Cartão final 1234</small>
+
+                            </div>
+
+                            <strong
+                                class="transaction-value negative-value sensitive-value"
+                                data-value="- R$ 189,90"
+                            >
+                                - R$ 189,90
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="transaction-menu-button"
+                                aria-label="Opções da movimentação"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                        <article
+                            class="transaction-item"
+                            data-type="income"
+                            data-category="salary"
+                            data-description="transferencia recebida empresa ltda salario"
+                            data-days="1"
+                        >
+
+                            <span class="transaction-icon income">
+                                <i class="fa-solid fa-building"></i>
+                            </span>
+
+                            <div class="transaction-description">
+
+                                <strong>Transferência recebida</strong>
+
+                                <span>
+                                    Empresa LTDA
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-status">
+
+                                <span class="status completed">
+                                    Concluído
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-time">
+
+                                <span>11:03</span>
+
+                                <small>Salário</small>
+
+                            </div>
+
+                            <strong
+                                class="transaction-value positive-value sensitive-value"
+                                data-value="+ R$ 2.400,00"
+                            >
+                                + R$ 2.400,00
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="transaction-menu-button"
+                                aria-label="Opções da movimentação"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                        <article
+                            class="transaction-item"
+                            data-type="expense"
+                            data-category="payment"
+                            data-description="pagamento netflix assinatura"
+                            data-days="1"
+                        >
+
+                            <span class="transaction-icon expense">
+                                <i class="fa-solid fa-tv"></i>
+                            </span>
+
+                            <div class="transaction-description">
+
+                                <strong>Pagamento</strong>
+
+                                <span>
+                                    Netflix
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-status">
+
+                                <span class="status completed">
+                                    Concluído
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-time">
+
+                                <span>08:10</span>
+
+                                <small>Débito automático</small>
+
+                            </div>
+
+                            <strong
+                                class="transaction-value negative-value sensitive-value"
+                                data-value="- R$ 39,90"
+                            >
+                                - R$ 39,90
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="transaction-menu-button"
+                                aria-label="Opções da movimentação"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                    <!-- 30 DE JULHO -->
+
+                    <div class="date-group">
+
+                        <div class="date-heading">
+
+                            <span>30 de julho</span>
+
+                            <small>Quinta-feira</small>
+
+                        </div>
+
+                        <article
+                            class="transaction-item"
+                            data-type="expense"
+                            data-category="transfer"
+                            data-description="transferencia enviada ana oliveira"
+                            data-days="2"
+                        >
+
+                            <span class="transaction-icon expense">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                            </span>
+
+                            <div class="transaction-description">
+
+                                <strong>Transferência enviada</strong>
+
+                                <span>
+                                    Para Ana Oliveira
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-status">
+
+                                <span class="status completed">
+                                    Concluído
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-time">
+
+                                <span>18:12</span>
+
+                                <small>Conta corrente</small>
+
+                            </div>
+
+                            <strong
+                                class="transaction-value negative-value sensitive-value"
+                                data-value="- R$ 75,50"
+                            >
+                                - R$ 75,50
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="transaction-menu-button"
+                                aria-label="Opções da movimentação"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                        <article
+                            class="transaction-item"
+                            data-type="expense"
+                            data-category="card"
+                            data-description="compra cartao supermercado central"
+                            data-days="2"
+                        >
+
+                            <span class="transaction-icon card">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </span>
+
+                            <div class="transaction-description">
+
+                                <strong>Compra no débito</strong>
+
+                                <span>
+                                    Supermercado Central
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-status">
+
+                                <span class="status completed">
+                                    Aprovada
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-time">
+
+                                <span>12:36</span>
+
+                                <small>Cartão final 1234</small>
+
+                            </div>
+
+                            <strong
+                                class="transaction-value negative-value sensitive-value"
+                                data-value="- R$ 243,70"
+                            >
+                                - R$ 243,70
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="transaction-menu-button"
+                                aria-label="Opções da movimentação"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                    <!-- 28 DE JULHO -->
+
+                    <div class="date-group">
+
+                        <div class="date-heading">
+
+                            <span>28 de julho</span>
+
+                            <small>Terça-feira</small>
+
+                        </div>
+
+                        <article
+                            class="transaction-item"
+                            data-type="income"
+                            data-category="pix"
+                            data-description="pix recebido carlos lima"
+                            data-days="4"
+                        >
+
+                            <span class="transaction-icon income">
+                                <i class="fa-brands fa-pix"></i>
+                            </span>
+
+                            <div class="transaction-description">
+
+                                <strong>PIX recebido</strong>
+
+                                <span>
+                                    De Carlos Lima
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-status">
+
+                                <span class="status completed">
+                                    Concluído
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-time">
+
+                                <span>17:30</span>
+
+                                <small>Conta corrente</small>
+
+                            </div>
+
+                            <strong
+                                class="transaction-value positive-value sensitive-value"
+                                data-value="+ R$ 500,00"
+                            >
+                                + R$ 500,00
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="transaction-menu-button"
+                                aria-label="Opções da movimentação"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                        <article
+                            class="transaction-item"
+                            data-type="expense"
+                            data-category="card"
+                            data-description="compra posto combustivel"
+                            data-days="4"
+                        >
+
+                            <span class="transaction-icon card">
+                                <i class="fa-solid fa-gas-pump"></i>
+                            </span>
+
+                            <div class="transaction-description">
+
+                                <strong>Compra no débito</strong>
+
+                                <span>
+                                    Posto Avenida
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-status">
+
+                                <span class="status completed">
+                                    Aprovada
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-time">
+
+                                <span>09:24</span>
+
+                                <small>Cartão final 1234</small>
+
+                            </div>
+
+                            <strong
+                                class="transaction-value negative-value sensitive-value"
+                                data-value="- R$ 200,00"
+                            >
+                                - R$ 200,00
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="transaction-menu-button"
+                                aria-label="Opções da movimentação"
+                            >
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+                <!-- SEM RESULTADOS -->
+
+                <div
+                    class="empty-state"
+                    id="emptyState"
+                    hidden
+                >
+
+                    <i class="fa-regular fa-folder-open"></i>
+
+                    <h3>Nenhuma movimentação encontrada</h3>
+
+                    <p>
+                        Tente alterar os filtros ou o termo de busca.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="resetFiltersButton"
+                    >
+                        Limpar filtros
+                    </button>
+
+                </div>
+
+                <!-- PAGINAÇÃO -->
+
+                <div class="pagination">
+
+                    <button
+                        type="button"
+                        class="pagination-arrow"
+                        aria-label="Página anterior"
+                        disabled
+                    >
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="pagination-number active"
+                    >
+                        1
+                    </button>
+
+                    <button
+                        type="button"
+                        class="pagination-number"
+                    >
+                        2
+                    </button>
+
+                    <button
+                        type="button"
+                        class="pagination-number"
+                    >
+                        3
+                    </button>
+
+                    <button
+                        type="button"
+                        class="pagination-arrow"
+                        aria-label="Próxima página"
+                    >
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                </div>
+
+            </section>
+
+            <footer class="page-footer">
+
+                <p>
+                    © 2026 ChromaBank. Todos os direitos reservados.
+                </p>
+
+                <div>
+
+                    <a href="#">Segurança</a>
+
+                    <a href="#">Privacidade</a>
+
+                    <a href="#">Ajuda</a>
+
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         MENU DA TRANSAÇÃO
+    ========================================== -->
+
+    <div
+        class="transaction-dropdown"
+        id="transactionDropdown"
+    >
+
+        <button type="button">
+
+            <i class="fa-regular fa-eye"></i>
+
+            Ver detalhes
+
+        </button>
+
+        <button type="button">
+
+            <i class="fa-solid fa-receipt"></i>
+
+            Ver comprovante
+
+        </button>
+
+        <button type="button">
+
+            <i class="fa-solid fa-arrow-rotate-right"></i>
+
+            Repetir operação
+
+        </button>
+
+    </div>
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Operação realizada.
+        </span>
+
+    </div>
+
+    <script src="extrato.js"></script>
+
+</body>
+
+</html>

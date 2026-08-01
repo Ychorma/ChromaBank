@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Gerencie seus cartões ChromaBank."
+    >
+
+    <title>Cartões | ChromaBank</title>
+
+    <link rel="stylesheet" href="cartoes.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <a
+                    href="../../index.html"
+                    class="brand"
+                    aria-label="Página inicial do ChromaBank"
+                >
+
+                    <img
+                        src="../../img/logo.png"
+                        alt="Símbolo ChromaBank"
+                        class="brand-logo"
+                    >
+
+                    <span class="brand-name">
+                        <strong>chroma</strong>Bank
+                    </span>
+
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Fechar menu"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="../pix/pix.html"
+                    class="nav-item"
+                >
+                    <i class="fa-brands fa-pix"></i>
+                    <span>PIX</span>
+                </a>
+
+                <a
+                    href="../transferencias/transferencias.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span>Transferências</span>
+                </a>
+
+                <a
+                    href="../pagamentos/pagamentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Pagamentos</span>
+                </a>
+
+                <a
+                    href="../extrato/extrato.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Extrato</span>
+                </a>
+
+                <a
+                    href="cartoes.html"
+                    class="nav-item active"
+                >
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Cartões</span>
+                </a>
+
+                <a
+                    href="../investimentos/investimentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Investimentos</span>
+                </a>
+
+                <a
+                    href="../perfil/perfil.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+
+                <a
+                    href="../configuracoes/configuracoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-security">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+                    <strong>Cartão protegido</strong>
+
+                    <span>
+                        Controle seu cartão com segurança.
+                    </span>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair da conta</span>
+            </button>
+
+        </aside>
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+        <!-- =========================================
+             CONTEÚDO PRINCIPAL
+        ========================================== -->
+
+        <main class="main-content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="page-header">
+
+                <div class="header-left">
+
+                    <button
+                        type="button"
+                        class="menu-button"
+                        id="menuButton"
+                        aria-label="Abrir menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            Meus cartões
+                        </span>
+
+                        <h1>Cartões</h1>
+
+                        <p>
+                            Consulte limite, fatura e configurações.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        id="toggleValues"
+                        aria-label="Mostrar ou ocultar valores"
+                    >
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        aria-label="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="profile-button"
+                        id="profileButton"
+                    >
+                        <span class="profile-avatar">VF</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- =========================================
+                 ÁREA PRINCIPAL DO CARTÃO
+            ========================================== -->
+
+            <section class="cards-main-grid">
+
+                <!-- CARTÃO VISUAL -->
+
+                <article class="card-showcase-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Cartão principal
+                            </span>
+
+                            <h2>ChromaBank Black</h2>
+
+                        </div>
+
+                        <span class="card-status active">
+                            <i class="fa-solid fa-circle"></i>
+                            Ativo
+                        </span>
+
+                    </div>
+
+                    <div class="credit-card-wrapper">
+
+                        <div
+                            class="credit-card"
+                            id="physicalCard"
+                        >
+
+                            <div class="credit-card-top">
+
+                                <div class="card-brand">
+
+                                    <img
+                                        src="../../img/logo.png"
+                                        alt=""
+                                        class="card-logo"
+                                    >
+
+                                    <span>chromaBank</span>
+
+                                </div>
+
+                                <i class="fa-solid fa-wifi contactless-icon"></i>
+
+                            </div>
+
+                            <div class="card-chip">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="card-number">
+
+                                <span class="hidden-number">
+                                    •••• •••• ••••
+                                </span>
+
+                                <strong id="cardLastDigits">
+                                    1234
+                                </strong>
+
+                            </div>
+
+                            <div class="card-bottom">
+
+                                <div>
+
+                                    <span>Titular</span>
+
+                                    <strong>
+                                        VINICIUS FERNANDES
+                                    </strong>
+
+                                </div>
+
+                                <div>
+
+                                    <span>Validade</span>
+
+                                    <strong>
+                                        12/31
+                                    </strong>
+
+                                </div>
+
+                                <div class="card-network">
+                                    VISA
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card-shadow"></div>
+
+                    </div>
+
+                    <div class="card-selector">
+
+                        <button
+                            type="button"
+                            class="selector-button active"
+                            data-card-type="physical"
+                        >
+                            <i class="fa-regular fa-credit-card"></i>
+
+                            Cartão físico
+                        </button>
+
+                        <button
+                            type="button"
+                            class="selector-button"
+                            data-card-type="virtual"
+                        >
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+
+                            Cartão virtual
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- RESUMO DO LIMITE -->
+
+                <article class="limit-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Limite
+                            </span>
+
+                            <h2>Limite do cartão</h2>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="icon-action-button"
+                            data-open-modal="limitModal"
+                            aria-label="Ajustar limite"
+                        >
+                            <i class="fa-solid fa-sliders"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="limit-value">
+
+                        <span>Disponível</span>
+
+                        <strong
+                            class="sensitive-value"
+                            data-value="R$ 3.240,00"
+                        >
+                            R$ 3.240,00
+                        </strong>
+
+                    </div>
+
+                    <div class="limit-progress">
+
+                        <span style="width: 65%;"></span>
+
+                    </div>
+
+                    <div class="limit-details">
+
+                        <div>
+
+                            <span>Limite utilizado</span>
+
+                            <strong
+                                class="sensitive-value"
+                                data-value="R$ 1.760,00"
+                            >
+                                R$ 1.760,00
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Limite total</span>
+
+                            <strong
+                                class="sensitive-value"
+                                data-value="R$ 5.000,00"
+                            >
+                                R$ 5.000,00
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        data-open-modal="limitModal"
+                    >
+                        Ajustar limite
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 FATURA E AÇÕES
+            ========================================== -->
+
+            <section class="middle-grid">
+
+                <!-- FATURA -->
+
+                <article class="panel invoice-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Fatura atual
+                            </span>
+
+                            <h2>Agosto de 2026</h2>
+
+                        </div>
+
+                        <a href="#">
+                            Ver detalhes
+
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="invoice-value">
+
+                        <span>Valor da fatura</span>
+
+                        <strong
+                            class="sensitive-value"
+                            data-value="R$ 1.459,90"
+                        >
+                            R$ 1.459,90
+                        </strong>
+
+                        <p>
+                            Vencimento em 10 de agosto
+                        </p>
+
+                    </div>
+
+                    <div class="invoice-info-grid">
+
+                        <div>
+
+                            <span>Melhor dia de compra</span>
+
+                            <strong>Dia 03</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Fechamento</span>
+
+                            <strong>Dia 05</strong>
+
+                        </div>
+
+                    </div>
+
+                    <div class="invoice-progress">
+
+                        <div>
+
+                            <span>Fatura utilizada</span>
+
+                            <strong>29%</strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <span style="width: 29%;"></span>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="payInvoiceButton"
+                    >
+                        Pagar fatura
+
+                        <i class="fa-solid fa-barcode"></i>
+                    </button>
+
+                </article>
+
+                <!-- AÇÕES DO CARTÃO -->
+
+                <article class="panel actions-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Controles
+                            </span>
+
+                            <h2>Ações do cartão</h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-actions-grid">
+
+                        <button
+                            type="button"
+                            class="card-action"
+                            id="blockCardButton"
+                        >
+
+                            <span class="card-action-icon danger">
+                                <i class="fa-solid fa-lock"></i>
+                            </span>
+
+                            <div>
+
+                                <strong id="blockCardText">
+                                    Bloquear cartão
+                                </strong>
+
+                                <small>
+                                    Bloqueio temporário
+                                </small>
+
+                            </div>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="card-action"
+                            data-open-modal="passwordModal"
+                        >
+
+                            <span class="card-action-icon purple">
+                                <i class="fa-solid fa-key"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Alterar senha
+                                </strong>
+
+                                <small>
+                                    Senha de 4 números
+                                </small>
+
+                            </div>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="card-action"
+                            data-open-modal="virtualCardModal"
+                        >
+
+                            <span class="card-action-icon blue">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Cartão virtual
+                                </strong>
+
+                                <small>
+                                    Compras online
+                                </small>
+
+                            </div>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="card-action"
+                            id="contactlessButton"
+                        >
+
+                            <span class="card-action-icon green">
+                                <i class="fa-solid fa-wifi"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Aproximação
+                                </strong>
+
+                                <small id="contactlessStatus">
+                                    Ativada
+                                </small>
+
+                            </div>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="card-action"
+                            data-open-modal="travelNoticeModal"
+                        >
+
+                            <span class="card-action-icon orange">
+                                <i class="fa-solid fa-plane"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Aviso viagem
+                                </strong>
+
+                                <small>
+                                    Uso internacional
+                                </small>
+
+                            </div>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="card-action"
+                            id="requestNewCardButton"
+                        >
+
+                            <span class="card-action-icon purple">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Pedir novo cartão
+                                </strong>
+
+                                <small>
+                                    Adicional ou substituição
+                                </small>
+
+                            </div>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 COMPRAS RECENTES
+            ========================================== -->
+
+            <section class="panel purchases-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            Cartão final 1234
+                        </span>
+
+                        <h2>Compras recentes</h2>
+
+                    </div>
+
+                    <a href="../extrato/extrato.html">
+
+                        Ver todas
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+                <div class="purchases-list">
+
+                    <article class="purchase-item">
+
+                        <span class="purchase-icon">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </span>
+
+                        <div class="purchase-description">
+
+                            <strong>Amazon</strong>
+
+                            <span>Compras online</span>
+
+                        </div>
+
+                        <div class="purchase-date">
+
+                            <span>Hoje</span>
+
+                            <small>15:42</small>
+
+                        </div>
+
+                        <strong
+                            class="purchase-value sensitive-value"
+                            data-value="R$ 189,90"
+                        >
+                            R$ 189,90
+                        </strong>
+
+                        <span class="purchase-status approved">
+                            Aprovada
+                        </span>
+
+                    </article>
+
+                    <article class="purchase-item">
+
+                        <span class="purchase-icon">
+                            <i class="fa-solid fa-tv"></i>
+                        </span>
+
+                        <div class="purchase-description">
+
+                            <strong>Netflix</strong>
+
+                            <span>Assinaturas</span>
+
+                        </div>
+
+                        <div class="purchase-date">
+
+                            <span>Ontem</span>
+
+                            <small>21:14</small>
+
+                        </div>
+
+                        <strong
+                            class="purchase-value sensitive-value"
+                            data-value="R$ 39,90"
+                        >
+                            R$ 39,90
+                        </strong>
+
+                        <span class="purchase-status approved">
+                            Aprovada
+                        </span>
+
+                    </article>
+
+                    <article class="purchase-item">
+
+                        <span class="purchase-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+
+                        <div class="purchase-description">
+
+                            <strong>Supermercado Central</strong>
+
+                            <span>Alimentação</span>
+
+                        </div>
+
+                        <div class="purchase-date">
+
+                            <span>31 jul.</span>
+
+                            <small>12:36</small>
+
+                        </div>
+
+                        <strong
+                            class="purchase-value sensitive-value"
+                            data-value="R$ 243,70"
+                        >
+                            R$ 243,70
+                        </strong>
+
+                        <span class="purchase-status approved">
+                            Aprovada
+                        </span>
+
+                    </article>
+
+                    <article class="purchase-item">
+
+                        <span class="purchase-icon">
+                            <i class="fa-solid fa-gas-pump"></i>
+                        </span>
+
+                        <div class="purchase-description">
+
+                            <strong>Posto Avenida</strong>
+
+                            <span>Transporte</span>
+
+                        </div>
+
+                        <div class="purchase-date">
+
+                            <span>28 jul.</span>
+
+                            <small>09:24</small>
+
+                        </div>
+
+                        <strong
+                            class="purchase-value sensitive-value"
+                            data-value="R$ 200,00"
+                        >
+                            R$ 200,00
+                        </strong>
+
+                        <span class="purchase-status approved">
+                            Aprovada
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 SEGURANÇA
+            ========================================== -->
+
+            <section class="security-banner">
+
+                <div class="security-banner-icon">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>Seu cartão está protegido</h2>
+
+                    <p>
+                        Você recebe notificações em tempo real sobre todas as compras.
+                    </p>
+
+                </div>
+
+                <a href="../configuracoes/configuracoes.html">
+
+                    Configurar segurança
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </section>
+
+            <!-- RODAPÉ -->
+
+            <footer class="page-footer">
+
+                <p>
+                    © 2026 ChromaBank. Todos os direitos reservados.
+                </p>
+
+                <div>
+
+                    <a href="#">Segurança</a>
+
+                    <a href="#">Privacidade</a>
+
+                    <a href="#">Ajuda</a>
+
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         MODAL AJUSTAR LIMITE
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="limitModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="limitModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-sliders"></i>
+            </span>
+
+            <h2 id="limitModalTitle">
+                Ajustar limite
+            </h2>
+
+            <p>
+                Escolha quanto do seu limite deseja disponibilizar.
+            </p>
+
+            <form id="limitForm">
+
+                <div class="limit-range-values">
+
+                    <span>R$ 500,00</span>
+
+                    <strong id="selectedLimit">
+                        R$ 5.000,00
+                    </strong>
+
+                </div>
+
+                <input
+                    type="range"
+                    id="limitRange"
+                    min="500"
+                    max="5000"
+                    step="100"
+                    value="5000"
+                >
+
+                <div class="input-group">
+
+                    <label for="limitInput">
+                        Novo limite
+                    </label>
+
+                    <div class="input-box currency-input">
+
+                        <span>R$</span>
+
+                        <input
+                            type="text"
+                            id="limitInput"
+                            value="5.000,00"
+                            inputmode="numeric"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Confirmar limite
+
+                    <i class="fa-solid fa-check"></i>
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL ALTERAR SENHA
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="passwordModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="passwordModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-key"></i>
+            </span>
+
+            <h2 id="passwordModalTitle">
+                Alterar senha do cartão
+            </h2>
+
+            <p>
+                Crie uma nova senha de quatro números.
+            </p>
+
+            <form id="passwordForm">
+
+                <div class="input-group">
+
+                    <label for="currentCardPassword">
+                        Senha atual
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="currentCardPassword"
+                            maxlength="4"
+                            inputmode="numeric"
+                            placeholder="••••"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="newCardPassword">
+                        Nova senha
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="newCardPassword"
+                            maxlength="4"
+                            inputmode="numeric"
+                            placeholder="••••"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="confirmCardPassword">
+                        Confirmar nova senha
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="confirmCardPassword"
+                            maxlength="4"
+                            inputmode="numeric"
+                            placeholder="••••"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Alterar senha
+
+                    <i class="fa-solid fa-check"></i>
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL CARTÃO VIRTUAL
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="virtualCardModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card virtual-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="virtualCardTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </span>
+
+            <h2 id="virtualCardTitle">
+                Cartão virtual
+            </h2>
+
+            <p>
+                Use este cartão para compras online.
+            </p>
+
+            <div class="virtual-card-preview">
+
+                <div>
+
+                    <span>chromaBank</span>
+
+                    <strong>VISA</strong>
+
+                </div>
+
+                <span class="virtual-card-number">
+                    5500 1234 5678 9012
+                </span>
+
+                <div>
+
+                    <span>
+                        VALIDADE
+                        <strong>12/28</strong>
+                    </span>
+
+                    <span>
+                        CVV
+                        <strong>482</strong>
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="primary-button"
+                id="copyVirtualCardButton"
+            >
+                Copiar dados
+
+                <i class="fa-regular fa-copy"></i>
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL AVISO VIAGEM
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="travelNoticeModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="travelNoticeTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-plane"></i>
+            </span>
+
+            <h2 id="travelNoticeTitle">
+                Aviso de viagem
+            </h2>
+
+            <p>
+                Informe o período em que utilizará o cartão fora do país.
+            </p>
+
+            <form id="travelNoticeForm">
+
+                <div class="input-group">
+
+                    <label for="travelCountry">
+                        País de destino
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-earth-americas"></i>
+
+                        <input
+                            type="text"
+                            id="travelCountry"
+                            placeholder="Ex.: Portugal"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="two-columns">
+
+                    <div class="input-group">
+
+                        <label for="travelStart">
+                            Data de início
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="date"
+                                id="travelStart"
+                                required
+                            >
+
+                        </div>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="travelEnd">
+                            Data de retorno
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="date"
+                                id="travelEnd"
+                                required
+                            >
+
+                        </div>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Ativar aviso
+
+                    <i class="fa-solid fa-check"></i>
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Operação realizada com sucesso.
+        </span>
+
+    </div>
+
+    <script src="cartoes.js"></script>
+
+</body>
+
+</html>
