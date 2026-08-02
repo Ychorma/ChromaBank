@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Simulação e contratação de empréstimos no ChromaBank."
+    >
+
+    <title>Empréstimos | ChromaBank</title>
+
+    <!-- CSS da página -->
+    <link
+        rel="stylesheet"
+        href="emprestimos.css"
+    >
+
+    <!-- CSS globais -->
+    <link
+        rel="stylesheet"
+        href="../../assets/css/tema.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/components.css"
+    >
+
+    <!-- Fonte -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside
+            class="sidebar"
+            id="sidebar"
+        >
+
+            <div class="sidebar-header">
+
+                <a
+                    href="../../index.html"
+                    class="brand"
+                    aria-label="Página inicial do ChromaBank"
+                >
+
+                    <img
+                        src="../../img/inlog.png"
+                        alt="Logo ChromaBank"
+                        class="brand-logo"
+                    >
+
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Fechar menu"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="../pix/pix.html"
+                    class="nav-item"
+                >
+                    <i class="fa-brands fa-pix"></i>
+                    <span>PIX</span>
+                </a>
+
+                <a
+                    href="../transferencias/transferencias.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span>Transferências</span>
+                </a>
+
+                <a
+                    href="../pagamentos/pagamentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Pagamentos</span>
+                </a>
+
+                <a
+                    href="emprestimos.html"
+                    class="nav-item active"
+                >
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <span>Empréstimos</span>
+                </a>
+
+                <a
+                    href="../extrato/extrato.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Extrato</span>
+                </a>
+
+                <a
+                    href="../cartoes/cartoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Cartões</span>
+                </a>
+
+                <a
+                    href="../investimentos/investimentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Investimentos</span>
+                </a>
+
+                <a
+                    href="../recarga/recarga.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>Recarga</span>
+                </a>
+
+                <a
+                    href="../deposito/deposito.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                    <span>Depósito</span>
+                </a>
+
+                <a
+                    href="../perfil/perfil.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+
+                <a
+                    href="../configuracoes/configuracoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-security">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+                    <strong>Contratação segura</strong>
+
+                    <span>
+                        Simulações protegidas pelo ChromaBank.
+                    </span>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair da conta</span>
+            </button>
+
+        </aside>
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+        <!-- =========================================
+             CONTEÚDO PRINCIPAL
+        ========================================== -->
+
+        <main class="main-content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="page-header">
+
+                <div class="header-left">
+
+                    <button
+                        type="button"
+                        class="menu-button"
+                        id="menuButton"
+                        aria-label="Abrir menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            Crédito sob medida
+                        </span>
+
+                        <h1>Empréstimos</h1>
+
+                        <p>
+                            Simule condições e encontre uma opção para seus planos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        id="notificationsButton"
+                        aria-label="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="profile-button"
+                        id="profileButton"
+                        aria-label="Abrir menu do perfil"
+                    >
+                        <span class="profile-avatar">
+                            VF
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- =========================================
+                 LIMITE PRÉ-APROVADO
+            ========================================== -->
+
+            <section class="loan-hero">
+
+                <div class="loan-hero-content">
+
+                    <span class="loan-hero-icon">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    </span>
+
+                    <div>
+
+                        <span class="loan-hero-label">
+                            Crédito disponível
+                        </span>
+
+                        <h2>
+                            Você tem até
+                            <strong id="approvedLimit">
+                                R$ 25.000,00
+                            </strong>
+                        </h2>
+
+                        <p>
+                            Faça uma simulação sem compromisso e confira as condições.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="loan-score">
+
+                    <div class="loan-score-header">
+
+                        <span>
+                            Análise de crédito
+                        </span>
+
+                        <strong>
+                            Excelente
+                        </strong>
+
+                    </div>
+
+                    <div class="loan-score-bar">
+                        <span style="width: 88%;"></span>
+                    </div>
+
+                    <small>
+                        Condições personalizadas para sua conta.
+                    </small>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 CONTEÚDO PRINCIPAL
+            ========================================== -->
+
+            <section class="loan-main-grid">
+
+                <!-- SIMULADOR -->
+
+                <article class="panel loan-simulator">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Simulação
+                            </span>
+
+                            <h2>
+                                Quanto você precisa?
+                            </h2>
+
+                            <p>
+                                Ajuste o valor e escolha o número de parcelas.
+                            </p>
+
+                        </div>
+
+                        <span class="simulator-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </span>
+
+                    </div>
+
+                    <form id="loanSimulationForm">
+
+                        <!-- VALOR -->
+
+                        <div class="simulation-field">
+
+                            <div class="field-heading">
+
+                                <label for="loanAmount">
+                                    Valor do empréstimo
+                                </label>
+
+                                <strong id="loanAmountDisplay">
+                                    R$ 10.000,00
+                                </strong>
+
+                            </div>
+
+                            <input
+                                type="range"
+                                id="loanAmount"
+                                min="1000"
+                                max="25000"
+                                step="500"
+                                value="10000"
+                            >
+
+                            <div class="range-labels">
+                                <span>R$ 1.000</span>
+                                <span>R$ 25.000</span>
+                            </div>
+
+                        </div>
+
+                        <!-- PARCELAS -->
+
+                        <div class="simulation-field">
+
+                            <div class="field-heading">
+
+                                <label for="loanInstallments">
+                                    Número de parcelas
+                                </label>
+
+                                <strong id="installmentsDisplay">
+                                    12x
+                                </strong>
+
+                            </div>
+
+                            <input
+                                type="range"
+                                id="loanInstallments"
+                                min="3"
+                                max="48"
+                                step="1"
+                                value="12"
+                            >
+
+                            <div class="range-labels">
+                                <span>3 meses</span>
+                                <span>48 meses</span>
+                            </div>
+
+                        </div>
+
+                        <!-- PRIMEIRO VENCIMENTO -->
+
+                        <div class="input-group">
+
+                            <label for="firstPaymentDate">
+                                Data da primeira parcela
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-regular fa-calendar"></i>
+
+                                <select id="firstPaymentDate">
+
+                                    <option value="30">
+                                        Daqui a 30 dias
+                                    </option>
+
+                                    <option value="45">
+                                        Daqui a 45 dias
+                                    </option>
+
+                                    <option value="60">
+                                        Daqui a 60 dias
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <!-- RESUMO -->
+
+                        <div class="simulation-summary">
+
+                            <div class="summary-item">
+
+                                <span>
+                                    Taxa mensal
+                                </span>
+
+                                <strong id="monthlyRate">
+                                    1,79% a.m.
+                                </strong>
+
+                            </div>
+
+                            <div class="summary-item">
+
+                                <span>
+                                    Valor da parcela
+                                </span>
+
+                                <strong id="installmentValue">
+                                    R$ 932,37
+                                </strong>
+
+                            </div>
+
+                            <div class="summary-item">
+
+                                <span>
+                                    Total a pagar
+                                </span>
+
+                                <strong id="totalLoanValue">
+                                    R$ 11.188,44
+                                </strong>
+
+                            </div>
+
+                            <div class="summary-item">
+
+                                <span>
+                                    Primeiro vencimento
+                                </span>
+
+                                <strong id="firstDueDate">
+                                    01/09/2026
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Continuar contratação
+
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </form>
+
+                </article>
+
+                <!-- VANTAGENS -->
+
+                <aside class="loan-side-column">
+
+                    <article class="panel loan-benefits">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-eyebrow">
+                                    Benefícios
+                                </span>
+
+                                <h2>
+                                    Crédito simples
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                        <div class="benefits-list">
+
+                            <div class="benefit-item">
+
+                                <span>
+                                    <i class="fa-solid fa-bolt"></i>
+                                </span>
+
+                                <div>
+                                    <strong>Contratação rápida</strong>
+
+                                    <small>
+                                        Simule e contrate em poucos passos.
+                                    </small>
+                                </div>
+
+                            </div>
+
+                            <div class="benefit-item">
+
+                                <span>
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                </span>
+
+                                <div>
+                                    <strong>Prazo flexível</strong>
+
+                                    <small>
+                                        Escolha entre 3 e 48 parcelas.
+                                    </small>
+                                </div>
+
+                            </div>
+
+                            <div class="benefit-item">
+
+                                <span>
+                                    <i class="fa-solid fa-percent"></i>
+                                </span>
+
+                                <div>
+                                    <strong>Taxa personalizada</strong>
+
+                                    <small>
+                                        Condições baseadas no seu perfil.
+                                    </small>
+                                </div>
+
+                            </div>
+
+                            <div class="benefit-item">
+
+                                <span>
+                                    <i class="fa-solid fa-piggy-bank"></i>
+                                </span>
+
+                                <div>
+                                    <strong>Antecipação de parcelas</strong>
+
+                                    <small>
+                                        Antecipe pagamentos e reduza juros.
+                                    </small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="loan-security-card">
+
+                        <span>
+                            <i class="fa-solid fa-circle-info"></i>
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Simular não compromete seu limite
+                            </h3>
+
+                            <p>
+                                O valor só será contratado após sua confirmação final.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </aside>
+
+            </section>
+
+            <!-- =========================================
+                 OFERTAS
+            ========================================== -->
+
+            <section class="loan-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            Outras opções
+                        </span>
+
+                        <h2>
+                            Ofertas disponíveis
+                        </h2>
+
+                        <p>
+                            Compare modalidades antes de contratar.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="loan-offers-grid">
+
+                    <article
+                        class="loan-offer-card featured"
+                        data-loan-type="personal"
+                    >
+
+                        <span class="offer-badge">
+                            Recomendado
+                        </span>
+
+                        <span class="offer-icon purple">
+                            <i class="fa-solid fa-wallet"></i>
+                        </span>
+
+                        <h3>
+                            Empréstimo pessoal
+                        </h3>
+
+                        <p>
+                            Dinheiro livre para usar como preferir.
+                        </p>
+
+                        <div class="offer-details">
+
+                            <span>
+                                A partir de
+                            </span>
+
+                            <strong>
+                                1,79% a.m.
+                            </strong>
+
+                            <small>
+                                Até 48 parcelas
+                            </small>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="outline-button"
+                            data-select-offer="personal"
+                        >
+                            Simular agora
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="loan-offer-card"
+                        data-loan-type="salary"
+                    >
+
+                        <span class="offer-icon green">
+                            <i class="fa-solid fa-money-check-dollar"></i>
+                        </span>
+
+                        <h3>
+                            Antecipação de salário
+                        </h3>
+
+                        <p>
+                            Antecipe parte do próximo pagamento.
+                        </p>
+
+                        <div class="offer-details">
+
+                            <span>
+                                Taxa a partir de
+                            </span>
+
+                            <strong>
+                                1,29% a.m.
+                            </strong>
+
+                            <small>
+                                Pagamento em até 3 meses
+                            </small>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="outline-button"
+                            data-select-offer="salary"
+                        >
+                            Ver condições
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="loan-offer-card"
+                        data-loan-type="secured"
+                    >
+
+                        <span class="offer-icon blue">
+                            <i class="fa-solid fa-house-circle-check"></i>
+                        </span>
+
+                        <h3>
+                            Crédito com garantia
+                        </h3>
+
+                        <p>
+                            Condições melhores usando um bem como garantia.
+                        </p>
+
+                        <div class="offer-details">
+
+                            <span>
+                                Taxa a partir de
+                            </span>
+
+                            <strong>
+                                0,99% a.m.
+                            </strong>
+
+                            <small>
+                                Prazos mais longos
+                            </small>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="outline-button"
+                            data-select-offer="secured"
+                        >
+                            Conhecer opção
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 EMPRÉSTIMOS ATIVOS
+            ========================================== -->
+
+            <section class="loan-section">
+
+                <article class="panel active-loans-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Seus contratos
+                            </span>
+
+                            <h2>
+                                Empréstimos ativos
+                            </h2>
+
+                            <p>
+                                Acompanhe parcelas e vencimentos.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="outline-button"
+                            id="viewLoanHistoryButton"
+                        >
+                            Ver histórico
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="active-loans-list"
+                        id="activeLoansList"
+                    >
+
+                        <article class="active-loan-item">
+
+                            <span class="active-loan-icon">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </span>
+
+                            <div class="active-loan-info">
+
+                                <strong>
+                                    Empréstimo pessoal
+                                </strong>
+
+                                <span>
+                                    Parcela 5 de 18
+                                </span>
+
+                                <div class="loan-progress">
+                                    <span style="width: 27.7%;"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="active-loan-payment">
+
+                                <span>
+                                    Próxima parcela
+                                </span>
+
+                                <strong>
+                                    R$ 486,70
+                                </strong>
+
+                                <small>
+                                    Vence em 12/08
+                                </small>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="loan-details-button"
+                                data-loan-details
+                            >
+                                Ver detalhes
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 PERGUNTAS FREQUENTES
+            ========================================== -->
+
+            <section class="loan-section">
+
+                <article class="panel faq-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Tire suas dúvidas
+                            </span>
+
+                            <h2>
+                                Perguntas frequentes
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="faq-list">
+
+                        <article class="faq-item">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                            >
+                                <span>
+                                    Posso antecipar as parcelas?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Sim. Você poderá antecipar parcelas e receber
+                                    redução proporcional dos juros futuros.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="faq-item">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                            >
+                                <span>
+                                    Quando o dinheiro entra na conta?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Após a aprovação e confirmação do contrato,
+                                    o valor poderá ser liberado em poucos minutos.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="faq-item">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                            >
+                                <span>
+                                    A simulação afeta minha análise de crédito?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Não. A simulação é apenas informativa e não
+                                    confirma a contratação do empréstimo.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- RODAPÉ -->
+
+            <footer class="page-footer">
+
+                <p>
+                    © 2026 ChromaBank. Todos os direitos reservados.
+                </p>
+
+                <div>
+                    <a href="#">Segurança</a>
+                    <a href="#">Privacidade</a>
+                    <a href="#">Ajuda</a>
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE CONFIRMAÇÃO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="loanConfirmationModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="loanConfirmationTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-file-signature"></i>
+            </span>
+
+            <span class="modal-eyebrow">
+                Revise a simulação
+            </span>
+
+            <h2 id="loanConfirmationTitle">
+                Confirmar empréstimo
+            </h2>
+
+            <p>
+                Confira as condições antes de enviar sua solicitação.
+            </p>
+
+            <div class="loan-confirmation-summary">
+
+                <div>
+                    <span>Valor solicitado</span>
+                    <strong id="modalLoanAmount">
+                        R$ 10.000,00
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Parcelas</span>
+                    <strong id="modalInstallments">
+                        12x de R$ 932,37
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Taxa mensal</span>
+                    <strong id="modalMonthlyRate">
+                        1,79% a.m.
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Total a pagar</span>
+                    <strong id="modalTotalValue">
+                        R$ 11.188,44
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Primeiro vencimento</span>
+                    <strong id="modalFirstDueDate">
+                        01/09/2026
+                    </strong>
+                </div>
+
+            </div>
+
+            <label class="confirmation-checkbox">
+
+                <input
+                    type="checkbox"
+                    id="loanTermsCheckbox"
+                >
+
+                <span class="custom-checkbox">
+                    <i class="fa-solid fa-check"></i>
+                </span>
+
+                <small>
+                    Li e concordo com as condições simuladas e com os
+                    termos da contratação.
+                </small>
+
+            </label>
+
+            <button
+                type="button"
+                class="primary-button"
+                id="confirmLoanButton"
+                disabled
+            >
+                Solicitar empréstimo
+
+                <i class="fa-solid fa-check"></i>
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE SUCESSO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="loanSuccessModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card success-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="loanSuccessTitle"
+        >
+
+            <span class="success-modal-icon">
+                <i class="fa-solid fa-check"></i>
+            </span>
+
+            <span class="modal-eyebrow">
+                Solicitação enviada
+            </span>
+
+            <h2 id="loanSuccessTitle">
+                Empréstimo em análise!
+            </h2>
+
+            <p>
+                Sua solicitação foi registrada. Você receberá uma
+                notificação assim que a análise for concluída.
+            </p>
+
+            <div class="request-code">
+
+                <span>
+                    Número da solicitação
+                </span>
+
+                <strong id="loanRequestCode">
+                    #CB-000000
+                </strong>
+
+            </div>
+
+            <button
+                type="button"
+                class="primary-button"
+                data-close-modal
+            >
+                Entendi
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE DETALHES
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="loanDetailsModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="loanDetailsTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+            </span>
+
+            <h2 id="loanDetailsTitle">
+                Detalhes do empréstimo
+            </h2>
+
+            <div class="loan-details-list">
+
+                <div>
+                    <span>Valor contratado</span>
+                    <strong>R$ 7.500,00</strong>
+                </div>
+
+                <div>
+                    <span>Parcelas pagas</span>
+                    <strong>5 de 18</strong>
+                </div>
+
+                <div>
+                    <span>Saldo restante</span>
+                    <strong>R$ 5.982,10</strong>
+                </div>
+
+                <div>
+                    <span>Próximo vencimento</span>
+                    <strong>12/08/2026</strong>
+                </div>
+
+                <div>
+                    <span>Valor da parcela</span>
+                    <strong>R$ 486,70</strong>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="outline-button full-width"
+                id="anticipateInstallmentsButton"
+            >
+                Antecipar parcelas
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Operação realizada com sucesso.
+        </span>
+
+    </div>
+
+    <!-- JS globais -->
+
+    <script src="../../assets/js/tema.js"></script>
+    <script src="../../assets/js/profile.js"></script>
+    <script src="../../assets/js/notifications.js"></script>
+
+    <!-- JS da página -->
+
+    <script src="emprestimos.js"></script>
+
+</body>
+
+</html>
