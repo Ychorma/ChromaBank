@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Área de recarga de celular do ChromaBank."
+    >
+
+    <title>Recarga | ChromaBank</title>
+
+    <link rel="stylesheet" href="recarga.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <a
+                    href="../../index.html"
+                    class="brand"
+                    aria-label="Página inicial do ChromaBank"
+                >
+
+                    <img
+                        src="../../img/logo.png"
+                        alt="Símbolo ChromaBank"
+                        class="brand-logo"
+                    >
+
+                    <span class="brand-name">
+                        <strong>chroma</strong>Bank
+                    </span>
+
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Fechar menu"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="../pix/pix.html"
+                    class="nav-item"
+                >
+                    <i class="fa-brands fa-pix"></i>
+                    <span>PIX</span>
+                </a>
+
+                <a
+                    href="../transferencias/transferencias.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span>Transferências</span>
+                </a>
+
+                <a
+                    href="../pagamentos/pagamentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Pagamentos</span>
+                </a>
+
+                <a
+                    href="../extrato/extrato.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Extrato</span>
+                </a>
+
+                <a
+                    href="../cartoes/cartoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Cartões</span>
+                </a>
+
+                <a
+                    href="../investimentos/investimentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Investimentos</span>
+                </a>
+
+                <a
+                    href="recarga.html"
+                    class="nav-item active"
+                >
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>Recarga</span>
+                </a>
+
+                <a
+                    href="../deposito/deposito.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                    <span>Depósito</span>
+                </a>
+
+                <a
+                    href="../perfil/perfil.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+
+                <a
+                    href="../configuracoes/configuracoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-security">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+
+                    <strong>Recarga protegida</strong>
+
+                    <span>
+                        Confira o número antes de confirmar.
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair da conta</span>
+            </button>
+
+        </aside>
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+        <!-- =========================================
+             CONTEÚDO PRINCIPAL
+        ========================================== -->
+
+        <main class="main-content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="page-header">
+
+                <div class="header-left">
+
+                    <button
+                        type="button"
+                        class="menu-button"
+                        id="menuButton"
+                        aria-label="Abrir menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            Celular pré-pago
+                        </span>
+
+                        <h1>Recarga</h1>
+
+                        <p>
+                            Recarregue seu celular de forma rápida e segura.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        id="toggleBalance"
+                        aria-label="Mostrar ou ocultar saldo"
+                    >
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        aria-label="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="profile-button"
+                        id="profileButton"
+                    >
+                        <span class="profile-avatar">VF</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- =========================================
+                 SALDO
+            ========================================== -->
+
+            <section class="balance-banner">
+
+                <div>
+
+                    <span>Saldo disponível</span>
+
+                    <strong id="balanceValue">
+                        R$ 4.856,90
+                    </strong>
+
+                    <p>
+                        Disponível para recargas e pagamentos.
+                    </p>
+
+                </div>
+
+                <a href="../extrato/extrato.html">
+
+                    Ver extrato
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </section>
+
+            <!-- =========================================
+                 RECARGA PRINCIPAL
+            ========================================== -->
+
+            <section class="recharge-main-grid">
+
+                <!-- FORMULÁRIO -->
+
+                <article class="panel recharge-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Nova recarga
+                            </span>
+
+                            <h2>Qual número deseja recarregar?</h2>
+
+                            <p>
+                                Informe o telefone e escolha a operadora.
+                            </p>
+
+                        </div>
+
+                        <span class="panel-icon">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </span>
+
+                    </div>
+
+                    <form id="rechargeForm">
+
+                        <!-- TELEFONE -->
+
+                        <div class="input-group">
+
+                            <label for="phoneNumber">
+                                Número do celular
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="phoneNumber"
+                                    placeholder="(11) 99999-9999"
+                                    inputmode="numeric"
+                                    autocomplete="tel"
+                                    maxlength="15"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="contact-button"
+                                    id="openContactsButton"
+                                    aria-label="Escolher contato"
+                                >
+                                    <i class="fa-regular fa-address-book"></i>
+                                </button>
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <!-- OPERADORA -->
+
+                        <div class="input-group">
+
+                            <label>
+                                Escolha a operadora
+                            </label>
+
+                            <div class="operator-grid">
+
+                                <button
+                                    type="button"
+                                    class="operator-card"
+                                    data-operator="Vivo"
+                                >
+
+                                    <span class="operator-logo vivo">
+                                        V
+                                    </span>
+
+                                    <span>Vivo</span>
+
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="operator-card"
+                                    data-operator="Claro"
+                                >
+
+                                    <span class="operator-logo claro">
+                                        C
+                                    </span>
+
+                                    <span>Claro</span>
+
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="operator-card"
+                                    data-operator="TIM"
+                                >
+
+                                    <span class="operator-logo tim">
+                                        TIM
+                                    </span>
+
+                                    <span>TIM</span>
+
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="operator-card"
+                                    data-operator="Oi"
+                                >
+
+                                    <span class="operator-logo oi">
+                                        Oi
+                                    </span>
+
+                                    <span>Oi</span>
+
+                                </button>
+
+                            </div>
+
+                            <input
+                                type="hidden"
+                                id="selectedOperator"
+                                required
+                            >
+
+                            <small
+                                class="field-error"
+                                id="operatorError"
+                            ></small>
+
+                        </div>
+
+                        <!-- VALORES -->
+
+                        <div class="input-group">
+
+                            <label>
+                                Escolha o valor
+                            </label>
+
+                            <div class="amount-grid">
+
+                                <button
+                                    type="button"
+                                    class="amount-button"
+                                    data-amount="15"
+                                >
+                                    R$ 15
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="amount-button"
+                                    data-amount="20"
+                                >
+                                    R$ 20
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="amount-button"
+                                    data-amount="30"
+                                >
+                                    R$ 30
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="amount-button"
+                                    data-amount="40"
+                                >
+                                    R$ 40
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="amount-button"
+                                    data-amount="50"
+                                >
+                                    R$ 50
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="amount-button"
+                                    data-amount="100"
+                                >
+                                    R$ 100
+                                </button>
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="amountError"
+                            ></small>
+
+                        </div>
+
+                        <!-- VALOR PERSONALIZADO -->
+
+                        <div class="input-group">
+
+                            <label for="customAmount">
+
+                                Outro valor
+
+                                <span>Opcional</span>
+
+                            </label>
+
+                            <div class="input-box currency-input">
+
+                                <span>R$</span>
+
+                                <input
+                                    type="text"
+                                    id="customAmount"
+                                    placeholder="0,00"
+                                    inputmode="numeric"
+                                    autocomplete="off"
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <!-- PAGAMENTO -->
+
+                        <div class="input-group">
+
+                            <label>
+                                Forma de pagamento
+                            </label>
+
+                            <div class="payment-methods">
+
+                                <label class="payment-method active">
+
+                                    <input
+                                        type="radio"
+                                        name="paymentMethod"
+                                        value="balance"
+                                        checked
+                                    >
+
+                                    <span class="payment-method-icon">
+                                        <i class="fa-solid fa-wallet"></i>
+                                    </span>
+
+                                    <span class="payment-method-info">
+
+                                        <strong>Saldo da conta</strong>
+
+                                        <small>
+                                            Disponível: R$ 4.856,90
+                                        </small>
+
+                                    </span>
+
+                                    <span class="radio-mark"></span>
+
+                                </label>
+
+                                <label class="payment-method">
+
+                                    <input
+                                        type="radio"
+                                        name="paymentMethod"
+                                        value="credit"
+                                    >
+
+                                    <span class="payment-method-icon">
+                                        <i class="fa-regular fa-credit-card"></i>
+                                    </span>
+
+                                    <span class="payment-method-info">
+
+                                        <strong>Cartão de crédito</strong>
+
+                                        <small>
+                                            Final 4582
+                                        </small>
+
+                                    </span>
+
+                                    <span class="radio-mark"></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <!-- FAVORITO -->
+
+                        <label class="favorite-checkbox">
+
+                            <input
+                                type="checkbox"
+                                id="saveFavoriteNumber"
+                            >
+
+                            <span class="custom-checkbox">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <span>
+                                Salvar este número nos favoritos
+                            </span>
+
+                        </label>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+
+                            Continuar
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </form>
+
+                </article>
+
+                <!-- RESUMO E BENEFÍCIOS -->
+
+                <div class="recharge-side-column">
+
+                    <article class="panel recharge-summary-card">
+
+                        <span class="summary-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </span>
+
+                        <h2>Recarga instantânea</h2>
+
+                        <p>
+                            O crédito é enviado para o número informado
+                            em poucos segundos.
+                        </p>
+
+                        <div class="summary-benefits">
+
+                            <div>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <span>Sem tarifas adicionais</span>
+
+                            </div>
+
+                            <div>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <span>Disponível 24 horas</span>
+
+                            </div>
+
+                            <div>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <span>Principais operadoras</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="panel promotion-card">
+
+                        <span class="promotion-badge">
+                            Oferta
+                        </span>
+
+                        <span class="promotion-icon">
+                            <i class="fa-solid fa-gift"></i>
+                        </span>
+
+                        <h2>Ganhe cashback</h2>
+
+                        <p>
+                            Faça uma recarga de R$ 30 ou mais e receba
+                            até 2% de cashback.
+                        </p>
+
+                        <button
+                            type="button"
+                            id="promotionButton"
+                        >
+                            Ver regulamento
+
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 FAVORITOS E HISTÓRICO
+            ========================================== -->
+
+            <section class="recharge-content-grid">
+
+                <!-- FAVORITOS -->
+
+                <article class="panel favorites-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Acesso rápido
+                            </span>
+
+                            <h2>Números favoritos</h2>
+
+                            <p>
+                                Recarregue novamente com poucos cliques.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="manageFavoritesButton"
+                        >
+                            Gerenciar
+                        </button>
+
+                    </div>
+
+                    <div class="favorites-list">
+
+                        <button
+                            type="button"
+                            class="favorite-number"
+                            data-name="Meu celular"
+                            data-phone="11999999999"
+                            data-operator="Vivo"
+                        >
+
+                            <span class="favorite-avatar purple">
+                                VF
+                            </span>
+
+                            <span class="favorite-info">
+
+                                <strong>Meu celular</strong>
+
+                                <small>
+                                    (11) 99999-9999 • Vivo
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="favorite-number"
+                            data-name="Maria"
+                            data-phone="11987654321"
+                            data-operator="Claro"
+                        >
+
+                            <span class="favorite-avatar blue">
+                                MS
+                            </span>
+
+                            <span class="favorite-info">
+
+                                <strong>Maria</strong>
+
+                                <small>
+                                    (11) 98765-4321 • Claro
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="favorite-number"
+                            data-name="João"
+                            data-phone="11981234567"
+                            data-operator="TIM"
+                        >
+
+                            <span class="favorite-avatar green">
+                                JS
+                            </span>
+
+                            <span class="favorite-info">
+
+                                <strong>João</strong>
+
+                                <small>
+                                    (11) 98123-4567 • TIM
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- HISTÓRICO -->
+
+                <article class="panel history-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Últimas operações
+                            </span>
+
+                            <h2>Recargas recentes</h2>
+
+                            <p>
+                                Confira seu histórico de recargas.
+                            </p>
+
+                        </div>
+
+                        <a href="../extrato/extrato.html">
+                            Ver extrato
+                        </a>
+
+                    </div>
+
+                    <div class="recharge-history-list">
+
+                        <article class="history-item">
+
+                            <span class="history-icon purple">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </span>
+
+                            <div class="history-description">
+
+                                <strong>Meu celular</strong>
+
+                                <span>
+                                    Vivo • (11) 99999-9999
+                                </span>
+
+                            </div>
+
+                            <div class="history-date">
+
+                                <span>Hoje</span>
+
+                                <small>14:32</small>
+
+                            </div>
+
+                            <strong class="history-value">
+                                - R$ 30,00
+                            </strong>
+
+                            <span class="status completed">
+                                Concluída
+                            </span>
+
+                        </article>
+
+                        <article class="history-item">
+
+                            <span class="history-icon blue">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </span>
+
+                            <div class="history-description">
+
+                                <strong>Maria</strong>
+
+                                <span>
+                                    Claro • (11) 98765-4321
+                                </span>
+
+                            </div>
+
+                            <div class="history-date">
+
+                                <span>28 jul.</span>
+
+                                <small>10:15</small>
+
+                            </div>
+
+                            <strong class="history-value">
+                                - R$ 20,00
+                            </strong>
+
+                            <span class="status completed">
+                                Concluída
+                            </span>
+
+                        </article>
+
+                        <article class="history-item">
+
+                            <span class="history-icon green">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </span>
+
+                            <div class="history-description">
+
+                                <strong>João</strong>
+
+                                <span>
+                                    TIM • (11) 98123-4567
+                                </span>
+
+                            </div>
+
+                            <div class="history-date">
+
+                                <span>20 jul.</span>
+
+                                <small>18:46</small>
+
+                            </div>
+
+                            <strong class="history-value">
+                                - R$ 50,00
+                            </strong>
+
+                            <span class="status completed">
+                                Concluída
+                            </span>
+
+                        </article>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 BANNER
+            ========================================== -->
+
+            <section class="security-banner">
+
+                <span class="security-banner-icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                </span>
+
+                <div>
+
+                    <h2>Confira o número antes de confirmar</h2>
+
+                    <p>
+                        Após a conclusão da recarga, não será possível
+                        cancelar ou alterar o número informado.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="helpButton"
+                >
+                    Preciso de ajuda
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </section>
+
+            <!-- RODAPÉ -->
+
+            <footer class="page-footer">
+
+                <p>
+                    © 2026 ChromaBank. Todos os direitos reservados.
+                </p>
+
+                <div>
+
+                    <a href="#">Segurança</a>
+
+                    <a href="#">Privacidade</a>
+
+                    <a href="#">Ajuda</a>
+
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE CONFIRMAÇÃO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="confirmationModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="confirmationModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </span>
+
+            <h2 id="confirmationModalTitle">
+                Confirmar recarga
+            </h2>
+
+            <p>
+                Confira os dados antes de concluir.
+            </p>
+
+            <div class="confirmation-summary">
+
+                <div class="confirmation-phone">
+
+                    <span class="confirmation-phone-icon">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </span>
+
+                    <div>
+
+                        <span>Número</span>
+
+                        <strong id="confirmationPhone">
+                            (11) 99999-9999
+                        </strong>
+
+                        <small id="confirmationOperator">
+                            Vivo
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="confirmation-details">
+
+                    <div>
+
+                        <span>Valor da recarga</span>
+
+                        <strong id="confirmationAmount">
+                            R$ 30,00
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>Pagamento</span>
+
+                        <strong id="confirmationPaymentMethod">
+                            Saldo da conta
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="confirmation-warning">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                <span>
+                    Verifique se o número está correto.
+                    A operação não poderá ser cancelada.
+                </span>
+
+            </div>
+
+            <button
+                type="button"
+                class="primary-button"
+                id="confirmRechargeButton"
+            >
+
+                Confirmar recarga
+
+                <i class="fa-solid fa-check"></i>
+
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE CONTATOS
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="contactsModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="contactsModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-regular fa-address-book"></i>
+            </span>
+
+            <h2 id="contactsModalTitle">
+                Escolher contato
+            </h2>
+
+            <p>
+                Selecione um número salvo.
+            </p>
+
+            <div class="contacts-list">
+
+                <button
+                    type="button"
+                    class="contact-item"
+                    data-phone="11999999999"
+                    data-operator="Vivo"
+                >
+
+                    <span class="contact-avatar purple">
+                        VF
+                    </span>
+
+                    <span>
+
+                        <strong>Meu celular</strong>
+
+                        <small>
+                            (11) 99999-9999
+                        </small>
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="contact-item"
+                    data-phone="11987654321"
+                    data-operator="Claro"
+                >
+
+                    <span class="contact-avatar blue">
+                        MS
+                    </span>
+
+                    <span>
+
+                        <strong>Maria Silva</strong>
+
+                        <small>
+                            (11) 98765-4321
+                        </small>
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="contact-item"
+                    data-phone="11981234567"
+                    data-operator="TIM"
+                >
+
+                    <span class="contact-avatar green">
+                        JS
+                    </span>
+
+                    <span>
+
+                        <strong>João Santos</strong>
+
+                        <small>
+                            (11) 98123-4567
+                        </small>
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Recarga realizada com sucesso.
+        </span>
+
+    </div>
+
+    <script src="recarga.js"></script>
+
+</body>
+
+</html>
