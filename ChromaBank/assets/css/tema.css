@@ -71,3 +71,951 @@ body.theme-light .profile-dropdown a,
 body.theme-light .profile-dropdown button {
     color: #4f4c58;
 }
+/* ==================================================
+   CORREÇÕES DE CONTRASTE — TEMA CLARO
+================================================== */
+
+/* Títulos e textos dos painéis */
+
+body.theme-light .panel h1,
+body.theme-light .panel h2,
+body.theme-light .panel h3,
+body.theme-light .panel h4,
+body.theme-light .panel strong,
+body.theme-light .card-content h1,
+body.theme-light .card-content h2,
+body.theme-light .card-content h3,
+body.theme-light .card-content strong {
+    color: #17151d;
+}
+
+body.theme-light .panel p,
+body.theme-light .panel span,
+body.theme-light .panel small,
+body.theme-light .card-content p,
+body.theme-light .card-content span,
+body.theme-light .card-content small {
+    color: #686371;
+}
+
+
+/* ==================================================
+   CAMPOS, BUSCAS E FILTROS
+================================================== */
+
+body.theme-light input,
+body.theme-light select,
+body.theme-light textarea {
+    color: #17151d;
+}
+
+body.theme-light input::placeholder,
+body.theme-light textarea::placeholder {
+    color: #918b99;
+}
+
+body.theme-light .input-box,
+body.theme-light .search-box,
+body.theme-light .filter-box,
+body.theme-light .select-box {
+    color: #17151d;
+
+    border-color: rgba(0, 0, 0, 0.1);
+
+    background: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-light select option {
+    color: #17151d;
+    background: #ffffff;
+}
+
+
+/* ==================================================
+   PÁGINA DE EXTRATO
+================================================== */
+
+body.theme-light .summary-card,
+body.theme-light .stat-card,
+body.theme-light .extract-summary-card,
+body.theme-light .filters-panel,
+body.theme-light .transactions-panel {
+    color: #17151d;
+
+    border-color: rgba(0, 0, 0, 0.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(244, 241, 250, 0.94)
+        );
+}
+
+body.theme-light .summary-card strong,
+body.theme-light .stat-card strong,
+body.theme-light .extract-summary-card strong {
+    color: #17151d;
+}
+
+/* Mantém valores positivos e negativos coloridos */
+
+body.theme-light .positive,
+body.theme-light .income,
+body.theme-light .value-positive {
+    color: #13c96b;
+}
+
+body.theme-light .negative,
+body.theme-light .expense,
+body.theme-light .value-negative {
+    color: #ff4d63;
+}
+
+
+/* Campo de pesquisa do extrato */
+
+body.theme-light .search-input,
+body.theme-light .search-container,
+body.theme-light .transactions-search {
+    color: #17151d;
+
+    border-color: rgba(0, 0, 0, 0.09);
+
+    background: rgba(255, 255, 255, 0.92);
+}
+
+
+/* Seletores de período, tipo e categoria */
+
+body.theme-light .filter-select,
+body.theme-light .filters-panel select {
+    color: #17151d;
+
+    border-color: rgba(0, 0, 0, 0.1);
+
+    background: #ffffff;
+}
+
+
+/* ==================================================
+   PÁGINA DE CARTÕES
+================================================== */
+
+body.theme-light .cards-panel,
+body.theme-light .card-limit-panel,
+body.theme-light .limit-panel,
+body.theme-light .invoice-panel,
+body.theme-light .card-settings-panel {
+    color: #17151d;
+
+    border-color: rgba(0, 0, 0, 0.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(244, 241, 250, 0.94)
+        );
+}
+
+body.theme-light .cards-panel h2,
+body.theme-light .cards-panel h3,
+body.theme-light .card-limit-panel h2,
+body.theme-light .card-limit-panel h3,
+body.theme-light .limit-panel h2,
+body.theme-light .limit-panel h3 {
+    color: #17151d;
+}
+
+body.theme-light .cards-panel p,
+body.theme-light .cards-panel span,
+body.theme-light .card-limit-panel p,
+body.theme-light .card-limit-panel span,
+body.theme-light .limit-panel p,
+body.theme-light .limit-panel span {
+    color: #6e6877;
+}
+
+
+/* ==================================================
+   CARTÃO BANCÁRIO CONTINUA ESCURO
+================================================== */
+
+body.theme-light .bank-card,
+body.theme-light .credit-card,
+body.theme-light .physical-card {
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(124, 44, 255, 0.25),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #17131f,
+            #08070c
+        );
+}
+
+body.theme-light .bank-card *,
+body.theme-light .credit-card *,
+body.theme-light .physical-card * {
+    color: inherit;
+}
+
+
+/* ==================================================
+   BOTÕES
+================================================== */
+
+body.theme-light .primary-button {
+    color: #ffffff;
+}
+
+body.theme-light .outline-button,
+body.theme-light .secondary-button {
+    color: #6222c8;
+
+    border-color: rgba(124, 44, 255, 0.26);
+
+    background: rgba(124, 44, 255, 0.07);
+}
+
+
+/* ==================================================
+   MODAIS
+================================================== */
+
+body.theme-light .modal-card {
+    color: #17151d;
+
+    border-color: rgba(124, 44, 255, 0.2);
+
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(124, 44, 255, 0.09),
+            transparent 34%
+        ),
+        linear-gradient(
+            150deg,
+            #ffffff,
+            #f3eff9
+        );
+}
+
+body.theme-light .modal-card h2,
+body.theme-light .modal-card h3,
+body.theme-light .modal-card strong {
+    color: #17151d;
+}/* ==================================================
+   TEMA CLARO — CORREÇÕES GERAIS
+================================================== */
+
+body.theme-light {
+    color: #17151d;
+}
+
+/* Textos padrão em áreas claras */
+
+body.theme-light .main-content h1,
+body.theme-light .main-content h2,
+body.theme-light .main-content h3,
+body.theme-light .main-content h4,
+body.theme-light .main-content strong {
+    color: #17151d;
+}
+
+body.theme-light .main-content p,
+body.theme-light .main-content small {
+    color: #716b7a;
+}
+
+/* Botões roxos continuam com texto branco */
+
+body.theme-light .primary-button,
+body.theme-light .primary-button *,
+body.theme-light .logout-button.active,
+body.theme-light .button-primary {
+    color: #ffffff;
+}
+
+/* ==================================================
+   BANNERS ESCUROS DE SALDO
+   PIX, PAGAMENTOS E TRANSFERÊNCIAS
+================================================== */
+
+body.theme-light .balance-banner,
+body.theme-light .balance-card,
+body.theme-light .balance-section,
+body.theme-light .available-balance,
+body.theme-light .security-summary {
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 78% 25%,
+            rgba(124, 44, 255, 0.23),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #311651,
+            #100a1c
+        );
+
+    border-color: rgba(124, 44, 255, 0.35);
+}
+
+body.theme-light .balance-banner h1,
+body.theme-light .balance-banner h2,
+body.theme-light .balance-banner h3,
+body.theme-light .balance-banner strong,
+body.theme-light .balance-card h1,
+body.theme-light .balance-card h2,
+body.theme-light .balance-card strong,
+body.theme-light .balance-section h1,
+body.theme-light .balance-section h2,
+body.theme-light .balance-section strong,
+body.theme-light .available-balance strong {
+    color: #ffffff;
+}
+
+body.theme-light .balance-banner p,
+body.theme-light .balance-banner span,
+body.theme-light .balance-card p,
+body.theme-light .balance-card span,
+body.theme-light .balance-section p,
+body.theme-light .balance-section span,
+body.theme-light .available-balance p,
+body.theme-light .available-balance span {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+body.theme-light .balance-banner a,
+body.theme-light .balance-card a,
+body.theme-light .balance-section a {
+    color: #ffffff;
+}
+
+/* ==================================================
+   CARDS DE AÇÃO
+   PIX, PAGAMENTOS E TRANSFERÊNCIAS
+================================================== */
+
+body.theme-light .action-card,
+body.theme-light .service-card,
+body.theme-light .operation-card,
+body.theme-light .pix-option,
+body.theme-light .payment-option,
+body.theme-light .transfer-option,
+body.theme-light .deposit-option {
+    color: #17151d;
+
+    border-color: rgba(0, 0, 0, 0.09);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.97),
+            rgba(243, 240, 249, 0.95)
+        );
+
+    box-shadow:
+        0 16px 38px rgba(28, 17, 48, 0.07);
+}
+
+body.theme-light .action-card h2,
+body.theme-light .action-card h3,
+body.theme-light .service-card h2,
+body.theme-light .service-card h3,
+body.theme-light .operation-card h2,
+body.theme-light .operation-card h3,
+body.theme-light .pix-option h2,
+body.theme-light .payment-option h2,
+body.theme-light .transfer-option h2,
+body.theme-light .deposit-option h2 {
+    color: #17151d;
+}
+
+body.theme-light .action-card p,
+body.theme-light .service-card p,
+body.theme-light .operation-card p,
+body.theme-light .pix-option p,
+body.theme-light .payment-option p,
+body.theme-light .transfer-option p,
+body.theme-light .deposit-option p {
+    color: #716b7a;
+}
+
+/* Card selecionado continua escuro */
+
+body.theme-light .action-card.active,
+body.theme-light .action-card.featured,
+body.theme-light .service-card.active,
+body.theme-light .operation-card.active,
+body.theme-light .pix-option.active,
+body.theme-light .payment-option.active,
+body.theme-light .transfer-option.active,
+body.theme-light .deposit-option.featured {
+    color: #ffffff;
+
+    border-color: rgba(124, 44, 255, 0.45);
+
+    background:
+        radial-gradient(
+            circle at 25% 15%,
+            rgba(168, 100, 255, 0.35),
+            transparent 48%
+        ),
+        linear-gradient(
+            145deg,
+            #6f51a0,
+            #241334
+        );
+}
+
+body.theme-light .action-card.active h2,
+body.theme-light .action-card.active h3,
+body.theme-light .action-card.featured h2,
+body.theme-light .service-card.active h2,
+body.theme-light .operation-card.active h2,
+body.theme-light .pix-option.active h2,
+body.theme-light .payment-option.active h2,
+body.theme-light .transfer-option.active h2,
+body.theme-light .deposit-option.featured h2 {
+    color: #ffffff;
+}
+
+body.theme-light .action-card.active p,
+body.theme-light .action-card.featured p,
+body.theme-light .service-card.active p,
+body.theme-light .operation-card.active p,
+body.theme-light .pix-option.active p,
+body.theme-light .payment-option.active p,
+body.theme-light .transfer-option.active p,
+body.theme-light .deposit-option.featured p {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* ==================================================
+   ÍCONES DOS CARDS
+================================================== */
+
+body.theme-light .action-icon,
+body.theme-light .service-icon,
+body.theme-light .option-icon,
+body.theme-light .deposit-option-icon {
+    color: #9851ff;
+
+    border-color: rgba(124, 44, 255, 0.2);
+    background: rgba(124, 44, 255, 0.09);
+}
+
+/* ==================================================
+   PIX
+================================================== */
+
+body.theme-light .contacts-panel,
+body.theme-light .pix-keys-panel,
+body.theme-light .pix-history-panel,
+body.theme-light .recent-contacts,
+body.theme-light .pix-keys,
+body.theme-light .pix-history {
+    color: #17151d;
+
+    border-color: rgba(0, 0, 0, 0.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f3f0f8
+        );
+}
+
+body.theme-light .contact-card,
+body.theme-light .pix-key-item,
+body.theme-light .history-item {
+    border-color: rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.65);
+}
+
+/* ==================================================
+   PAGAMENTOS
+================================================== */
+
+body.theme-light .scheduled-payments-panel,
+body.theme-light .recent-payments-panel,
+body.theme-light .payment-history-panel,
+body.theme-light .upcoming-bills-panel {
+    color: #17151d;
+
+    border-color: rgba(0, 0, 0, 0.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f3f0f8
+        );
+}
+
+/* ==================================================
+   TRANSFERÊNCIAS
+================================================== */
+
+body.theme-light .recent-contacts-panel,
+body.theme-light .scheduled-transfers-panel,
+body.theme-light .transfer-history-panel,
+body.theme-light .quick-transfer-panel {
+    color: #17151d;
+
+    border-color: rgba(0, 0, 0, 0.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f3f0f8
+        );
+}
+
+/* ==================================================
+   CONFIGURAÇÕES — BANNER DE SEGURANÇA
+================================================== */
+
+body.theme-light .security-summary {
+    color: #ffffff;
+}
+
+body.theme-light .security-summary h2,
+body.theme-light .security-summary strong {
+    color: #ffffff;
+}
+
+body.theme-light .security-summary p,
+body.theme-light .security-summary span {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+body.theme-light .security-summary .security-score-header strong {
+    color: #29dc7d;
+}
+
+/* ==================================================
+   CONFIGURAÇÕES — ABAS
+================================================== */
+
+body.theme-light .settings-tabs {
+    border-color: rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.82);
+}
+
+body.theme-light .settings-tab {
+    color: #625d6b;
+}
+
+body.theme-light .settings-tab:hover {
+    color: #17151d;
+    background: rgba(124, 44, 255, 0.06);
+}
+
+body.theme-light .settings-tab.active {
+    color: #ffffff;
+
+    border-color: rgba(124, 44, 255, 0.35);
+
+    background:
+        linear-gradient(
+            135deg,
+            #b27aff,
+            #7c2cff
+        );
+}
+
+/* ==================================================
+   CONFIGURAÇÕES — CARDS
+================================================== */
+
+body.theme-light .setting-card,
+body.theme-light .notification-group,
+body.theme-light .notification-channels-panel,
+body.theme-light .limits-panel,
+body.theme-light .preference-card,
+body.theme-light .privacy-card,
+body.theme-light .devices-panel {
+    color: #17151d;
+
+    border-color: rgba(0, 0, 0, 0.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(244, 241, 249, 0.96)
+        );
+}
+
+body.theme-light .setting-card h3,
+body.theme-light .notification-group h2,
+body.theme-light .preference-card h3,
+body.theme-light .privacy-card h3,
+body.theme-light .devices-panel h2 {
+    color: #17151d;
+}
+
+body.theme-light .setting-card p,
+body.theme-light .notification-group p,
+body.theme-light .preference-card p,
+body.theme-light .privacy-card p,
+body.theme-light .devices-panel p {
+    color: #716b7a;
+}
+
+/* ==================================================
+   CAMPOS E SELECTS
+================================================== */
+
+body.theme-light .input-box,
+body.theme-light .search-box,
+body.theme-light .filter-box {
+    color: #17151d;
+
+    border-color: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.92);
+}
+
+body.theme-light .input-box input,
+body.theme-light .input-box select,
+body.theme-light .input-box textarea {
+    color: #17151d;
+}
+
+body.theme-light .input-box input::placeholder,
+body.theme-light textarea::placeholder {
+    color: #948e9c;
+}
+
+/* ==================================================
+   MENU DO PERFIL NO TEMA CLARO
+================================================== */
+
+body.theme-light .profile-dropdown {
+    color: #17151d;
+
+    border-color: rgba(124, 44, 255, 0.2);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+body.theme-light .profile-dropdown a,
+body.theme-light .profile-dropdown button {
+    color: #514b59;
+}
+
+body.theme-light .profile-dropdown a:hover,
+body.theme-light .profile-dropdown button:hover {
+    color: #17151d;
+    background: rgba(124, 44, 255, 0.08);
+}/* ==================================================
+   CORREÇÃO FINAL — PIX E DASHBOARD
+================================================== */
+
+/* ===============================================
+   PIX — BANNER DE SALDO
+=============================================== */
+
+body.theme-light .balance-banner,
+body.theme-light .balance-banner * {
+    color: #ffffff;
+}
+
+body.theme-light .balance-banner span,
+body.theme-light .balance-banner p {
+    color: rgba(255, 255, 255, 0.62);
+}
+
+body.theme-light .balance-banner strong {
+    color: #ffffff;
+}
+
+body.theme-light .balance-banner > a,
+body.theme-light .balance-banner > a * {
+    color: #ffffff;
+}
+
+
+/* ===============================================
+   PIX — CARD ATIVO
+=============================================== */
+
+body.theme-light .deposit-option.featured,
+body.theme-light .pix-option.active,
+body.theme-light .action-card.active,
+body.theme-light .action-card.featured {
+    color: #ffffff;
+}
+
+body.theme-light .deposit-option.featured h2,
+body.theme-light .deposit-option.featured h3,
+body.theme-light .deposit-option.featured strong,
+body.theme-light .pix-option.active h2,
+body.theme-light .pix-option.active h3,
+body.theme-light .pix-option.active strong,
+body.theme-light .action-card.active h2,
+body.theme-light .action-card.active h3,
+body.theme-light .action-card.active strong,
+body.theme-light .action-card.featured h2,
+body.theme-light .action-card.featured h3,
+body.theme-light .action-card.featured strong {
+    color: #ffffff;
+}
+
+body.theme-light .deposit-option.featured p,
+body.theme-light .deposit-option.featured span,
+body.theme-light .pix-option.active p,
+body.theme-light .pix-option.active span,
+body.theme-light .action-card.active p,
+body.theme-light .action-card.active span,
+body.theme-light .action-card.featured p,
+body.theme-light .action-card.featured span {
+    color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* ===============================================
+   DASHBOARD — CARD ESCURO
+=============================================== */
+
+body.theme-light .credit-card,
+body.theme-light .bank-card,
+body.theme-light .dashboard-card,
+body.theme-light .main-card {
+    color: #ffffff;
+}
+
+body.theme-light .credit-card *,
+body.theme-light .bank-card *,
+body.theme-light .dashboard-card *,
+body.theme-light .main-card * {
+    color: inherit;
+}
+
+
+/* ===============================================
+   DASHBOARD — BANNER DO CARTÃO
+=============================================== */
+
+body.theme-light .card-banner,
+body.theme-light .black-card-banner,
+body.theme-light .credit-card-banner,
+body.theme-light .card-highlight {
+    color: #ffffff;
+}
+
+body.theme-light .card-banner h2,
+body.theme-light .card-banner h3,
+body.theme-light .card-banner strong,
+body.theme-light .black-card-banner h2,
+body.theme-light .black-card-banner h3,
+body.theme-light .black-card-banner strong,
+body.theme-light .credit-card-banner h2,
+body.theme-light .credit-card-banner h3,
+body.theme-light .credit-card-banner strong,
+body.theme-light .card-highlight h2,
+body.theme-light .card-highlight h3,
+body.theme-light .card-highlight strong {
+    color: #ffffff;
+}
+
+body.theme-light .card-banner p,
+body.theme-light .card-banner span,
+body.theme-light .black-card-banner p,
+body.theme-light .black-card-banner span,
+body.theme-light .credit-card-banner p,
+body.theme-light .credit-card-banner span,
+body.theme-light .card-highlight p,
+body.theme-light .card-highlight span {
+    color: rgba(255, 255, 255, 0.62);
+}
+
+body.theme-light .card-banner button,
+body.theme-light .black-card-banner button,
+body.theme-light .credit-card-banner button,
+body.theme-light .card-highlight button {
+    color: #ffffff;
+}/* ==================================================
+   DASHBOARD — AÇÕES RÁPIDAS NO TEMA CLARO
+================================================== */
+
+body.theme-light .quick-actions-panel,
+body.theme-light .quick-actions-card,
+body.theme-light .quick-actions {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f2eef8
+        );
+
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.theme-light .quick-action,
+body.theme-light .quick-action-card,
+body.theme-light .action-shortcut {
+    color: #ffffff;
+
+    border-color: rgba(124, 44, 255, 0.28);
+
+    background:
+        linear-gradient(
+            145deg,
+            #21142f,
+            #0d0914
+        );
+}
+
+body.theme-light .quick-action i,
+body.theme-light .quick-action span,
+body.theme-light .quick-action strong,
+body.theme-light .quick-action-card i,
+body.theme-light .quick-action-card span,
+body.theme-light .quick-action-card strong,
+body.theme-light .action-shortcut i,
+body.theme-light .action-shortcut span,
+body.theme-light .action-shortcut strong {
+    color: #ffffff;
+}
+
+body.theme-light .quick-action:hover,
+body.theme-light .quick-action-card:hover,
+body.theme-light .action-shortcut:hover {
+    border-color: rgba(168, 100, 255, 0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            #392052,
+            #160c22
+        );
+}
+
+
+/* ==================================================
+   PIX — CARD ATIVO / DESTACADO
+================================================== */
+
+body.theme-light .deposit-option.featured,
+body.theme-light .pix-option.active,
+body.theme-light .action-card.active,
+body.theme-light .action-card.featured,
+body.theme-light .pix-card.active,
+body.theme-light .pix-card.featured {
+    color: #ffffff !important;
+
+    background:
+        radial-gradient(
+            circle at 25% 15%,
+            rgba(168, 100, 255, 0.38),
+            transparent 48%
+        ),
+        linear-gradient(
+            145deg,
+            #7655a8,
+            #281538
+        ) !important;
+}
+
+body.theme-light .deposit-option.featured *,
+body.theme-light .pix-option.active *,
+body.theme-light .action-card.active *,
+body.theme-light .action-card.featured *,
+body.theme-light .pix-card.active *,
+body.theme-light .pix-card.featured * {
+    color: #ffffff !important;
+}
+
+body.theme-light .deposit-option.featured p,
+body.theme-light .pix-option.active p,
+body.theme-light .action-card.active p,
+body.theme-light .action-card.featured p,
+body.theme-light .pix-card.active p,
+body.theme-light .pix-card.featured p {
+    color: rgba(255, 255, 255, 0.62) !important;
+}
+
+
+/* ==================================================
+   PIX — BANNER DE SALDO
+================================================== */
+
+body.theme-light .balance-banner strong,
+body.theme-light .balance-banner h1,
+body.theme-light .balance-banner h2 {
+    color: #ffffff !important;
+}
+
+body.theme-light .balance-banner span,
+body.theme-light .balance-banner p {
+    color: rgba(255, 255, 255, 0.6) !important;
+}/* ==================================================
+   PIX — AJUSTE FINAL DO TEMA CLARO
+================================================== */
+
+/* Banner do saldo */
+
+body.theme-light .balance-banner,
+body.theme-light .balance-banner * {
+    color: #ffffff !important;
+}
+
+body.theme-light .balance-banner span,
+body.theme-light .balance-banner p {
+    color: rgba(255, 255, 255, 0.62) !important;
+}
+
+
+/* Primeiro card / opção selecionada */
+
+body.theme-light .pix-actions-grid > :first-child,
+body.theme-light .pix-options-grid > :first-child,
+body.theme-light .actions-grid > :first-child,
+body.theme-light .pix-card.active,
+body.theme-light .action-card.active {
+    color: #ffffff !important;
+}
+
+body.theme-light .pix-actions-grid > :first-child *,
+body.theme-light .pix-options-grid > :first-child *,
+body.theme-light .actions-grid > :first-child *,
+body.theme-light .pix-card.active *,
+body.theme-light .action-card.active * {
+    color: #ffffff !important;
+}
+
+body.theme-light .pix-actions-grid > :first-child p,
+body.theme-light .pix-options-grid > :first-child p,
+body.theme-light .actions-grid > :first-child p,
+body.theme-light .pix-card.active p,
+body.theme-light .action-card.active p {
+    color: rgba(255, 255, 255, 0.58) !important;
+}/* ==========================================
+   PIX - BANNER DE SALDO
+========================================== */
+
+body.theme-light .balance-summary {
+    color: #ffffff;
+}
+
+body.theme-light .balance-summary strong {
+    color: #ffffff !important;
+}
+
+body.theme-light .balance-summary span,
+body.theme-light .balance-summary p {
+    color: rgba(255,255,255,.65) !important;
+}

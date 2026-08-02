@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Recuperação de senha da conta ChromaBank."
+    >
+
+    <title>Recuperar senha | ChromaBank</title>
+
+    <link
+        rel="stylesheet"
+        href="recuperar-senha.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <main class="recovery-page">
+
+        <!-- =========================================
+             LADO ESQUERDO
+        ========================================== -->
+
+        <section class="recovery-visual">
+
+            <a
+                href="../../index.html"
+                class="brand"
+                aria-label="Página inicial do ChromaBank"
+            >
+
+                <img
+                    src="../../img/inlog.png"
+                    alt="Logo ChromaBank"
+                    class="brand-logo"
+                >
+
+            </a>
+
+            <div class="visual-content">
+
+                <span class="visual-eyebrow">
+                    Segurança da conta
+                </span>
+
+                <h1>
+                    Recupere seu acesso com segurança.
+                </h1>
+
+                <p>
+                    Confirme sua identidade, crie uma nova senha
+                    e volte a acessar sua conta ChromaBank.
+                </p>
+
+                <div class="security-list">
+
+                    <article class="security-item">
+
+                        <span>
+                            <i class="fa-solid fa-user-shield"></i>
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Validação de identidade
+                            </strong>
+
+                            <small>
+                                Confirmamos seus dados antes de alterar a senha.
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="security-item">
+
+                        <span>
+                            <i class="fa-solid fa-key"></i>
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Nova senha protegida
+                            </strong>
+
+                            <small>
+                                Use uma combinação forte e diferente das anteriores.
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="security-item">
+
+                        <span>
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Processo seguro
+                            </strong>
+
+                            <small>
+                                Nenhuma senha é exibida durante a recuperação.
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+            <div class="visual-decoration decoration-one"></div>
+            <div class="visual-decoration decoration-two"></div>
+
+        </section>
+
+        <!-- =========================================
+             FORMULÁRIO
+        ========================================== -->
+
+        <section class="recovery-content">
+
+            <div class="recovery-card">
+
+                <!-- PROGRESSO -->
+
+                <div class="recovery-progress">
+
+                    <div
+                        class="progress-step active"
+                        data-progress-step="1"
+                    >
+
+                        <span>1</span>
+
+                        <div>
+
+                            <strong>
+                                Identificação
+                            </strong>
+
+                            <small>
+                                Informe seus dados
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="progress-line"></div>
+
+                    <div
+                        class="progress-step"
+                        data-progress-step="2"
+                    >
+
+                        <span>2</span>
+
+                        <div>
+
+                            <strong>
+                                Verificação
+                            </strong>
+
+                            <small>
+                                Confirme o código
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="progress-line"></div>
+
+                    <div
+                        class="progress-step"
+                        data-progress-step="3"
+                    >
+
+                        <span>3</span>
+
+                        <div>
+
+                            <strong>
+                                Nova senha
+                            </strong>
+
+                            <small>
+                                Finalize o acesso
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- =====================================
+                     ETAPA 1
+                ====================================== -->
+
+                <section
+                    class="recovery-step active"
+                    id="identificationStep"
+                    data-recovery-step="1"
+                >
+
+                    <span class="step-icon">
+                        <i class="fa-regular fa-user"></i>
+                    </span>
+
+                    <span class="step-eyebrow">
+                        Recuperação de acesso
+                    </span>
+
+                    <h2>
+                        Esqueceu sua senha?
+                    </h2>
+
+                    <p>
+                        Informe o CPF ou o e-mail cadastrado na sua conta.
+                    </p>
+
+                    <form id="identificationForm">
+
+                        <div class="input-group">
+
+                            <label for="recoveryIdentifier">
+                                CPF ou e-mail
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-regular fa-id-card"></i>
+
+                                <input
+                                    type="text"
+                                    id="recoveryIdentifier"
+                                    placeholder="Digite seu CPF ou e-mail"
+                                    autocomplete="username"
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Continuar
+
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </form>
+
+                    <a
+                        href="../login/login.html"
+                        class="back-login-link"
+                    >
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Voltar para o login
+                    </a>
+
+                </section>
+
+                <!-- =====================================
+                     ETAPA 2
+                ====================================== -->
+
+                <section
+                    class="recovery-step"
+                    id="verificationStep"
+                    data-recovery-step="2"
+                    hidden
+                >
+
+                    <span class="step-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </span>
+
+                    <span class="step-eyebrow">
+                        Código de segurança
+                    </span>
+
+                    <h2>
+                        Confirme sua identidade
+                    </h2>
+
+                    <p>
+                        Enviamos um código de seis dígitos para:
+                    </p>
+
+                    <strong
+                        class="recovery-destination"
+                        id="recoveryDestination"
+                    >
+                        vi••••••@email.com
+                    </strong>
+
+                    <form id="verificationForm">
+
+                        <div class="code-inputs">
+
+                            <input
+                                type="text"
+                                class="code-input"
+                                maxlength="1"
+                                inputmode="numeric"
+                                autocomplete="one-time-code"
+                                aria-label="Primeiro dígito"
+                            >
+
+                            <input
+                                type="text"
+                                class="code-input"
+                                maxlength="1"
+                                inputmode="numeric"
+                                aria-label="Segundo dígito"
+                            >
+
+                            <input
+                                type="text"
+                                class="code-input"
+                                maxlength="1"
+                                inputmode="numeric"
+                                aria-label="Terceiro dígito"
+                            >
+
+                            <input
+                                type="text"
+                                class="code-input"
+                                maxlength="1"
+                                inputmode="numeric"
+                                aria-label="Quarto dígito"
+                            >
+
+                            <input
+                                type="text"
+                                class="code-input"
+                                maxlength="1"
+                                inputmode="numeric"
+                                aria-label="Quinto dígito"
+                            >
+
+                            <input
+                                type="text"
+                                class="code-input"
+                                maxlength="1"
+                                inputmode="numeric"
+                                aria-label="Sexto dígito"
+                            >
+
+                        </div>
+
+                        <small
+                            class="code-error"
+                            id="codeError"
+                        ></small>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Verificar código
+
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+
+                    </form>
+
+                    <div class="resend-area">
+
+                        <span>
+                            Não recebeu o código?
+                        </span>
+
+                        <button
+                            type="button"
+                            id="resendCodeButton"
+                            disabled
+                        >
+                            Reenviar em
+
+                            <strong id="resendCountdown">
+                                30s
+                            </strong>
+                        </button>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="backToIdentificationButton"
+                    >
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Alterar CPF ou e-mail
+                    </button>
+
+                </section>
+
+                <!-- =====================================
+                     ETAPA 3
+                ====================================== -->
+
+                <section
+                    class="recovery-step"
+                    id="newPasswordStep"
+                    data-recovery-step="3"
+                    hidden
+                >
+
+                    <span class="step-icon">
+                        <i class="fa-solid fa-key"></i>
+                    </span>
+
+                    <span class="step-eyebrow">
+                        Proteção da conta
+                    </span>
+
+                    <h2>
+                        Crie uma nova senha
+                    </h2>
+
+                    <p>
+                        Escolha uma senha forte e diferente da anterior.
+                    </p>
+
+                    <form id="newPasswordForm">
+
+                        <div class="input-group">
+
+                            <label for="newPassword">
+                                Nova senha
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input
+                                    type="password"
+                                    id="newPassword"
+                                    placeholder="Digite a nova senha"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="toggle-password-button"
+                                    data-toggle-password="newPassword"
+                                    aria-label="Mostrar nova senha"
+                                >
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <div class="password-requirements">
+
+                            <span data-password-rule="length">
+                                <i class="fa-regular fa-circle"></i>
+                                Pelo menos 8 caracteres
+                            </span>
+
+                            <span data-password-rule="uppercase">
+                                <i class="fa-regular fa-circle"></i>
+                                Uma letra maiúscula
+                            </span>
+
+                            <span data-password-rule="number">
+                                <i class="fa-regular fa-circle"></i>
+                                Um número
+                            </span>
+
+                            <span data-password-rule="special">
+                                <i class="fa-regular fa-circle"></i>
+                                Um caractere especial
+                            </span>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="confirmNewPassword">
+                                Confirmar nova senha
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input
+                                    type="password"
+                                    id="confirmNewPassword"
+                                    placeholder="Repita a nova senha"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="toggle-password-button"
+                                    data-toggle-password="confirmNewPassword"
+                                    aria-label="Mostrar confirmação da senha"
+                                >
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Atualizar senha
+
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+
+                    </form>
+
+                </section>
+
+                <!-- =====================================
+                     SUCESSO
+                ====================================== -->
+
+                <section
+                    class="recovery-step success-step"
+                    id="successStep"
+                    data-recovery-step="4"
+                    hidden
+                >
+
+                    <span class="success-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span class="step-eyebrow">
+                        Senha atualizada
+                    </span>
+
+                    <h2>
+                        Acesso recuperado!
+                    </h2>
+
+                    <p>
+                        Sua senha foi alterada com sucesso.
+                        Agora você já pode entrar novamente na sua conta.
+                    </p>
+
+                    <a
+                        href="../login/login.html"
+                        class="primary-button"
+                    >
+                        Ir para o login
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </section>
+
+            </div>
+
+            <footer class="recovery-footer">
+
+                <span>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Ambiente protegido pelo ChromaBank
+                </span>
+
+                <p>
+                    © 2026 ChromaBank
+                </p>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Operação realizada com sucesso.
+        </span>
+
+    </div>
+
+    <script src="recuperar-senha.js"></script>
+
+</body>
+
+</html>
