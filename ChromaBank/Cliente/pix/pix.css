@@ -30,7 +30,7 @@
     --danger: #ff4d63;
     --warning: #ffb946;
 
-    --sidebar-width: 240px;
+    --sidebar-width:270px
 
     --shadow:
         0 24px 70px rgba(0, 0, 0, 0.38);
@@ -2066,5 +2066,181 @@ textarea:focus {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+}/* ===============================================
+   AJUSTE DE ESCALA — PIX
+=============================================== */
+
+.main-content {
+    padding: 22px;
+}
+
+.page-header {
+    min-height: 78px;
+    margin-bottom: 18px;
+}
+
+.header-left h1 {
+    font-size: clamp(27px, 3vw, 38px);
+}
+
+.balance-summary {
+    min-height: 155px;
+    padding: 24px 30px;
+}
+
+.balance-summary strong {
+    font-size: clamp(30px, 4vw, 42px);
+}
+
+.pix-actions-grid,
+.actions-grid {
+    gap: 14px;
+}
+
+.pix-option,
+.action-card {
+    min-height: 185px;
+    padding: 20px;
+}
+
+@media (min-width: 981px) {
+    .main-content {
+        max-width: 1500px;
+        margin-left: var(--sidebar-width);
+    }
+}/* ==================================================
+   PIX — ESCALA IGUAL À DASHBOARD
+================================================== */
+
+:root {
+    --sidebar-width: 236px !important;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: var(--sidebar-width) !important;
+    padding: 24px 16px 20px !important;
+}
+
+.main-content {
+    width: calc(100% - var(--sidebar-width)) !important;
+    margin-left: var(--sidebar-width) !important;
+    padding: 28px !important;
+}
+
+/* Cabeçalho */
+
+.page-header {
+    min-height: 90px !important;
+    margin-bottom: 24px !important;
+}
+
+.header-left h1,
+.page-header h1 {
+    font-size: 34px !important;
+    line-height: 1.15 !important;
+    letter-spacing: -1.3px !important;
+}
+
+.header-left p,
+.page-header p {
+    font-size: 13px !important;
+}
+
+/* Banner de saldo */
+
+.balance-summary {
+    min-height: 170px !important;
+    padding: 26px 38px !important;
+    border-radius: 22px !important;
+}
+
+.balance-summary strong,
+#balanceValue {
+    font-size: 42px !important;
+    line-height: 1.1 !important;
+}
+
+.balance-summary span,
+.balance-summary p {
+    font-size: 13px !important;
+}
+
+/* Cards PIX */
+
+.pix-actions-grid,
+.actions-grid {
+    gap: 16px !important;
+}
+
+.pix-action-card,
+.pix-option,
+.action-card {
+    min-height: 190px !important;
+    padding: 24px 28px !important;
+    border-radius: 20px !important;
+}
+
+.pix-action-card h2,
+.pix-option h2,
+.action-card h2,
+.pix-action-card h3,
+.pix-option h3,
+.action-card h3 {
+    font-size: 18px !important;
+}
+
+.pix-action-card p,
+.pix-option p,
+.action-card p {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+}
+
+.pix-action-card .action-icon,
+.pix-option .action-icon,
+.action-card .action-icon {
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 19px !important;
+}
+
+/* Avatar e ícones do cabeçalho */
+
+.profile-avatar {
+    width: 48px !important;
+    height: 48px !important;
+}
+
+.header-icon-button {
+    width: 46px !important;
+    height: 46px !important;
+}
+
+/* Tablet e celular */
+
+@media (max-width: 980px) {
+    .main-content {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 22px !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .main-content {
+        padding: 16px !important;
+    }
+
+    .header-left h1,
+    .page-header h1 {
+        font-size: 27px !important;
+    }
+
+    .balance-summary strong,
+    #balanceValue {
+        font-size: 34px !important;
     }
 }
