@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Área de depósitos da conta ChromaBank."
+    >
+
+    <title>Depósito | ChromaBank</title>
+
+    <link rel="stylesheet" href="deposito.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <a
+                    href="../../index.html"
+                    class="brand"
+                    aria-label="Página inicial do ChromaBank"
+                >
+
+                    <img
+                        src="../../img/inlog.png"
+                        alt="Símbolo ChromaBank"
+                        class="brand-logo"
+                    >
+
+                    <span class="brand-name">
+                        <strong>chroma</strong>Bank
+                    </span>
+
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Fechar menu"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="../pix/pix.html"
+                    class="nav-item"
+                >
+                    <i class="fa-brands fa-pix"></i>
+                    <span>PIX</span>
+                </a>
+
+                <a
+                    href="../transferencias/transferencias.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span>Transferências</span>
+                </a>
+
+                <a
+                    href="../pagamentos/pagamentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Pagamentos</span>
+                </a>
+
+                <a
+                    href="../extrato/extrato.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Extrato</span>
+                </a>
+
+                <a
+                    href="../cartoes/cartoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Cartões</span>
+                </a>
+
+                <a
+                    href="../investimentos/investimentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Investimentos</span>
+                </a>
+
+                <a
+                    href="../recarga/recarga.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>Recarga</span>
+                </a>
+
+                <a
+                    href="deposito.html"
+                    class="nav-item active"
+                >
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                    <span>Depósito</span>
+                </a>
+
+                <a
+                    href="../perfil/perfil.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+
+                <a
+                    href="../configuracoes/configuracoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-security">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+
+                    <strong>Depósito protegido</strong>
+
+                    <span>
+                        Use somente os dados oficiais da sua conta.
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair da conta</span>
+            </button>
+
+        </aside>
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+        <!-- =========================================
+             CONTEÚDO PRINCIPAL
+        ========================================== -->
+
+        <main class="main-content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="page-header">
+
+                <div class="header-left">
+
+                    <button
+                        type="button"
+                        class="menu-button"
+                        id="menuButton"
+                        aria-label="Abrir menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            Adicionar dinheiro
+                        </span>
+
+                        <h1>Depósito</h1>
+
+                        <p>
+                            Escolha como deseja adicionar dinheiro à sua conta.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        id="toggleBalance"
+                        aria-label="Mostrar ou ocultar saldo"
+                    >
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        aria-label="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="profile-button"
+                        id="profileButton"
+                    >
+                        <span class="profile-avatar">VF</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- =========================================
+                 SALDO
+            ========================================== -->
+
+            <section class="balance-banner">
+
+                <div>
+
+                    <span>Saldo atual</span>
+
+                    <strong id="balanceValue">
+                        R$ 4.856,90
+                    </strong>
+
+                    <p>
+                        O valor depositado será adicionado ao seu saldo.
+                    </p>
+
+                </div>
+
+                <a href="../extrato/extrato.html">
+
+                    Ver extrato
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </section>
+
+            <!-- =========================================
+                 FORMAS DE DEPÓSITO
+            ========================================== -->
+
+            <section class="deposit-options-grid">
+
+                <button
+                    type="button"
+                    class="deposit-option featured"
+                    data-open-modal="pixDepositModal"
+                >
+
+                    <span class="deposit-option-icon">
+                        <i class="fa-brands fa-pix"></i>
+                    </span>
+
+                    <div>
+
+                        <span class="deposit-option-tag">
+                            Instantâneo
+                        </span>
+
+                        <h2>Depositar por PIX</h2>
+
+                        <p>
+                            Gere um QR Code ou copie sua chave PIX.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right option-arrow"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="deposit-option"
+                    data-open-modal="boletoDepositModal"
+                >
+
+                    <span class="deposit-option-icon">
+                        <i class="fa-solid fa-barcode"></i>
+                    </span>
+
+                    <div>
+
+                        <span class="deposit-option-tag">
+                            Até 3 dias úteis
+                        </span>
+
+                        <h2>Gerar boleto</h2>
+
+                        <p>
+                            Crie um boleto para adicionar dinheiro à conta.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right option-arrow"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="deposit-option"
+                    data-open-modal="bankDataModal"
+                >
+
+                    <span class="deposit-option-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </span>
+
+                    <div>
+
+                        <span class="deposit-option-tag">
+                            TED ou DOC
+                        </span>
+
+                        <h2>Transferência bancária</h2>
+
+                        <p>
+                            Use agência e conta para receber transferências.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right option-arrow"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="deposit-option"
+                    id="shareAccountDataButton"
+                >
+
+                    <span class="deposit-option-icon">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </span>
+
+                    <div>
+
+                        <span class="deposit-option-tag">
+                            Compartilhar
+                        </span>
+
+                        <h2>Enviar dados da conta</h2>
+
+                        <p>
+                            Compartilhe seus dados bancários com segurança.
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right option-arrow"></i>
+
+                </button>
+
+            </section>
+
+            <!-- =========================================
+                 CONTEÚDO PRINCIPAL
+            ========================================== -->
+
+            <section class="deposit-content-grid">
+
+                <!-- DADOS DA CONTA -->
+
+                <article class="panel account-data-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Dados bancários
+                            </span>
+
+                            <h2>Dados para transferência</h2>
+
+                            <p>
+                                Use estes dados para receber depósitos.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="copyAllAccountDataButton"
+                        >
+                            Copiar tudo
+                        </button>
+
+                    </div>
+
+                    <div class="account-data-list">
+
+                        <div class="account-data-item">
+
+                            <span class="account-data-icon">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Banco</span>
+
+                                <strong>
+                                    ChromaBank
+                                </strong>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="copy-button"
+                                data-copy-value="ChromaBank"
+                                aria-label="Copiar banco"
+                            >
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="account-data-item">
+
+                            <span class="account-data-icon">
+                                <i class="fa-solid fa-hashtag"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Agência</span>
+
+                                <strong>
+                                    0001
+                                </strong>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="copy-button"
+                                data-copy-value="0001"
+                                aria-label="Copiar agência"
+                            >
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="account-data-item">
+
+                            <span class="account-data-icon">
+                                <i class="fa-regular fa-credit-card"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Conta</span>
+
+                                <strong>
+                                    987654-3
+                                </strong>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="copy-button"
+                                data-copy-value="987654-3"
+                                aria-label="Copiar conta"
+                            >
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="account-data-item">
+
+                            <span class="account-data-icon">
+                                <i class="fa-regular fa-id-card"></i>
+                            </span>
+
+                            <div>
+
+                                <span>CPF do titular</span>
+
+                                <strong>
+                                    529.982.247-25
+                                </strong>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="copy-button"
+                                data-copy-value="52998224725"
+                                aria-label="Copiar CPF"
+                            >
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="account-data-item">
+
+                            <span class="account-data-icon">
+                                <i class="fa-brands fa-pix"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Chave PIX</span>
+
+                                <strong>
+                                    vinicius@email.com
+                                </strong>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="copy-button"
+                                data-copy-value="vinicius@email.com"
+                                aria-label="Copiar chave PIX"
+                            >
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- QR CODE -->
+
+                <article class="panel qr-code-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Receber via PIX
+                            </span>
+
+                            <h2>QR Code da conta</h2>
+
+                            <p>
+                                Escaneie para fazer um depósito.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="qr-code-wrapper">
+
+                        <div
+                            class="qr-code"
+                            id="accountQrCode"
+                            aria-label="QR Code PIX demonstrativo"
+                        >
+
+                            <i class="fa-solid fa-qrcode"></i>
+
+                        </div>
+
+                        <span class="qr-code-logo">
+                            <i class="fa-brands fa-pix"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="qr-code-info">
+
+                        <strong>
+                            Chave PIX
+                        </strong>
+
+                        <span>
+                            vinicius@email.com
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="copyPixKeyButton"
+                    >
+
+                        Copiar chave PIX
+
+                        <i class="fa-regular fa-copy"></i>
+
+                    </button>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 HISTÓRICO
+            ========================================== -->
+
+            <section class="panel deposit-history-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            Movimentações
+                        </span>
+
+                        <h2>Depósitos recentes</h2>
+
+                        <p>
+                            Acompanhe os valores adicionados à sua conta.
+                        </p>
+
+                    </div>
+
+                    <a href="../extrato/extrato.html">
+
+                        Ver extrato completo
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+                <div class="deposit-history-list">
+
+                    <article class="history-item">
+
+                        <span class="history-icon pix">
+                            <i class="fa-brands fa-pix"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Depósito por PIX</strong>
+
+                            <span>
+                                Recebido de Maria Silva
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>Hoje</span>
+
+                            <small>10:42</small>
+
+                        </div>
+
+                        <strong class="history-value">
+                            + R$ 250,00
+                        </strong>
+
+                        <span class="status completed">
+                            Concluído
+                        </span>
+
+                    </article>
+
+                    <article class="history-item">
+
+                        <span class="history-icon boleto">
+                            <i class="fa-solid fa-barcode"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Depósito por boleto</strong>
+
+                            <span>
+                                Boleto compensado
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>Ontem</span>
+
+                            <small>08:15</small>
+
+                        </div>
+
+                        <strong class="history-value">
+                            + R$ 1.000,00
+                        </strong>
+
+                        <span class="status completed">
+                            Concluído
+                        </span>
+
+                    </article>
+
+                    <article class="history-item">
+
+                        <span class="history-icon transfer">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Transferência bancária</strong>
+
+                            <span>
+                                Banco de origem: 341
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>29 jul.</span>
+
+                            <small>16:28</small>
+
+                        </div>
+
+                        <strong class="history-value">
+                            + R$ 480,00
+                        </strong>
+
+                        <span class="status completed">
+                            Concluído
+                        </span>
+
+                    </article>
+
+                    <article class="history-item">
+
+                        <span class="history-icon pix">
+                            <i class="fa-brands fa-pix"></i>
+                        </span>
+
+                        <div class="history-description">
+
+                            <strong>Depósito por PIX</strong>
+
+                            <span>
+                                Recebido de João Santos
+                            </span>
+
+                        </div>
+
+                        <div class="history-date">
+
+                            <span>25 jul.</span>
+
+                            <small>11:07</small>
+
+                        </div>
+
+                        <strong class="history-value">
+                            + R$ 80,00
+                        </strong>
+
+                        <span class="status completed">
+                            Concluído
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 INFORMAÇÕES
+            ========================================== -->
+
+            <section class="information-grid">
+
+                <article class="information-card">
+
+                    <span class="information-icon purple">
+                        <i class="fa-solid fa-bolt"></i>
+                    </span>
+
+                    <div>
+
+                        <h2>PIX instantâneo</h2>
+
+                        <p>
+                            Depósitos por PIX entram na conta em poucos segundos.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="information-card">
+
+                    <span class="information-icon blue">
+                        <i class="fa-regular fa-clock"></i>
+                    </span>
+
+                    <div>
+
+                        <h2>Prazo do boleto</h2>
+
+                        <p>
+                            Boletos podem levar até três dias úteis para compensar.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="information-card">
+
+                    <span class="information-icon green">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </span>
+
+                    <div>
+
+                        <h2>Operação protegida</h2>
+
+                        <p>
+                            Seus dados bancários são protegidos pelo ChromaBank.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 BANNER DE SEGURANÇA
+            ========================================== -->
+
+            <section class="security-banner">
+
+                <span class="security-banner-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </span>
+
+                <div>
+
+                    <h2>Utilize somente os dados oficiais da sua conta</h2>
+
+                    <p>
+                        O ChromaBank nunca solicita senhas ou códigos para liberar depósitos.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="securityHelpButton"
+                >
+
+                    Dicas de segurança
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </section>
+
+            <!-- RODAPÉ -->
+
+            <footer class="page-footer">
+
+                <p>
+                    © 2026 ChromaBank. Todos os direitos reservados.
+                </p>
+
+                <div>
+
+                    <a href="#">Segurança</a>
+
+                    <a href="#">Privacidade</a>
+
+                    <a href="#">Ajuda</a>
+
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DEPÓSITO PIX
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="pixDepositModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="pixDepositModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-brands fa-pix"></i>
+            </span>
+
+            <h2 id="pixDepositModalTitle">
+                Depositar por PIX
+            </h2>
+
+            <p>
+                Informe o valor para gerar um QR Code de depósito.
+            </p>
+
+            <form id="pixDepositForm">
+
+                <div class="input-group">
+
+                    <label for="pixDepositAmount">
+                        Valor do depósito
+                    </label>
+
+                    <div class="input-box currency-input">
+
+                        <span>R$</span>
+
+                        <input
+                            type="text"
+                            id="pixDepositAmount"
+                            placeholder="0,00"
+                            inputmode="numeric"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="pixDepositDescription">
+
+                        Descrição
+
+                        <span>Opcional</span>
+
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-message"></i>
+
+                        <input
+                            type="text"
+                            id="pixDepositDescription"
+                            placeholder="Ex.: Depósito na conta"
+                            maxlength="60"
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div
+                    class="generated-pix-area"
+                    id="generatedPixArea"
+                    hidden
+                >
+
+                    <div class="generated-qr-code">
+
+                        <i class="fa-solid fa-qrcode"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Valor solicitado</span>
+
+                        <strong id="generatedPixAmount">
+                            R$ 0,00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    Gerar QR Code
+
+                    <i class="fa-solid fa-qrcode"></i>
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL BOLETO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="boletoDepositModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="boletoDepositModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-barcode"></i>
+            </span>
+
+            <h2 id="boletoDepositModalTitle">
+                Gerar boleto de depósito
+            </h2>
+
+            <p>
+                Informe o valor que deseja adicionar à sua conta.
+            </p>
+
+            <form id="boletoDepositForm">
+
+                <div class="input-group">
+
+                    <label for="boletoAmount">
+                        Valor do boleto
+                    </label>
+
+                    <div class="input-box currency-input">
+
+                        <span>R$</span>
+
+                        <input
+                            type="text"
+                            id="boletoAmount"
+                            placeholder="0,00"
+                            inputmode="numeric"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="boletoDueDate">
+                        Data de vencimento
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        <input
+                            type="date"
+                            id="boletoDueDate"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-error"></small>
+
+                </div>
+
+                <div
+                    class="generated-boleto-area"
+                    id="generatedBoletoArea"
+                    hidden
+                >
+
+                    <span>Código do boleto</span>
+
+                    <strong id="generatedBoletoCode">
+                        34191.79001 01043.510047 91020.150008 1 98760000000000
+                    </strong>
+
+                    <button
+                        type="button"
+                        id="copyBoletoCodeButton"
+                    >
+                        <i class="fa-regular fa-copy"></i>
+                        Copiar código
+                    </button>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    Gerar boleto
+
+                    <i class="fa-solid fa-barcode"></i>
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DADOS BANCÁRIOS
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="bankDataModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="bankDataModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-building-columns"></i>
+            </span>
+
+            <h2 id="bankDataModalTitle">
+                Dados para transferência
+            </h2>
+
+            <p>
+                Use os dados abaixo para receber uma transferência bancária.
+            </p>
+
+            <div class="modal-bank-data">
+
+                <div>
+
+                    <span>Banco</span>
+
+                    <strong>ChromaBank</strong>
+
+                </div>
+
+                <div>
+
+                    <span>Agência</span>
+
+                    <strong>0001</strong>
+
+                </div>
+
+                <div>
+
+                    <span>Conta</span>
+
+                    <strong>987654-3</strong>
+
+                </div>
+
+                <div>
+
+                    <span>Tipo da conta</span>
+
+                    <strong>Conta corrente</strong>
+
+                </div>
+
+                <div>
+
+                    <span>Titular</span>
+
+                    <strong>Vinícius Fernandes</strong>
+
+                </div>
+
+                <div>
+
+                    <span>CPF</span>
+
+                    <strong>529.982.247-25</strong>
+
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="primary-button"
+                id="copyModalBankDataButton"
+            >
+
+                Copiar dados
+
+                <i class="fa-regular fa-copy"></i>
+
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE COMPARTILHAMENTO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="shareModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="shareModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-share-nodes"></i>
+            </span>
+
+            <h2 id="shareModalTitle">
+                Compartilhar dados
+            </h2>
+
+            <p>
+                Escolha como deseja compartilhar seus dados bancários.
+            </p>
+
+            <div class="share-options">
+
+                <button
+                    type="button"
+                    class="share-option"
+                    data-share-type="copy"
+                >
+
+                    <span>
+                        <i class="fa-regular fa-copy"></i>
+                    </span>
+
+                    <div>
+
+                        <strong>Copiar dados</strong>
+
+                        <small>
+                            Copiar para a área de transferência
+                        </small>
+
+                    </div>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="share-option"
+                    data-share-type="whatsapp"
+                >
+
+                    <span>
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </span>
+
+                    <div>
+
+                        <strong>WhatsApp</strong>
+
+                        <small>
+                            Compartilhar com um contato
+                        </small>
+
+                    </div>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="share-option"
+                    data-share-type="email"
+                >
+
+                    <span>
+                        <i class="fa-regular fa-envelope"></i>
+                    </span>
+
+                    <div>
+
+                        <strong>E-mail</strong>
+
+                        <small>
+                            Enviar por e-mail
+                        </small>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Operação realizada com sucesso.
+        </span>
+
+    </div>
+
+    <script src="deposito.js"></script>
+
+</body>
+
+</html>
