@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contratação e gerenciamento de seguros no ChromaBank."
+    >
+
+    <title>Seguros | ChromaBank</title>
+
+    <!-- CSS da página -->
+    <link
+        rel="stylesheet"
+        href="seguros.css"
+    >
+
+    <!-- CSS global -->
+    <link
+        rel="stylesheet"
+        href="../../assets/css/tema.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/components.css"
+    >
+
+    <!-- Fonte -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside
+            class="sidebar"
+            id="sidebar"
+        >
+
+            <div class="sidebar-header">
+
+                <a
+                    href="../../index.html"
+                    class="brand"
+                    aria-label="Página inicial do ChromaBank"
+                >
+                    <img
+                        src="../../img/inlog.png"
+                        alt="Logo ChromaBank"
+                        class="brand-logo"
+                    >
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Fechar menu"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="../pix/pix.html"
+                    class="nav-item"
+                >
+                    <i class="fa-brands fa-pix"></i>
+                    <span>PIX</span>
+                </a>
+
+                <a
+                    href="../transferencias/transferencias.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span>Transferências</span>
+                </a>
+
+                <a
+                    href="../pagamentos/pagamentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Pagamentos</span>
+                </a>
+
+                <a
+                    href="../emprestimos/emprestimos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <span>Empréstimos</span>
+                </a>
+
+                <a
+                     href="../seguros/seguros.html"
+                    class="nav-item active"
+                >
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <span>Seguros</span>
+                </a>
+
+                <a
+                    href="../extrato/extrato.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Extrato</span>
+                </a>
+
+                <a
+                    href="../cartoes/cartoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Cartões</span>
+                </a>
+
+                <a
+                    href="../investimentos/investimentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Investimentos</span>
+                </a>
+
+                <a
+                    href="../recarga/recarga.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>Recarga</span>
+                </a>
+
+                <a
+                    href="../deposito/deposito.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                    <span>Depósito</span>
+                </a>
+
+                <a
+                    href="../perfil/perfil.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+
+                <a
+                    href="../configuracoes/configuracoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+<a
+                    href="../ajuda/ajuda.html"
+                    class="nav-item "
+                >
+                    <i class="fa-solid fa-headset"></i>
+                    <span>Ajuda</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-security">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <div>
+                    <strong>Proteção ChromaBank</strong>
+
+                    <span>
+                        Contratação segura e transparente.
+                    </span>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair da conta</span>
+            </button>
+
+        </aside>
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+        <!-- =========================================
+             CONTEÚDO PRINCIPAL
+        ========================================== -->
+
+        <main class="main-content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="page-header">
+
+                <div class="header-left">
+
+                    <button
+                        type="button"
+                        class="menu-button"
+                        id="menuButton"
+                        aria-label="Abrir menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            Proteção para todos os momentos
+                        </span>
+
+                        <h1>Seguros</h1>
+
+                        <p>
+                            Proteja seus bens, sua família e seus planos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        id="notificationsButton"
+                        aria-label="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="profile-button"
+                        id="profileButton"
+                        aria-label="Abrir menu do perfil"
+                    >
+                        <span class="profile-avatar">
+                            VF
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- =========================================
+                 HERO
+            ========================================== -->
+
+            <section class="insurance-hero">
+
+                <div class="insurance-hero-content">
+
+                    <span class="hero-icon">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </span>
+
+                    <div>
+
+                        <span class="hero-eyebrow">
+                            Proteção ChromaBank
+                        </span>
+
+                        <h2>
+                            Proteja o que realmente importa.
+                        </h2>
+
+                        <p>
+                            Encontre coberturas sob medida, assistência
+                            24 horas e contratação sem burocracia.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="primary-button"
+                            id="viewInsuranceOptionsButton"
+                        >
+                            Conhecer opções
+
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-benefits">
+
+                    <div>
+                        <strong>24h</strong>
+                        <span>Assistência</span>
+                    </div>
+
+                    <div>
+                        <strong>100%</strong>
+                        <span>Digital</span>
+                    </div>
+
+                    <div>
+                        <strong>4</strong>
+                        <span>Tipos de proteção</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 OPÇÕES DE SEGURO
+            ========================================== -->
+
+            <section
+                class="insurance-section"
+                id="insuranceOptions"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            Escolha sua proteção
+                        </span>
+
+                        <h2>
+                            Seguros disponíveis
+                        </h2>
+
+                        <p>
+                            Compare planos e encontre a cobertura ideal.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="insurance-grid">
+
+                    <!-- SEGURO AUTO -->
+
+                    <article
+                        class="insurance-card featured"
+                        data-insurance-type="auto"
+                    >
+
+                        <span class="insurance-badge">
+                            Mais escolhido
+                        </span>
+
+                        <span class="insurance-icon auto">
+                            <i class="fa-solid fa-car-side"></i>
+                        </span>
+
+                        <h3>Seguro Auto</h3>
+
+                        <p>
+                            Proteção para colisões, roubo, furto e assistência.
+                        </p>
+
+                        <ul class="coverage-list">
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Roubo e furto
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Colisão e incêndio
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Guincho 24 horas
+                            </li>
+
+                        </ul>
+
+                        <div class="insurance-price">
+
+                            <span>A partir de</span>
+
+                            <strong>
+                                R$ 89,90
+                                <small>/mês</small>
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="insurance-button"
+                            data-open-quote="auto"
+                        >
+                            Fazer cotação
+                        </button>
+
+                    </article>
+
+                    <!-- SEGURO RESIDENCIAL -->
+
+                    <article
+                        class="insurance-card"
+                        data-insurance-type="home"
+                    >
+
+                        <span class="insurance-icon home">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </span>
+
+                        <h3>Seguro Residencial</h3>
+
+                        <p>
+                            Sua casa protegida contra imprevistos e emergências.
+                        </p>
+
+                        <ul class="coverage-list">
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Incêndio e explosão
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Danos elétricos
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Chaveiro e encanador
+                            </li>
+
+                        </ul>
+
+                        <div class="insurance-price">
+
+                            <span>A partir de</span>
+
+                            <strong>
+                                R$ 24,90
+                                <small>/mês</small>
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="insurance-button"
+                            data-open-quote="home"
+                        >
+                            Ver planos
+                        </button>
+
+                    </article>
+
+                    <!-- SEGURO DE VIDA -->
+
+                    <article
+                        class="insurance-card"
+                        data-insurance-type="life"
+                    >
+
+                        <span class="insurance-icon life">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </span>
+
+                        <h3>Seguro de Vida</h3>
+
+                        <p>
+                            Segurança financeira para você e para sua família.
+                        </p>
+
+                        <ul class="coverage-list">
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Cobertura por morte
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Invalidez permanente
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Assistência familiar
+                            </li>
+
+                        </ul>
+
+                        <div class="insurance-price">
+
+                            <span>A partir de</span>
+
+                            <strong>
+                                R$ 39,90
+                                <small>/mês</small>
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="insurance-button"
+                            data-open-quote="life"
+                        >
+                            Conhecer cobertura
+                        </button>
+
+                    </article>
+
+                    <!-- SEGURO CELULAR -->
+
+                    <article
+                        class="insurance-card"
+                        data-insurance-type="phone"
+                    >
+
+                        <span class="insurance-icon phone">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </span>
+
+                        <h3>Seguro Celular</h3>
+
+                        <p>
+                            Proteção para roubo, furto e danos no aparelho.
+                        </p>
+
+                        <ul class="coverage-list">
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Roubo e furto qualificado
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Quebra acidental
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Danos por líquidos
+                            </li>
+
+                        </ul>
+
+                        <div class="insurance-price">
+
+                            <span>A partir de</span>
+
+                            <strong>
+                                R$ 19,90
+                                <small>/mês</small>
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="insurance-button"
+                            data-open-quote="phone"
+                        >
+                            Proteger celular
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 BENEFÍCIOS
+            ========================================== -->
+
+            <section class="insurance-section">
+
+                <article class="panel insurance-benefits-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                Vantagens
+                            </span>
+
+                            <h2>
+                                Por que contratar pelo ChromaBank?
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="benefits-grid">
+
+                        <div class="benefit-card">
+
+                            <span>
+                                <i class="fa-solid fa-bolt"></i>
+                            </span>
+
+                            <div>
+                                <strong>Contratação rápida</strong>
+
+                                <p>
+                                    Faça tudo online e em poucos minutos.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="benefit-card">
+
+                            <span>
+                                <i class="fa-solid fa-headset"></i>
+                            </span>
+
+                            <div>
+                                <strong>Assistência 24 horas</strong>
+
+                                <p>
+                                    Atendimento sempre que você precisar.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="benefit-card">
+
+                            <span>
+                                <i class="fa-solid fa-sliders"></i>
+                            </span>
+
+                            <div>
+                                <strong>Planos flexíveis</strong>
+
+                                <p>
+                                    Escolha coberturas de acordo com seu perfil.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="benefit-card">
+
+                            <span>
+                                <i class="fa-solid fa-ban"></i>
+                            </span>
+
+                            <div>
+                                <strong>Cancelamento simples</strong>
+
+                                <p>
+                                    Gerencie seu seguro diretamente pelo aplicativo.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 SEGUROS ATIVOS
+            ========================================== -->
+
+            <section class="insurance-section">
+
+                <article class="panel active-insurances-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                Suas proteções
+                            </span>
+
+                            <h2>
+                                Seguros ativos
+                            </h2>
+
+                            <p>
+                                Acompanhe planos, cobranças e coberturas.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="outline-button"
+                            id="viewInsuranceHistoryButton"
+                        >
+                            Ver histórico
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="active-insurances-list"
+                        id="activeInsurancesList"
+                    >
+
+                        <div
+                            class="empty-insurances"
+                            id="emptyInsurances"
+                        >
+                            <span>
+                                <i class="fa-solid fa-shield"></i>
+                            </span>
+
+                            <strong>
+                                Nenhum seguro contratado
+                            </strong>
+
+                            <p>
+                                Quando você contratar uma proteção,
+                                ela aparecerá aqui.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 COMO FUNCIONA
+            ========================================== -->
+
+            <section class="insurance-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            Processo simples
+                        </span>
+
+                        <h2>Como contratar?</h2>
+
+                    </div>
+
+                </div>
+
+                <div class="steps-grid">
+
+                    <article class="step-card">
+
+                        <span>1</span>
+
+                        <h3>Escolha o seguro</h3>
+
+                        <p>
+                            Selecione a proteção que combina com você.
+                        </p>
+
+                    </article>
+
+                    <article class="step-card">
+
+                        <span>2</span>
+
+                        <h3>Personalize o plano</h3>
+
+                        <p>
+                            Defina coberturas e valores de proteção.
+                        </p>
+
+                    </article>
+
+                    <article class="step-card">
+
+                        <span>3</span>
+
+                        <h3>Confirme a contratação</h3>
+
+                        <p>
+                            Revise os dados e finalize com segurança.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 FAQ
+            ========================================== -->
+
+            <section class="insurance-section">
+
+                <article class="panel faq-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                Tire suas dúvidas
+                            </span>
+
+                            <h2>Perguntas frequentes</h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="faq-list">
+
+                        <article class="faq-item">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                            >
+                                <span>
+                                    Posso cancelar o seguro quando quiser?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Sim. O cancelamento poderá ser solicitado
+                                    pelo aplicativo, conforme as condições do plano.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="faq-item">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                            >
+                                <span>
+                                    Quando a cobertura começa?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    A data de início será exibida antes da
+                                    confirmação da contratação.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="faq-item">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                            >
+                                <span>
+                                    Como aciono a assistência?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Depois da contratação, você terá acesso ao
+                                    telefone e aos canais de assistência do plano.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- RODAPÉ -->
+
+            <footer class="page-footer">
+
+                <p>
+                    © 2026 ChromaBank. Todos os direitos reservados.
+                </p>
+
+                <div>
+                    <a href="#">Termos</a>
+                    <a href="#">Privacidade</a>
+                    <a href="#">Ajuda</a>
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE COTAÇÃO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="insuranceQuoteModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="insuranceQuoteTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon" id="quoteModalIcon">
+                <i class="fa-solid fa-shield-heart"></i>
+            </span>
+
+            <span class="modal-eyebrow">
+                Cotação personalizada
+            </span>
+
+            <h2 id="insuranceQuoteTitle">
+                Seguro Auto
+            </h2>
+
+            <p id="insuranceQuoteDescription">
+                Personalize sua proteção antes de contratar.
+            </p>
+
+            <form id="insuranceQuoteForm">
+
+                <div class="input-group">
+
+                    <label for="coverageAmount">
+                        Valor da cobertura
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-sack-dollar"></i>
+
+                        <select id="coverageAmount">
+
+                            <option value="50000">
+                                R$ 50.000,00
+                            </option>
+
+                            <option value="100000">
+                                R$ 100.000,00
+                            </option>
+
+                            <option value="150000">
+                                R$ 150.000,00
+                            </option>
+
+                            <option value="250000">
+                                R$ 250.000,00
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="insurancePlan">
+                        Plano
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                        <select id="insurancePlan">
+
+                            <option value="basic">
+                                Plano Essencial
+                            </option>
+
+                            <option value="complete">
+                                Plano Completo
+                            </option>
+
+                            <option value="premium">
+                                Plano Premium
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="quote-summary">
+
+                    <div>
+                        <span>Seguro</span>
+                        <strong id="quoteInsuranceName">
+                            Seguro Auto
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Cobertura</span>
+                        <strong id="quoteCoverageValue">
+                            R$ 50.000,00
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Mensalidade</span>
+                        <strong id="quoteMonthlyPrice">
+                            R$ 89,90
+                        </strong>
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Continuar contratação
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE CONFIRMAÇÃO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="insuranceConfirmationModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="insuranceConfirmationTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-file-signature"></i>
+            </span>
+
+            <span class="modal-eyebrow">
+                Confirmação
+            </span>
+
+            <h2 id="insuranceConfirmationTitle">
+                Confirmar contratação
+            </h2>
+
+            <p>
+                Revise os dados do seu seguro antes de finalizar.
+            </p>
+
+            <div class="confirmation-summary">
+
+                <div>
+                    <span>Seguro</span>
+                    <strong id="confirmationInsuranceName">
+                        Seguro Auto
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Plano</span>
+                    <strong id="confirmationPlanName">
+                        Plano Essencial
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Cobertura</span>
+                    <strong id="confirmationCoverageValue">
+                        R$ 50.000,00
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Mensalidade</span>
+                    <strong id="confirmationMonthlyPrice">
+                        R$ 89,90
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Primeira cobrança</span>
+                    <strong id="confirmationFirstCharge">
+                        10/09/2026
+                    </strong>
+                </div>
+
+            </div>
+
+            <label class="confirmation-checkbox">
+
+                <input
+                    type="checkbox"
+                    id="insuranceTermsCheckbox"
+                >
+
+                <span class="custom-checkbox">
+                    <i class="fa-solid fa-check"></i>
+                </span>
+
+                <small>
+                    Li e concordo com as coberturas,
+                    exclusões e condições do seguro.
+                </small>
+
+            </label>
+
+            <button
+                type="button"
+                class="primary-button"
+                id="confirmInsuranceButton"
+                disabled
+            >
+                Contratar seguro
+
+                <i class="fa-solid fa-shield-heart"></i>
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE SUCESSO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="insuranceSuccessModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card success-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="insuranceSuccessTitle"
+        >
+
+            <span class="success-modal-icon">
+                <i class="fa-solid fa-check"></i>
+            </span>
+
+            <span class="modal-eyebrow">
+                Proteção ativada
+            </span>
+
+            <h2 id="insuranceSuccessTitle">
+                Seguro contratado!
+            </h2>
+
+            <p>
+                Sua proteção foi contratada com sucesso
+                e já está disponível na área de seguros ativos.
+            </p>
+
+            <div class="policy-code">
+
+                <span>Número da apólice</span>
+
+                <strong id="insurancePolicyCode">
+                    #SEG-000000
+                </strong>
+
+            </div>
+
+            <button
+                type="button"
+                class="primary-button"
+                data-close-modal
+            >
+                Entendi
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE DETALHES
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="insuranceDetailsModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="insuranceDetailsTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-shield"></i>
+            </span>
+
+            <h2 id="insuranceDetailsTitle">
+                Detalhes do seguro
+            </h2>
+
+            <div
+                class="insurance-details-list"
+                id="insuranceDetailsList"
+            ></div>
+
+            <div class="details-actions">
+
+                <button
+                    type="button"
+                    class="outline-button"
+                    id="requestAssistanceButton"
+                >
+                    Solicitar assistência
+                </button>
+
+                <button
+                    type="button"
+                    class="danger-button"
+                    id="cancelInsuranceButton"
+                >
+                    Cancelar seguro
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Operação realizada com sucesso.
+        </span>
+
+    </div>
+
+    <!-- JS globais -->
+
+    <script src="../../assets/js/tema.js"></script>
+    <script src="../../assets/js/profile.js"></script>
+    <script src="../../assets/js/notifications.js"></script>
+
+    <!-- JS da página -->
+
+    <script src="seguros.js"></script>
+
+</body>
+
+</html>

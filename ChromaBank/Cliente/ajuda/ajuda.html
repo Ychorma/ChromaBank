@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Central de ajuda e atendimento do ChromaBank."
+    >
+
+    <title>Central de Ajuda | ChromaBank</title>
+
+    <!-- CSS da página -->
+    <link
+        rel="stylesheet"
+        href="ajuda.css"
+    >
+
+    <!-- CSS globais -->
+    <link
+        rel="stylesheet"
+        href="../../assets/css/tema.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/components.css"
+    >
+
+    <!-- Fonte -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside
+            class="sidebar"
+            id="sidebar"
+        >
+
+            <div class="sidebar-header">
+
+                <a
+                    href="../../index.html"
+                    class="brand"
+                    aria-label="Página inicial do ChromaBank"
+                >
+                    <img
+                        src="../../img/inlog.png"
+                        alt="Logo ChromaBank"
+                        class="brand-logo"
+                    >
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Fechar menu"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="../pix/pix.html"
+                    class="nav-item"
+                >
+                    <i class="fa-brands fa-pix"></i>
+                    <span>PIX</span>
+                </a>
+
+                <a
+                    href="../transferencias/transferencias.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span>Transferências</span>
+                </a>
+
+                <a
+                    href="../pagamentos/pagamentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Pagamentos</span>
+                </a>
+
+                <a
+                    href="../emprestimos/emprestimos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <span>Empréstimos</span>
+                </a>
+
+                <a
+                    href="../seguros/seguros.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <span>Seguros</span>
+                </a>
+
+                <a
+                    href="../extrato/extrato.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Extrato</span>
+                </a>
+
+                <a
+                    href="../cartoes/cartoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Cartões</span>
+                </a>
+
+                <a
+                    href="../investimentos/investimentos.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Investimentos</span>
+                </a>
+
+                <a
+                    href="../recarga/recarga.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>Recarga</span>
+                </a>
+
+                <a
+                    href="../deposito/deposito.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                    <span>Depósito</span>
+                </a>
+
+                <a
+                    href="../perfil/perfil.html"
+                    class="nav-item"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+
+                <a
+                    href="../configuracoes/configuracoes.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+
+                <a
+                    href="../ajuda/ajuda.html"
+                    class="nav-item active"
+                >
+                    <i class="fa-solid fa-headset"></i>
+                    <span>Ajuda</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-security">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+                    <strong>Atendimento seguro</strong>
+
+                    <span>
+                        Seus chamados ficam protegidos.
+                    </span>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair da conta</span>
+            </button>
+
+        </aside>
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+        <!-- =========================================
+             CONTEÚDO PRINCIPAL
+        ========================================== -->
+
+        <main class="main-content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="page-header">
+
+                <div class="header-left">
+
+                    <button
+                        type="button"
+                        class="menu-button"
+                        id="menuButton"
+                        aria-label="Abrir menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            Suporte ChromaBank
+                        </span>
+
+                        <h1>Central de Ajuda</h1>
+
+                        <p>
+                            Encontre respostas ou fale com nossa equipe.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="header-icon-button"
+                        id="notificationsButton"
+                        aria-label="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+
+                    <div class="profile-area">
+
+                        <button
+                            type="button"
+                            class="profile-button"
+                            id="profileButton"
+                            aria-label="Abrir menu do perfil"
+                        >
+                            <span class="profile-avatar">
+                                VF
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <span class="profile-avatar">
+                                    VF
+                                </span>
+
+                                <div>
+                                    <strong>Vinícius Fernandes</strong>
+                                    <small>Cliente ChromaBank</small>
+                                </div>
+
+                            </div>
+
+                            <a href="../perfil/perfil.html">
+                                <i class="fa-regular fa-user"></i>
+                                <span>Meu perfil</span>
+                            </a>
+
+                            <a href="../configuracoes/configuracoes.html">
+                                <i class="fa-solid fa-gear"></i>
+                                <span>Configurações</span>
+                            </a>
+
+                            <button
+                                type="button"
+                                id="profileLogoutButton"
+                            >
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <span>Sair da conta</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- =========================================
+                 HERO
+            ========================================== -->
+
+            <section class="help-hero">
+
+                <div class="help-hero-content">
+
+                    <span class="help-hero-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </span>
+
+                    <div>
+
+                        <span class="help-hero-eyebrow">
+                            Atendimento 24 horas
+                        </span>
+
+                        <h2>
+                            Como podemos ajudar você hoje?
+                        </h2>
+
+                        <p>
+                            Tire dúvidas, abra um chamado ou converse com o
+                            atendimento ChromaBank.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="primary-button"
+                            id="startChatButton"
+                        >
+                            <i class="fa-solid fa-comments"></i>
+                            Iniciar atendimento
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="help-hero-status">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>Atendimento disponível</strong>
+                        <small>Tempo médio de resposta: 2 minutos</small>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 CANAIS DE ATENDIMENTO
+            ========================================== -->
+
+            <section class="help-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            Escolha um canal
+                        </span>
+
+                        <h2>Fale com o ChromaBank</h2>
+
+                        <p>
+                            Selecione a forma de atendimento que preferir.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="contact-grid">
+
+                    <article
+                        class="contact-card"
+                        data-support-channel="Chat"
+                    >
+
+                        <span class="contact-icon chat">
+                            <i class="fa-solid fa-comments"></i>
+                        </span>
+
+                        <h3>Chat online</h3>
+
+                        <p>
+                            Converse com um atendente diretamente pelo site.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="contact-button"
+                        >
+                            Iniciar chat
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="contact-card"
+                        data-support-channel="WhatsApp"
+                    >
+
+                        <span class="contact-icon whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </span>
+
+                        <h3>WhatsApp</h3>
+
+                        <p>
+                            Receba atendimento rápido pelo aplicativo.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="contact-button"
+                        >
+                            Conversar
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="contact-card"
+                        data-support-channel="Telefone"
+                    >
+
+                        <span class="contact-icon phone">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+
+                        <h3>Telefone</h3>
+
+                        <p>
+                            Ligue gratuitamente para nossa central.
+                        </p>
+
+                        <strong class="contact-detail">
+                            0800 000 0000
+                        </strong>
+
+                        <button
+                            type="button"
+                            class="contact-button"
+                        >
+                            Ver atendimento
+                        </button>
+
+                    </article>
+
+                    <article
+                        class="contact-card"
+                        data-support-channel="E-mail"
+                    >
+
+                        <span class="contact-icon email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+
+                        <h3>E-mail</h3>
+
+                        <p>
+                            Envie sua solicitação para nossa equipe.
+                        </p>
+
+                        <strong class="contact-detail">
+                            suporte@chromabank.com
+                        </strong>
+
+                        <button
+                            type="button"
+                            class="contact-button"
+                        >
+                            Enviar e-mail
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- =========================================
+                 CONTEÚDO EM DUAS COLUNAS
+            ========================================== -->
+
+            <section class="help-main-grid">
+
+                <!-- ABRIR CHAMADO -->
+
+                <article class="panel ticket-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                Atendimento especializado
+                            </span>
+
+                            <h2>Abrir chamado</h2>
+
+                            <p>
+                                Descreva sua solicitação e acompanhe pelo histórico.
+                            </p>
+
+                        </div>
+
+                        <span class="panel-icon">
+                            <i class="fa-solid fa-ticket"></i>
+                        </span>
+
+                    </div>
+
+                    <form id="ticketForm">
+
+                        <div class="input-group">
+
+                            <label for="ticketCategory">
+                                Categoria
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-layer-group"></i>
+
+                                <select
+                                    id="ticketCategory"
+                                    required
+                                >
+                                    <option value="">
+                                        Selecione uma categoria
+                                    </option>
+
+                                    <option value="PIX">
+                                        PIX
+                                    </option>
+
+                                    <option value="Cartões">
+                                        Cartões
+                                    </option>
+
+                                    <option value="Empréstimos">
+                                        Empréstimos
+                                    </option>
+
+                                    <option value="Seguros">
+                                        Seguros
+                                    </option>
+
+                                    <option value="Investimentos">
+                                        Investimentos
+                                    </option>
+
+                                    <option value="Conta">
+                                        Conta e acesso
+                                    </option>
+
+                                    <option value="Fraude">
+                                        Suspeita de fraude
+                                    </option>
+
+                                    <option value="Outro">
+                                        Outro assunto
+                                    </option>
+                                </select>
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label for="ticketSubject">
+                                Assunto
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-regular fa-message"></i>
+
+                                <input
+                                    type="text"
+                                    id="ticketSubject"
+                                    placeholder="Resuma sua solicitação"
+                                    maxlength="80"
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+                        <div class="input-group full-field">
+
+                            <label for="ticketMessage">
+                                Mensagem
+                            </label>
+
+                            <div class="input-box textarea-box">
+
+                                <i class="fa-regular fa-pen-to-square"></i>
+
+                                <textarea
+                                    id="ticketMessage"
+                                    placeholder="Conte com detalhes o que aconteceu..."
+                                    maxlength="600"
+                                    required
+                                ></textarea>
+
+                            </div>
+
+                            <div class="field-footer">
+
+                                <small class="field-error"></small>
+
+                                <span id="messageCounter">
+                                    0/600
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Enviar chamado
+
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </form>
+
+                </article>
+
+                <!-- EMERGÊNCIA -->
+
+                <aside class="help-side-column">
+
+                    <article class="emergency-card">
+
+                        <span class="emergency-icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </span>
+
+                        <span class="emergency-eyebrow">
+                            Emergência
+                        </span>
+
+                        <h2>Precisa agir agora?</h2>
+
+                        <p>
+                            Use uma das opções abaixo para proteger sua conta.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="emergency-action"
+                            data-emergency-action="Bloquear cartão"
+                        >
+                            <i class="fa-regular fa-credit-card"></i>
+
+                            <span>
+                                <strong>Bloquear cartão</strong>
+                                <small>Impeça novas compras imediatamente.</small>
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="emergency-action"
+                            data-emergency-action="Bloquear conta"
+                        >
+                            <i class="fa-solid fa-user-lock"></i>
+
+                            <span>
+                                <strong>Bloquear conta</strong>
+                                <small>Interrompa temporariamente o acesso.</small>
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="emergency-action"
+                            data-emergency-action="Reportar fraude"
+                        >
+                            <i class="fa-solid fa-shield-virus"></i>
+
+                            <span>
+                                <strong>Reportar fraude</strong>
+                                <small>Avise sobre uma movimentação suspeita.</small>
+                            </span>
+                        </button>
+
+                    </article>
+
+                    <article class="security-tip-card">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <div>
+                            <strong>
+                                O ChromaBank nunca pede sua senha
+                            </strong>
+
+                            <p>
+                                Não informe códigos ou senhas por telefone,
+                                mensagem ou e-mail.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </aside>
+
+            </section>
+
+            <!-- =========================================
+                 FAQ
+            ========================================== -->
+
+            <section class="help-section">
+
+                <article class="panel faq-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                Respostas rápidas
+                            </span>
+
+                            <h2>Perguntas frequentes</h2>
+
+                            <p>
+                                Encontre soluções para as dúvidas mais comuns.
+                            </p>
+
+                        </div>
+
+                        <div class="faq-search">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="faqSearch"
+                                placeholder="Pesquisar dúvida"
+                                aria-label="Pesquisar dúvidas"
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="faq-list"
+                        id="faqList"
+                    >
+
+                        <article
+                            class="faq-item"
+                            data-faq-keywords="senha alterar segurança configurações"
+                        >
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                            >
+                                <span>
+                                    Como alterar minha senha?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Acesse Configurações, entre em Segurança e
+                                    selecione a opção de alteração de senha.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article
+                            class="faq-item"
+                            data-faq-keywords="cartão bloquear roubo perda"
+                        >
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                            >
+                                <span>
+                                    Como bloquear meu cartão?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Entre na página Cartões, selecione o cartão
+                                    desejado e utilize a opção de bloqueio.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article
+                            class="faq-item"
+                            data-faq-keywords="pix cancelar estornar transferência"
+                        >
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                            >
+                                <span>
+                                    Posso cancelar um PIX?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Um PIX concluído não pode ser cancelado.
+                                    Em caso de erro, entre em contato com o
+                                    destinatário ou abra um chamado.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article
+                            class="faq-item"
+                            data-faq-keywords="empréstimo solicitar crédito simular"
+                        >
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                            >
+                                <span>
+                                    Como solicitar um empréstimo?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Acesse Empréstimos, ajuste o valor e as
+                                    parcelas no simulador e confirme a solicitação.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article
+                            class="faq-item"
+                            data-faq-keywords="seguro assistência apólice"
+                        >
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                            >
+                                <span>
+                                    Como acionar a assistência do seguro?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Abra a página Seguros, selecione sua apólice
+                                    ativa e clique em solicitar assistência.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article
+                            class="faq-item"
+                            data-faq-keywords="conta acesso recuperar login"
+                        >
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                            >
+                                <span>
+                                    Como recuperar o acesso à conta?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Na tela de login, selecione “Esqueci minha
+                                    senha” e siga as etapas de verificação.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                    <div
+                        class="faq-empty"
+                        id="faqEmpty"
+                        hidden
+                    >
+                        <i class="fa-regular fa-face-frown"></i>
+
+                        <strong>Nenhuma resposta encontrada</strong>
+
+                        <span>
+                            Tente pesquisar com outras palavras.
+                        </span>
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 HISTÓRICO
+            ========================================== -->
+
+            <section class="help-section">
+
+                <article class="panel history-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                Acompanhamento
+                            </span>
+
+                            <h2>Histórico de chamados</h2>
+
+                            <p>
+                                Consulte suas solicitações recentes.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="outline-button"
+                            id="clearTicketHistoryButton"
+                        >
+                            Limpar histórico
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="ticket-history"
+                        id="ticketHistory"
+                    >
+
+                        <div class="empty-history">
+
+                            <span>
+                                <i class="fa-regular fa-folder-open"></i>
+                            </span>
+
+                            <strong>
+                                Nenhum chamado registrado
+                            </strong>
+
+                            <p>
+                                Os chamados enviados aparecerão aqui.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =========================================
+                 RODAPÉ
+            ========================================== -->
+
+            <footer class="page-footer">
+
+                <p>
+                    © 2026 ChromaBank. Todos os direitos reservados.
+                </p>
+
+                <div>
+                    <a href="#">Segurança</a>
+                    <a href="#">Privacidade</a>
+                    <a href="#">Termos</a>
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE ATENDIMENTO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="supportModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="supportModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon">
+                <i class="fa-solid fa-headset"></i>
+            </span>
+
+            <span class="modal-eyebrow">
+                Atendimento ChromaBank
+            </span>
+
+            <h2 id="supportModalTitle">
+                Sobre o que você quer falar?
+            </h2>
+
+            <p>
+                Escolha uma categoria para iniciar o atendimento.
+            </p>
+
+            <div class="support-topics">
+
+                <button
+                    type="button"
+                    data-support-topic="PIX"
+                >
+                    <i class="fa-brands fa-pix"></i>
+                    <span>PIX</span>
+                </button>
+
+                <button
+                    type="button"
+                    data-support-topic="Cartões"
+                >
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Cartões</span>
+                </button>
+
+                <button
+                    type="button"
+                    data-support-topic="Empréstimos"
+                >
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <span>Empréstimos</span>
+                </button>
+
+                <button
+                    type="button"
+                    data-support-topic="Seguros"
+                >
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <span>Seguros</span>
+                </button>
+
+                <button
+                    type="button"
+                    data-support-topic="Conta"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Conta</span>
+                </button>
+
+                <button
+                    type="button"
+                    data-support-topic="Outro assunto"
+                >
+                    <i class="fa-solid fa-ellipsis"></i>
+                    <span>Outro</span>
+                </button>
+
+            </div>
+
+            <button
+                type="button"
+                class="primary-button"
+                id="confirmSupportStartButton"
+                disabled
+            >
+                Iniciar conversa
+
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE CONVERSA INICIADA
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="supportStartedModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card success-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="supportStartedTitle"
+        >
+
+            <span class="success-modal-icon">
+                <i class="fa-solid fa-comments"></i>
+            </span>
+
+            <span class="modal-eyebrow">
+                Atendimento iniciado
+            </span>
+
+            <h2 id="supportStartedTitle">
+                Você entrou na fila!
+            </h2>
+
+            <p>
+                Este atendimento é demonstrativo. Em uma versão com backend,
+                um atendente responderia em poucos minutos.
+            </p>
+
+            <div class="protocol-box">
+
+                <span>Protocolo do atendimento</span>
+
+                <strong id="supportProtocol">
+                    CHR-000000
+                </strong>
+
+            </div>
+
+            <button
+                type="button"
+                class="primary-button"
+                data-close-modal
+            >
+                Entendi
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE CHAMADO CRIADO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="ticketSuccessModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card success-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="ticketSuccessTitle"
+        >
+
+            <span class="success-modal-icon">
+                <i class="fa-solid fa-check"></i>
+            </span>
+
+            <span class="modal-eyebrow">
+                Solicitação registrada
+            </span>
+
+            <h2 id="ticketSuccessTitle">
+                Chamado criado com sucesso!
+            </h2>
+
+            <p>
+                Nossa equipe analisará sua solicitação e enviará atualizações
+                pela Central de Notificações.
+            </p>
+
+            <div class="protocol-box">
+
+                <span>Protocolo do chamado</span>
+
+                <strong id="ticketProtocol">
+                    CHR-000000
+                </strong>
+
+            </div>
+
+            <button
+                type="button"
+                class="primary-button"
+                data-close-modal
+            >
+                Voltar para a Central
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         MODAL DE EMERGÊNCIA
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="emergencyModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal
+        ></div>
+
+        <section
+            class="modal-card emergency-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="emergencyModalTitle"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-icon danger">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </span>
+
+            <span class="modal-eyebrow danger-text">
+                Ação de segurança
+            </span>
+
+            <h2 id="emergencyModalTitle">
+                Confirmar solicitação
+            </h2>
+
+            <p id="emergencyModalDescription">
+                Esta ação será registrada como uma solicitação urgente.
+            </p>
+
+            <div class="emergency-warning">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    Esta é uma simulação de front-end. Nenhuma conta ou cartão
+                    real será bloqueado.
+                </span>
+
+            </div>
+
+            <button
+                type="button"
+                class="danger-primary-button"
+                id="confirmEmergencyButton"
+            >
+                Confirmar solicitação
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Operação realizada com sucesso.
+        </span>
+
+    </div>
+
+    <!-- JS globais -->
+
+    <script src="../../assets/js/tema.js"></script>
+    <script src="../../assets/js/profile.js"></script>
+    <script src="../../assets/js/notifications.js"></script>
+
+    <!-- JS da página -->
+
+    <script src="ajuda.js"></script>
+
+</body>
+
+</html>

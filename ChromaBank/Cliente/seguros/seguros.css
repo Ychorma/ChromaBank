@@ -1,0 +1,2292 @@
+/* ==================================================
+   CHROMABANK — SEGUROS
+   Arquivo: seguros.css
+================================================== */
+
+:root {
+    --background: #050508;
+    --background-soft: #09090f;
+
+    --surface: rgba(255, 255, 255, 0.035);
+    --surface-hover: rgba(255, 255, 255, 0.065);
+
+    --primary: #7c2cff;
+    --primary-light: #a864ff;
+    --primary-dark: #4e0eb8;
+
+    --text: #ffffff;
+    --text-soft: #b9b8c5;
+    --text-muted: #74727f;
+
+    --border: rgba(255, 255, 255, 0.09);
+    --border-purple: rgba(139, 70, 255, 0.38);
+
+    --success: #29dc7d;
+    --danger: #ff4d63;
+    --warning: #ffb946;
+    --blue: #5c7cff;
+
+    --sidebar-width: 240px;
+}
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 82% 7%,
+            rgba(124, 44, 255, 0.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(92, 124, 255, 0.07),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #050508,
+            #07070c 55%,
+            #030305
+        );
+
+    font-family: "Poppins", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body.sidebar-open,
+body.modal-open {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ==================================================
+   LAYOUT
+================================================== */
+
+.app-layout {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+}
+
+.main-content {
+    width: calc(100% - var(--sidebar-width));
+    min-height: 100vh;
+
+    margin-left: var(--sidebar-width);
+    padding: 28px;
+}
+
+/* ==================================================
+   SIDEBAR
+================================================== */
+
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px 16px 20px;
+
+    border-right: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(124, 44, 255, 0.09),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #07070b,
+            #040406
+        );
+
+    box-shadow: 18px 0 45px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+}
+
+.brand-logo {
+    width: 145px;
+    height: 54px;
+
+    object-fit: contain;
+    object-position: left center;
+
+    filter:
+        drop-shadow(0 0 9px rgba(124, 44, 255, 0.35));
+}
+
+.sidebar-close {
+    width: 42px;
+    height: 42px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    overflow-y: auto;
+    padding-right: 3px;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        rgba(124, 44, 255, 0.45)
+        transparent;
+}
+
+.nav-item {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 0 14px;
+
+    border: 1px solid transparent;
+    border-radius: 14px;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.nav-item i {
+    width: 20px;
+
+    color: #aaa8b5;
+
+    text-align: center;
+    font-size: 15px;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.045);
+
+    transform: translateX(3px);
+}
+
+.nav-item:hover i {
+    color: var(--primary-light);
+}
+
+.nav-item.active {
+    color: #ffffff;
+
+    border-color: var(--border-purple);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(168, 100, 255, 0.22),
+            rgba(78, 14, 184, 0.34)
+        );
+
+    box-shadow:
+        0 12px 30px rgba(124, 44, 255, 0.18);
+}
+
+.nav-item.active i {
+    color: #ffffff;
+}
+
+.sidebar-security {
+    margin-top: auto;
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.sidebar-security > i {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: var(--primary-light);
+    background: rgba(124, 44, 255, 0.1);
+}
+
+.sidebar-security div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.sidebar-security strong {
+    font-size: 10px;
+}
+
+.sidebar-security span {
+    color: var(--text-muted);
+
+    font-size: 8px;
+    line-height: 1.4;
+}
+
+.logout-button {
+    min-height: 46px;
+
+    margin-top: 14px;
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border-radius: 13px;
+
+    color: var(--text-soft);
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+.logout-button:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+
+    display: none;
+
+    background: rgba(0, 0, 0, 0.68);
+
+    backdrop-filter: blur(5px);
+}
+
+/* ==================================================
+   CABEÇALHO
+================================================== */
+
+.page-header {
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    margin-bottom: 24px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.menu-button {
+    width: 46px;
+    height: 46px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    color: #ffffff;
+    background: var(--surface);
+
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.page-eyebrow,
+.section-eyebrow,
+.modal-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 6px;
+
+    color: var(--primary-light);
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.header-left h1 {
+    margin-bottom: 5px;
+
+    font-size: clamp(27px, 3vw, 34px);
+    letter-spacing: -1.3px;
+}
+
+.header-left p {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-icon-button {
+    width: 46px;
+    height: 46px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid transparent;
+    border-radius: 13px;
+
+    color: var(--text-soft);
+    background: transparent;
+
+    cursor: pointer;
+    font-size: 18px;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.header-icon-button:hover {
+    color: #ffffff;
+
+    border-color: var(--border);
+    background: var(--surface);
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 4px 8px 4px 4px;
+
+    border-radius: 999px;
+
+    color: var(--text-soft);
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.profile-avatar {
+    width: 48px;
+    height: 48px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-light),
+            var(--primary-dark)
+        );
+
+    box-shadow:
+        0 0 0 5px rgba(124, 44, 255, 0.08);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: inherit;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.insurance-hero {
+    min-height: 250px;
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 35px;
+
+    padding: 34px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border-purple);
+    border-radius: 26px;
+
+    background:
+        radial-gradient(
+            circle at 82% 20%,
+            rgba(124, 44, 255, 0.32),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 12% 85%,
+            rgba(92, 124, 255, 0.12),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(43, 20, 72, 0.97),
+            rgba(9, 8, 15, 0.98)
+        );
+
+    box-shadow:
+        0 28px 70px rgba(0, 0, 0, 0.38),
+        0 0 40px rgba(124, 44, 255, 0.12);
+}
+
+.insurance-hero::after {
+    content: "";
+
+    width: 340px;
+    height: 340px;
+
+    position: absolute;
+    right: -145px;
+    bottom: -215px;
+
+    border: 1px solid rgba(168, 100, 255, 0.18);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 50px rgba(124, 44, 255, 0.025),
+        0 0 0 100px rgba(124, 44, 255, 0.014);
+}
+
+.insurance-hero-content,
+.hero-benefits {
+    position: relative;
+    z-index: 2;
+}
+
+.insurance-hero-content {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.hero-icon {
+    width: 78px;
+    height: 78px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border-purple);
+    border-radius: 24px;
+
+    color: var(--primary-light);
+    background: rgba(124, 44, 255, 0.14);
+
+    font-size: 31px;
+
+    box-shadow:
+        0 0 30px rgba(124, 44, 255, 0.14);
+}
+
+.hero-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 7px;
+
+    color: var(--primary-light);
+
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.insurance-hero h2 {
+    max-width: 620px;
+
+    margin-bottom: 10px;
+
+    font-size: clamp(26px, 3vw, 40px);
+    letter-spacing: -1.4px;
+}
+
+.insurance-hero p {
+    max-width: 590px;
+
+    margin-bottom: 22px;
+
+    color: rgba(255, 255, 255, 0.61);
+
+    font-size: 11px;
+    line-height: 1.75;
+}
+
+.hero-benefits {
+    min-width: 300px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    padding: 19px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.hero-benefits div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    padding: 10px;
+
+    text-align: center;
+}
+
+.hero-benefits div + div {
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-benefits strong {
+    font-size: 19px;
+}
+
+.hero-benefits span {
+    color: rgba(255, 255, 255, 0.48);
+
+    font-size: 8px;
+}
+
+/* ==================================================
+   SEÇÕES
+================================================== */
+
+.insurance-section {
+    margin-top: 25px;
+}
+
+.section-heading {
+    margin-bottom: 17px;
+}
+
+.section-heading h2 {
+    margin-bottom: 5px;
+
+    font-size: 21px;
+}
+
+.section-heading p {
+    color: var(--text-muted);
+
+    font-size: 10px;
+}
+
+/* ==================================================
+   CARDS DE SEGURO
+================================================== */
+
+.insurance-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.insurance-card {
+    min-height: 420px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 22px;
+
+    border: 1px solid var(--border);
+    border-radius: 21px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.038),
+            rgba(255, 255, 255, 0.012)
+        );
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.26);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.insurance-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--border-purple);
+
+    box-shadow:
+        0 27px 65px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(124, 44, 255, 0.08);
+}
+
+.insurance-card.featured {
+    border-color: var(--border-purple);
+
+    background:
+        radial-gradient(
+            circle at 80% 8%,
+            rgba(124, 44, 255, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(44, 22, 71, 0.88),
+            rgba(11, 9, 17, 0.97)
+        );
+}
+
+.insurance-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    min-height: 25px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 9px;
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-light),
+            var(--primary)
+        );
+
+    font-size: 7px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.insurance-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 19px;
+
+    border-radius: 18px;
+
+    font-size: 22px;
+}
+
+.insurance-icon.auto {
+    color: var(--primary-light);
+    background: rgba(124, 44, 255, 0.12);
+}
+
+.insurance-icon.home {
+    color: var(--blue);
+    background: rgba(92, 124, 255, 0.11);
+}
+
+.insurance-icon.life {
+    color: #ff6480;
+    background: rgba(255, 100, 128, 0.11);
+}
+
+.insurance-icon.phone {
+    color: var(--success);
+    background: rgba(41, 220, 125, 0.11);
+}
+
+.insurance-card h3 {
+    margin-bottom: 8px;
+
+    font-size: 15px;
+}
+
+.insurance-card > p {
+    min-height: 46px;
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+    line-height: 1.65;
+}
+
+.coverage-list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin: 20px 0;
+
+    list-style: none;
+}
+
+.coverage-list li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--text-soft);
+
+    font-size: 9px;
+}
+
+.coverage-list i {
+    color: var(--success);
+
+    font-size: 8px;
+}
+
+.insurance-price {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    margin-top: auto;
+    margin-bottom: 18px;
+}
+
+.insurance-price > span {
+    color: var(--text-muted);
+    font-size: 8px;
+}
+
+.insurance-price strong {
+    color: var(--primary-light);
+
+    font-size: 20px;
+}
+
+.insurance-price small {
+    color: var(--text-muted);
+
+    font-size: 8px;
+    font-weight: 400;
+}
+
+.insurance-button {
+    width: 100%;
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border-purple);
+    border-radius: 12px;
+
+    color: var(--primary-light);
+    background: rgba(124, 44, 255, 0.065);
+
+    cursor: pointer;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.insurance-button:hover {
+    color: #ffffff;
+    background: rgba(124, 44, 255, 0.16);
+
+    transform: translateY(-2px);
+}
+
+/* ==================================================
+   PAINÉIS
+================================================== */
+
+.panel {
+    border: 1px solid var(--border);
+    border-radius: 21px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.038),
+            rgba(255, 255, 255, 0.012)
+        );
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.27);
+
+    backdrop-filter: blur(18px);
+}
+
+.panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.panel-header h2 {
+    margin-bottom: 5px;
+
+    font-size: 18px;
+}
+
+.panel-header p {
+    color: var(--text-muted);
+
+    font-size: 10px;
+}
+
+/* ==================================================
+   BENEFÍCIOS
+================================================== */
+
+.insurance-benefits-panel {
+    padding: 24px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
+
+    margin-top: 20px;
+}
+
+.benefit-card {
+    min-height: 125px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    padding: 17px;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.benefit-card:hover {
+    border-color: var(--border-purple);
+    background: rgba(124, 44, 255, 0.06);
+
+    transform: translateY(-3px);
+}
+
+.benefit-card > span {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    color: var(--primary-light);
+    background: rgba(124, 44, 255, 0.1);
+}
+
+.benefit-card div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.benefit-card strong {
+    font-size: 10px;
+}
+
+.benefit-card p {
+    color: var(--text-muted);
+
+    font-size: 8px;
+    line-height: 1.55;
+}
+
+/* ==================================================
+   SEGUROS ATIVOS
+================================================== */
+
+.active-insurances-panel {
+    padding: 23px;
+}
+
+.active-insurances-list {
+    margin-top: 19px;
+}
+
+.empty-insurances {
+    min-height: 230px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 30px;
+
+    border: 1px dashed rgba(255, 255, 255, 0.11);
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+.empty-insurances > span {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 7px;
+
+    border-radius: 20px;
+
+    color: var(--primary-light);
+    background: rgba(124, 44, 255, 0.1);
+
+    font-size: 24px;
+}
+
+.empty-insurances strong {
+    font-size: 12px;
+}
+
+.empty-insurances p {
+    max-width: 390px;
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+    line-height: 1.65;
+}
+
+.active-insurance-item {
+    min-height: 112px;
+
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 16px;
+
+    padding: 17px;
+
+    border: 1px solid var(--border);
+    border-radius: 17px;
+
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.active-insurance-item + .active-insurance-item {
+    margin-top: 10px;
+}
+
+.active-insurance-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    color: var(--primary-light);
+    background: rgba(124, 44, 255, 0.1);
+
+    font-size: 19px;
+}
+
+.active-insurance-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.active-insurance-info strong {
+    font-size: 11px;
+}
+
+.active-insurance-info span,
+.active-insurance-info small {
+    color: var(--text-muted);
+
+    font-size: 8px;
+}
+
+.active-insurance-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.active-insurance-price span,
+.active-insurance-price small {
+    color: var(--text-muted);
+
+    font-size: 8px;
+}
+
+.active-insurance-price strong {
+    font-size: 12px;
+}
+
+.insurance-details-button {
+    min-height: 40px;
+
+    padding: 0 13px;
+
+    border: 1px solid var(--border-purple);
+    border-radius: 11px;
+
+    color: var(--primary-light);
+    background: rgba(124, 44, 255, 0.06);
+
+    cursor: pointer;
+
+    font-size: 9px;
+}
+
+/* ==================================================
+   PASSOS
+================================================== */
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.step-card {
+    min-height: 180px;
+
+    position: relative;
+
+    padding: 22px;
+
+    border: 1px solid var(--border);
+    border-radius: 19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.01)
+        );
+}
+
+.step-card > span {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 13px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-light),
+            var(--primary)
+        );
+
+    box-shadow:
+        0 10px 25px rgba(124, 44, 255, 0.22);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.step-card h3 {
+    margin-bottom: 7px;
+
+    font-size: 13px;
+}
+
+.step-card p {
+    color: var(--text-muted);
+
+    font-size: 9px;
+    line-height: 1.65;
+}
+
+/* ==================================================
+   FAQ
+================================================== */
+
+.faq-panel {
+    padding: 23px;
+}
+
+.faq-list {
+    margin-top: 18px;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-item:last-child {
+    border-bottom: 0;
+}
+
+.faq-question {
+    width: 100%;
+    min-height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    color: var(--text);
+    background: transparent;
+
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-question span {
+    font-size: 11px;
+}
+
+.faq-question i {
+    color: var(--primary-light);
+
+    transition: transform 0.25s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height 0.3s ease,
+        opacity 0.25s ease,
+        padding 0.25s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 160px;
+
+    padding-bottom: 18px;
+
+    opacity: 1;
+}
+
+.faq-answer p {
+    color: var(--text-muted);
+
+    font-size: 9px;
+    line-height: 1.7;
+}
+
+/* ==================================================
+   BOTÕES
+================================================== */
+
+.primary-button {
+    min-height: 50px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 0 20px;
+
+    border-radius: 12px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-light),
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    box-shadow:
+        0 15px 35px rgba(124, 44, 255, 0.27);
+
+    cursor: pointer;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 20px 45px rgba(124, 44, 255, 0.42);
+}
+
+.primary-button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+    transform: none;
+}
+
+.outline-button {
+    min-height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 0 15px;
+
+    border: 1px solid var(--border-purple);
+    border-radius: 11px;
+
+    color: var(--primary-light);
+    background: rgba(124, 44, 255, 0.06);
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.outline-button:hover {
+    color: #ffffff;
+    background: rgba(124, 44, 255, 0.15);
+
+    transform: translateY(-2px);
+}
+
+.danger-button {
+    min-height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 15px;
+
+    border: 1px solid rgba(255, 77, 99, 0.28);
+    border-radius: 11px;
+
+    color: var(--danger);
+    background: rgba(255, 77, 99, 0.07);
+
+    cursor: pointer;
+
+    font-size: 10px;
+}
+
+/* ==================================================
+   INPUTS
+================================================== */
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+}
+
+.input-box {
+    min-height: 56px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 13px;
+
+    background: rgba(5, 5, 9, 0.55);
+}
+
+.input-box:focus-within {
+    border-color: var(--primary-light);
+
+    box-shadow:
+        0 0 0 4px rgba(124, 44, 255, 0.08);
+}
+
+.input-box > i {
+    color: #918e9e;
+}
+
+.input-box select {
+    width: 100%;
+    height: 54px;
+
+    padding: 0 13px;
+
+    border: 0;
+    outline: 0;
+
+    color: #ffffff;
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+.input-box select option {
+    color: #ffffff;
+    background: #101018;
+}
+
+/* ==================================================
+   MODAIS
+================================================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.76);
+
+    backdrop-filter: blur(8px);
+}
+
+.modal-card {
+    width: min(520px, 100%);
+    max-height: calc(100vh - 40px);
+
+    position: relative;
+    z-index: 2;
+
+    padding: 30px;
+
+    overflow-y: auto;
+
+    border: 1px solid var(--border-purple);
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(124, 44, 255, 0.13),
+            transparent 32%
+        ),
+        linear-gradient(
+            150deg,
+            #11111a,
+            #08080d
+        );
+
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.65),
+        0 0 45px rgba(124, 44, 255, 0.12);
+
+    transform: translateY(20px) scale(0.97);
+
+    transition: transform 0.25s ease;
+}
+
+.modal.active .modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    width: 42px;
+    height: 42px;
+
+    position: absolute;
+    top: 17px;
+    right: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    color: var(--text-soft);
+    background: rgba(255, 255, 255, 0.035);
+
+    cursor: pointer;
+}
+
+.modal-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 19px;
+
+    border: 1px solid var(--border-purple);
+    border-radius: 18px;
+
+    color: var(--primary-light);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(168, 100, 255, 0.18),
+            rgba(78, 14, 184, 0.22)
+        );
+
+    font-size: 23px;
+}
+
+.modal-card h2 {
+    margin-bottom: 8px;
+
+    font-size: 25px;
+    letter-spacing: -0.8px;
+}
+
+.modal-card > p {
+    margin-bottom: 22px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.quote-summary,
+.confirmation-summary,
+.insurance-details-list {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.quote-summary > div,
+.confirmation-summary > div,
+.insurance-details-list > div {
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 13px 15px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.quote-summary > div:last-child,
+.confirmation-summary > div:last-child,
+.insurance-details-list > div:last-child {
+    border-bottom: 0;
+}
+
+.quote-summary span,
+.confirmation-summary span,
+.insurance-details-list span {
+    color: var(--text-muted);
+
+    font-size: 9px;
+}
+
+.quote-summary strong,
+.confirmation-summary strong,
+.insurance-details-list strong {
+    font-size: 10px;
+    text-align: right;
+}
+
+.confirmation-checkbox {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    cursor: pointer;
+}
+
+.confirmation-checkbox input {
+    position: absolute;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-checkbox {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 7px;
+
+    color: transparent;
+    background: rgba(255, 255, 255, 0.03);
+
+    font-size: 9px;
+}
+
+.confirmation-checkbox input:checked + .custom-checkbox {
+    color: #ffffff;
+
+    border-color: var(--primary);
+    background: var(--primary);
+}
+
+.confirmation-checkbox small {
+    color: var(--text-muted);
+
+    font-size: 8px;
+    line-height: 1.6;
+}
+
+.success-modal {
+    text-align: center;
+}
+
+.success-modal-icon {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    border-radius: 22px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--success),
+            #148d51
+        );
+
+    box-shadow:
+        0 0 34px rgba(41, 220, 125, 0.25);
+
+    font-size: 26px;
+}
+
+.policy-code {
+    margin: 18px 0;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.policy-code span {
+    color: var(--text-muted);
+
+    font-size: 8px;
+}
+
+.policy-code strong {
+    color: var(--primary-light);
+
+    font-size: 15px;
+}
+
+.details-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* ==================================================
+   TOAST
+================================================== */
+
+.toast {
+    min-width: 280px;
+
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 6000;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px 18px;
+
+    border: 1px solid rgba(41, 220, 125, 0.28);
+    border-radius: 14px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 56, 39, 0.97),
+            rgba(7, 20, 14, 0.97)
+        );
+
+    box-shadow:
+        0 22px 60px rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+}
+
+.toast.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.toast i {
+    color: var(--success);
+}
+
+.toast span {
+    font-size: 11px;
+}
+
+.toast.error {
+    border-color: rgba(255, 77, 99, 0.3);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(70, 20, 29, 0.97),
+            rgba(24, 7, 11, 0.97)
+        );
+}
+
+.toast.error i {
+    color: var(--danger);
+}
+
+/* ==================================================
+   RODAPÉ
+================================================== */
+
+.page-footer {
+    margin-top: 26px;
+    padding: 22px 4px 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    border-top: 1px solid var(--border);
+}
+
+.page-footer p,
+.page-footer a {
+    color: var(--text-muted);
+
+    font-size: 10px;
+}
+
+.page-footer div {
+    display: flex;
+    gap: 22px;
+}
+
+.page-footer a:hover {
+    color: #ffffff;
+}
+
+/* ==================================================
+   TEMA CLARO
+================================================== */
+
+body.theme-light .insurance-card,
+body.theme-light .insurance-benefits-panel,
+body.theme-light .active-insurances-panel,
+body.theme-light .faq-panel,
+body.theme-light .step-card {
+    color: #17151d;
+
+    border-color: rgba(0, 0, 0, 0.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(243, 240, 249, 0.96)
+        );
+
+    box-shadow:
+        0 18px 48px rgba(30, 20, 50, 0.08);
+}
+
+body.theme-light .insurance-card.featured {
+    color: #ffffff;
+
+    border-color: rgba(124, 44, 255, 0.35);
+
+    background:
+        radial-gradient(
+            circle at 80% 8%,
+            rgba(168, 100, 255, 0.25),
+            transparent 36%
+        ),
+        linear-gradient(
+            145deg,
+            #60418c,
+            #24142f
+        );
+}
+
+body.theme-light .insurance-card.featured h3,
+body.theme-light .insurance-card.featured strong {
+    color: #ffffff;
+}
+
+body.theme-light .insurance-card.featured p,
+body.theme-light .insurance-card.featured li,
+body.theme-light .insurance-card.featured span,
+body.theme-light .insurance-card.featured small {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+body.theme-light .benefit-card,
+body.theme-light .active-insurance-item,
+body.theme-light .empty-insurances {
+    border-color: rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.72);
+}
+
+body.theme-light .faq-question,
+body.theme-light .active-insurance-item strong {
+    color: #17151d;
+}
+
+body.theme-light .input-box {
+    border-color: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-light .input-box select {
+    color: #17151d;
+}
+
+body.theme-light .input-box select option {
+    color: #17151d;
+    background: #ffffff;
+}
+
+body.theme-light .modal-card {
+    color: #17151d;
+
+    border-color: rgba(124, 44, 255, 0.2);
+
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(124, 44, 255, 0.1),
+            transparent 32%
+        ),
+        linear-gradient(
+            150deg,
+            #ffffff,
+            #f3eff9
+        );
+}
+
+body.theme-light .quote-summary,
+body.theme-light .confirmation-summary,
+body.theme-light .insurance-details-list,
+body.theme-light .policy-code {
+    border-color: rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.75);
+}
+
+/* ==================================================
+   NOTEBOOK
+================================================== */
+
+@media (max-width: 1300px) {
+
+    :root {
+        --sidebar-width: 215px;
+    }
+
+    .main-content {
+        padding: 22px;
+    }
+
+    .insurance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 980px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .sidebar-close,
+    .menu-button {
+        display: flex;
+    }
+
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .insurance-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-benefits {
+        width: 100%;
+    }
+
+    .active-insurance-item {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+    }
+
+    .insurance-details-button {
+        grid-column: 2 / -1;
+        justify-self: flex-end;
+    }
+}
+
+/* ==================================================
+   CELULAR
+================================================== */
+
+@media (max-width: 700px) {
+
+    .main-content {
+        padding: 16px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+    }
+
+    .header-left h1 {
+        font-size: 25px;
+    }
+
+    .header-left p {
+        font-size: 11px;
+    }
+
+    .header-icon-button {
+        display: none;
+    }
+
+    .profile-avatar {
+        width: 44px;
+        height: 44px;
+    }
+
+    .insurance-hero {
+        padding: 22px;
+    }
+
+    .insurance-hero-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero-icon {
+        width: 60px;
+        height: 60px;
+
+        font-size: 24px;
+    }
+
+    .hero-benefits {
+        min-width: 0;
+    }
+
+    .insurance-grid,
+    .benefits-grid,
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insurance-card {
+        min-height: 390px;
+    }
+
+    .insurance-benefits-panel,
+    .active-insurances-panel,
+    .faq-panel {
+        padding: 18px;
+    }
+
+    .panel-header {
+        flex-direction: column;
+    }
+
+    .active-insurance-item {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .active-insurance-price {
+        grid-column: 2;
+        align-items: flex-start;
+    }
+
+    .insurance-details-button {
+        grid-column: 2;
+        justify-self: flex-start;
+    }
+
+    .page-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-footer div {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .modal-card {
+        padding: 25px 20px;
+    }
+
+    .toast {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+
+        min-width: 0;
+    }
+}
+
+/* ==================================================
+   CELULARES PEQUENOS
+================================================== */
+
+@media (max-width: 430px) {
+
+    .main-content {
+        padding: 12px;
+    }
+
+    .profile-button > i {
+        display: none;
+    }
+
+    .hero-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-benefits div + div {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-left: 0;
+    }
+
+    .active-insurance-item {
+        grid-template-columns: 1fr;
+    }
+
+    .active-insurance-icon,
+    .active-insurance-price,
+    .insurance-details-button {
+        grid-column: auto;
+    }
+
+    .active-insurance-price {
+        align-items: flex-start;
+    }
+
+    .insurance-details-button {
+        justify-self: stretch;
+    }
+
+    .quote-summary > div,
+    .confirmation-summary > div,
+    .insurance-details-list > div {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .quote-summary strong,
+    .confirmation-summary strong,
+    .insurance-details-list strong {
+        text-align: left;
+    }
+
+    .details-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================================================
+   ACESSIBILIDADE
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
