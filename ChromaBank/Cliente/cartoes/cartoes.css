@@ -2074,3 +2074,14 @@ input[type="range"] {
         transition-duration: 0.01ms !important;
     }
 }
+/* Número do cartão no tema claro */
+body.theme-light .card-number,
+body.theme-light .card-number .hidden-number,
+body.theme-light #cardLastDigits {
+    color: #ffffff !important;
+}body.theme-light .card-visual span,
+body.theme-light .card-visual strong,
+body.theme-light .credit-card span,
+body.theme-light .credit-card strong {
+    color: #ffffff !important;
+}

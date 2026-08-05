@@ -11,7 +11,7 @@
 if (
     sessionStorage.getItem("chromaBankLoggedIn") !== "true"
 ) {
-    window.location.href = "../login.html";
+    window.location.href = "../login/login.html";
 }
 
 
@@ -405,7 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         window.location.href =
-            "../login.html";
+            "../login/login.html";
     }
 
     logoutButton?.addEventListener(

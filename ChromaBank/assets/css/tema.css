@@ -1019,3 +1019,184 @@ body.theme-light .balance-summary span,
 body.theme-light .balance-summary p {
     color: rgba(255,255,255,.65) !important;
 }
+/* ==================================================
+   HERO SECTIONS - TEMA CLARO
+================================================== */
+
+body.theme-light .hero,
+body.theme-light .page-hero,
+body.theme-light .loan-hero,
+body.theme-light .insurance-hero,
+body.theme-light .help-hero {
+    color: #fff;
+}
+
+body.theme-light .hero h1,
+body.theme-light .hero h2,
+body.theme-light .hero h3,
+body.theme-light .hero p,
+body.theme-light .hero strong,
+
+body.theme-light .page-hero h1,
+body.theme-light .page-hero h2,
+body.theme-light .page-hero h3,
+body.theme-light .page-hero p,
+body.theme-light .page-hero strong,
+
+body.theme-light .loan-hero h1,
+body.theme-light .loan-hero h2,
+body.theme-light .loan-hero h3,
+body.theme-light .loan-hero p,
+body.theme-light .loan-hero strong,
+
+body.theme-light .insurance-hero h1,
+body.theme-light .insurance-hero h2,
+body.theme-light .insurance-hero h3,
+body.theme-light .insurance-hero p,
+body.theme-light .insurance-hero strong,
+
+body.theme-light .help-hero h1,
+body.theme-light .help-hero h2,
+body.theme-light .help-hero h3,
+body.theme-light .help-hero p,
+body.theme-light .help-hero strong {
+    color: #fff;
+}
+
+body.theme-light .loan-hero p,
+body.theme-light .insurance-hero p,
+body.theme-light .help-hero p {
+    color: rgba(255,255,255,.70);
+}
+/* =========================================
+   SIDEBAR — HOVER NO TEMA CLARO
+========================================= */
+
+body.theme-light .nav-item:hover {
+    color: #17151d !important;
+    background: rgba(124, 44, 255, 0.08) !important;
+    border-color: rgba(124, 44, 255, 0.16) !important;
+}
+
+body.theme-light .nav-item:hover i {
+    color: var(--primary) !important;
+}
+
+body.theme-light .nav-item:hover span {
+    color: #17151d !important;
+}
+/* =========================================
+   TEMA CLARO - DASHBOARD
+========================================= */
+
+body.theme-light .card-label {
+    color: #6b7280 !important;
+}
+
+body.theme-light .positive-value,
+body.theme-light .investment-growth {
+    color: #16a34a !important;
+}
+
+body.theme-light .investment-value {
+    color: #17151d !important;
+}
+/* =========================================
+   TEMA CLARO - DASHBOARD
+========================================= */
+
+body.theme-light .bottom-card-button {
+    color: #7c2cff !important;
+    border-color: rgba(124, 44, 255, 0.20) !important;
+}
+
+body.theme-light .bottom-card-button:hover {
+    color: #ffffff !important;
+}
+
+/* Labels da área de investimentos */
+body.theme-light .investment-footer span,
+body.theme-light .investment-stats span,
+body.theme-light .investment-summary span {
+    color: #6b7280 !important;
+}
+
+body.theme-light .investment-footer strong,
+body.theme-light .investment-stats strong,
+body.theme-light .investment-summary strong {
+    color: #17151d !important;
+}
+/* =========================================
+   TEMA CLARO — DASHBOARD / MOVIMENTAÇÕES
+========================================= */
+
+/* Descrições secundárias das movimentações */
+body.theme-light .transaction-info span,
+body.theme-light .transaction-details span,
+body.theme-light .transaction-description {
+    color: #6b7280 !important;
+}
+
+/* Horário das movimentações */
+body.theme-light .transaction-value span,
+body.theme-light .transaction-time {
+    color: #9ca3af !important;
+}
+
+/* Valores */
+body.theme-light .transaction-value strong {
+    color: #17151d !important;
+}
+
+body.theme-light .transaction-value .positive-value {
+    color: #16a34a !important;
+}
+
+/* Links "Ver todas" */
+body.theme-light .view-all,
+body.theme-light .card-header a,
+body.theme-light .section-header a {
+    color: #7c2cff !important;
+}
+
+/* Botões inferiores dos cards */
+body.theme-light .bottom-card-button {
+    color: #7c2cff !important;
+    border-color: rgba(124, 44, 255, 0.24) !important;
+    background: transparent !important;
+}
+
+body.theme-light .bottom-card-button:hover {
+    color: #ffffff !important;
+    background: #7c2cff !important;
+}
+/* =========================================
+   TEMA CLARO — METAS E NOTIFICAÇÕES
+========================================= */
+
+/* Horários das notificações */
+body.theme-light .notification-time {
+    color: #9ca3af !important;
+}
+
+/* Percentuais das metas */
+body.theme-light .goal-content > div > span {
+    color: #9ca3af !important;
+}
+
+/* Texto secundário das metas */
+body.theme-light .goal-content p {
+    color: #6b7280 !important;
+}
+/* =========================================
+   TEMA CLARO — EXTRATO
+========================================= */
+
+body.theme-light .date-heading > span {
+    color: #17151d !important;
+}
+
+body.theme-light .date-heading small,
+body.theme-light .date-heading time {
+    color: #6b7280 !important;
+}
